@@ -1,5 +1,6 @@
-import { Footer } from '../components/Footer/Footer';
+import './layout.css'
 import './globals.css';
+import { Footer } from '../components/Footer/Footer';
 
 import type { Metadata } from 'next';
 
