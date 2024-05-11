@@ -1,3 +1,4 @@
+import { Footer } from '../components/Footer/Footer';
 import './globals.css';
 
 import type { Metadata } from 'next';
@@ -14,7 +15,10 @@ export default function Layout({
 }>) {
   return (
     <html lang='en'>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

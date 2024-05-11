@@ -1,4 +1,5 @@
 import './Footer.css';
+import texts from '../../data/texts.json';
 import { CustomLink } from '../Link/Link';
 
 export function Footer() {
@@ -7,19 +8,19 @@ export function Footer() {
       <div className='asb-ui'>
         <CustomLink
           href='https://github.com/Hulow/asb-web-app'
-          children={<h3>ASB UI</h3>}
+          children={<h3>{texts.asbUi}</h3>}
           target={true}
         />
       </div>
       <div className='asb-app'>
         <CustomLink
           href='https://github.com/Hulow/asb-app'
-          children={<h3>ASB APP</h3>}
+          children={<h3>{texts.asbApp}</h3>}
           target={true}
         />
       </div>
       <div className='email'>
-        <h3>victor@asb.com</h3>
+        <h3>{texts.emailAddress}</h3>
       </div>
     </div>
   );
