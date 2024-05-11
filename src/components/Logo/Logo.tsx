@@ -1,3 +1,4 @@
+import './Logo.css';
 import Image from 'next/image';
 
 interface props {
