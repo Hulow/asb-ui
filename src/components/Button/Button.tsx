@@ -4,15 +4,15 @@ import { getClassNames } from '../../util/util';
 
 export function Button({
   children,
-  state,
+  onEvent,
   classNames
 }: {
   children: React.ReactNode;
-  state?: any;
+  onEvent?: any;
   classNames?: string[];
 }) {
   const [isActive, setIsActive] = useState(false);
-  if (state) state(isActive);
+  if (onEvent) onEvent(isActive);
   const className = getClassNames('button flex-center component', classNames);
 
   return (
