@@ -10,7 +10,7 @@ interface props {
 
 export function Logo(props: props) {
   return (
-    <div className='logo-container'>
+    <div className='logo-container flex-column-center'>
       <Image
         priority
         src={props.route}

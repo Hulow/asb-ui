@@ -1,25 +1,22 @@
-import { useState } from 'react';
 import './Button.css';
-import { CustomLink } from '../Link/Link';
+import { useState } from 'react';
+import { getClassNames } from '../../util/util';
 
 export function Button({
   children,
   state,
-  customClassName,
+  classNames
 }: {
   children: React.ReactNode;
   state?: any;
-  customClassName?: string;
+  classNames?: string[];
 }) {
   const [isActive, setIsActive] = useState(false);
   if (state) state(isActive);
-  const className = 'button';
-  const customClassNames = customClassName
-    ? className + ' ' + customClassName
-    : className;
+  const className = getClassNames('button flex-center component', classNames);
 
   return (
-    <div className={customClassNames} onClick={() => setIsActive(!isActive)}>
+    <div className={className} onClick={() => setIsActive(!isActive)}>
       {children}
     </div>
   );
