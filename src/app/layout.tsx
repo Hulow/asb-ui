@@ -1,10 +1,10 @@
 import './globals.css';
 
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "ASB",
-  description: "Anechoic Station Berlin",
+  title: 'ASB',
+  description: 'Anechoic Station Berlin',
 };
 
 export default function Layout({
@@ -13,7 +13,7 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body>{children}</body>
     </html>
   );
