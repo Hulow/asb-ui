@@ -5,7 +5,7 @@ import { getClassNames } from '../../util/util';
 export function Button({
   children,
   onEvent,
-  classNames
+  classNames,
 }: {
   children: React.ReactNode;
   onEvent?: any;
