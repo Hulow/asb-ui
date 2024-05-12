@@ -5,6 +5,7 @@ import { Logo } from '../components/Logo/Logo';
 import { NavBar, OnEvent } from '../components/NavBar/NavBar';
 import texts from '../data/texts.json';
 import { Cabinets } from '../components/Cabinets/Cabinets';
+import { Station } from '../components/Station/Station';
 
 export default function Home() {
   const [event, setEvent] = useState<undefined | OnEvent>(undefined);
@@ -27,7 +28,7 @@ function Content({ event }: { event: OnEvent }) {
     case texts.content:
       return <div>texts.content</div>;
     case texts.station:
-      return <div>texts.about</div>;
+      return <Station/>
     case texts.cabinets:
       return <Cabinets/>;
   }
