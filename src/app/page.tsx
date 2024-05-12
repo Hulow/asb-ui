@@ -26,7 +26,7 @@ function Content({ event }: { event: OnEvent }) {
   switch (event?.name) {
     case texts.content:
       return <div>texts.content</div>;
-    case texts.about:
+    case texts.station:
       return <div>texts.about</div>;
     case texts.cabinets:
       return <Cabinets/>;
