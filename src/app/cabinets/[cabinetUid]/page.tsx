@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useEffect, useState } from 'react';
 import { config } from '../../../config/config';
@@ -31,6 +31,6 @@ export default function MeasurementPage({ params }: MeasurementParam) {
   if (loading) {
     return <div></div>;
   }
-  
+
   return <div></div>;
 }
