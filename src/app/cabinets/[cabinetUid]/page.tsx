@@ -32,10 +32,5 @@ export default function MeasurementPage({ params }: Params) {
     return <div></div>;
   }
 
-  return <div>
-
-  </div>;
+  return <div></div>;
 }
-
-
-//
