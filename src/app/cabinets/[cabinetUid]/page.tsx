@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from 'react';
 import { config } from '../../../config/config';
 import { Measurement } from '../../../types/measurements';
