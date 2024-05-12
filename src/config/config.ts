@@ -3,6 +3,7 @@ interface Config {
   asbKeyUrl: string;
   endpoints: {
     cabinets: string;
+    measurements: string;
   };
 }
 
@@ -11,5 +12,6 @@ export const config: Config = {
   asbKeyUrl: process.env.ASB_KEY_URL ?? 'asb',
   endpoints: {
     cabinets: '/api/cabinets',
+    measurements: '/api/measurement',
   },
 };
