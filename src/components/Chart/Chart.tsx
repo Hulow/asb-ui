@@ -21,7 +21,7 @@ interface ChartProps {
   datasets: DataSet[];
 }
 
-interface DataSet {
+export interface DataSet {
   label: string;
   data: number[];
   bordelColor: string;

@@ -4,13 +4,13 @@ import { useEffect, useState } from 'react';
 import { config } from '../../../config/config';
 import { Measurement } from '../../../types/measurements';
 
-interface MeasurementParam {
+interface Params {
   params: {
     cabinetUid: string;
   };
 }
 
-export default function MeasurementPage({ params }: MeasurementParam) {
+export default function MeasurementPage({ params }: Params) {
   const endpoint = config.endpoints.measurements;
   const [measurements, setMeasurements] = useState<Measurement | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -32,5 +32,10 @@ export default function MeasurementPage({ params }: MeasurementParam) {
     return <div></div>;
   }
 
-  return <div></div>;
+  return <div>
+
+  </div>;
 }
+
+
+//
