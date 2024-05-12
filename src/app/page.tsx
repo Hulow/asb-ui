@@ -6,6 +6,7 @@ import { NavBar, OnEvent } from '../components/NavBar/NavBar';
 import texts from '../data/texts.json';
 import { Cabinets } from '../components/Cabinets/Cabinets';
 import { Station } from '../components/Station/Station';
+import { ProjectOverview } from '../components/ProjectOverview/ProjectOverview';
 
 export default function Home() {
   const [event, setEvent] = useState<undefined | OnEvent>(undefined);
@@ -25,8 +26,8 @@ export default function Home() {
 
 function Content({ event }: { event: OnEvent }) {
   switch (event?.name) {
-    case texts.content:
-      return <div>texts.content</div>;
+    case texts.ProjectOverview:
+      return <ProjectOverview/>
     case texts.station:
       return <Station/>
     case texts.cabinets:

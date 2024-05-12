@@ -16,7 +16,7 @@ export function NavBar({ onEvent }: { onEvent: any }) {
     <div className='nav-bar'>
       <NavBarItem
         onEvent={reactOnEvent}
-        eventName={texts.content}
+        eventName={texts.ProjectOverview}
         activeEventName={activeEventName}
       />
       <NavBarItem
