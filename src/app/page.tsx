@@ -28,7 +28,7 @@ export default function Home() {
   }, [endpoint]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div></div>;
   }
 
   function handleEvent(event: any): void {

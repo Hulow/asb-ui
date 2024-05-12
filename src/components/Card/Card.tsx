@@ -1,8 +1,12 @@
-import { MappedCabinet } from '../../types/MappedCabinet';
+import { CabinetOverview } from '../../types/cabinet-overview';
 import { CustomLink } from '../Link/Link';
 import './Card.css';
 
-export const Card = ({ cabinetContent }: { cabinetContent: MappedCabinet }) => {
+export const Card = ({
+  cabinetContent,
+}: {
+  cabinetContent: CabinetOverview;
+}) => {
   return (
     <CustomLink
       href={`cabinets/measurement/${cabinetContent.cabinet.uid}`}
@@ -11,14 +15,17 @@ export const Card = ({ cabinetContent }: { cabinetContent: MappedCabinet }) => {
   );
 };
 
-const CabinetCard = ({ cabinetContent }: { cabinetContent: MappedCabinet }) => {
+const CabinetCard = ({
+  cabinetContent,
+}: {
+  cabinetContent: CabinetOverview;
+}) => {
   const { cabinet, drivers } = cabinetContent;
   return (
-    <div className='card component'>
+    <div className='card flex-column-center component'>
       <CardItem children={<h1>{cabinet.productName}</h1>} />
       <CardItem children={<h2>{cabinet.enclosureType}</h2>} />
       <CardItem
-        customClassName='card-sub-items'
         children={drivers.map((driver: any, index: number) => {
           return (
             <CardItem
@@ -36,16 +43,10 @@ const CabinetCard = ({ cabinetContent }: { cabinetContent: MappedCabinet }) => {
   );
 };
 
-const CardItem = ({
-  children,
-  customClassName,
-}: {
-  children: React.ReactNode;
-  customClassName?: string;
-}) => {
-  const className = 'card-item';
-  const customClassNames = customClassName
-    ? className + customClassName
-    : className;
-  return <div className={customClassNames}>{children}</div>;
+const CardItem = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <div className='card-item card-sub-items flex-column-center'>
+      {children}
+    </div>
+  );
 };

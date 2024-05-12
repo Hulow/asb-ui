@@ -1,11 +1,6 @@
-h3:hover {
-  color: rgb(255, 89, 0);
-}
-
 .footer {
   bottom: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-color: rgba(255, 255, 255, 0.029);
 }

@@ -3,6 +3,7 @@ import { CabinetOverview } from '../../types/cabinet-overview';
 import { useState } from 'react';
 import { DropdownButton } from '../Dropdown/DropdownButton/DropdownButton';
 import { DropdownItem } from '../Dropdown/DropdownItem/DropdownItem';
+import { Card } from '../Card/Card';
 
 const ALL_CABINETS = 'ALL';
 
@@ -15,6 +16,7 @@ export function Cabinets({ cabinets }: { cabinets: CabinetOverview[] }) {
   ];
 
   sortOwners();
+  const cabinetsContent = getSelectedCabinets();
 
   return (
     <div className='cabinets'>
@@ -32,6 +34,11 @@ export function Cabinets({ cabinets }: { cabinets: CabinetOverview[] }) {
               />
             ))
           : null}
+      </div>
+      <div className='cabinet-cards'>
+        {cabinetsContent.map((cabinet, index) => {
+          return <Card key={index} cabinetContent={cabinet} />;
+        })}
       </div>
     </div>
   );
@@ -54,5 +61,14 @@ export function Cabinets({ cabinets }: { cabinets: CabinetOverview[] }) {
   function updateOwnerSelection(event: string) {
     setSelectedOwner(event);
     setDropdownState(!dropdownState);
+  }
+
+  function getSelectedCabinets(): CabinetOverview[] {
+    if (selectedOwner === ALL_CABINETS) {
+      return cabinets;
+    }
+    return cabinets.filter(
+      (cabinet) => cabinet.owner.ownername === selectedOwner
+    );
   }
 }
