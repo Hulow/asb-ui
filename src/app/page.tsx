@@ -27,10 +27,10 @@ export default function Home() {
 function Content({ event }: { event: OnEvent }) {
   switch (event?.name) {
     case texts.ProjectOverview:
-      return <ProjectOverview/>
+      return <ProjectOverview />;
     case texts.station:
-      return <Station/>
+      return <Station />;
     case texts.cabinets:
-      return <Cabinets/>;
+      return <Cabinets />;
   }
 }

@@ -1,5 +1,5 @@
-import './ProjectOverview.css'
+import './ProjectOverview.css';
 
 export function ProjectOverview() {
-    return <div>PROJECT OVERVIEW COMPONENT</div>
+  return <div>PROJECT OVERVIEW COMPONENT</div>;
 }

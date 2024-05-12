@@ -1,5 +1,5 @@
-import './Station.css'
+import './Station.css';
 
 export function Station() {
-    return <div>STATION COMPONENT</div>
+  return <div>STATION COMPONENT</div>;
 }

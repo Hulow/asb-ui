@@ -1,5 +1,5 @@
-import './Cabinets.css'
+import './Cabinets.css';
 
 export function Cabinets() {
-    return <div>CABINETS COMPONENT</div>
+  return <div>CABINETS COMPONENT</div>;
 }
