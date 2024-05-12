@@ -44,9 +44,5 @@ const CabinetCard = ({
 };
 
 const CardItem = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div className='card-item card-sub-items flex-column-center'>
-      {children}
-    </div>
-  );
+  return <div className='card-item flex-column-center'>{children}</div>;
 };
