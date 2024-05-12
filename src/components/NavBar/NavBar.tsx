@@ -1,29 +1,17 @@
 import './NavBar.css';
-import { Button } from '../Button/Button';
 import texts from '../../data/texts.json';
 import { NavBarItem } from './NabBarItem/NavBarItem';
-
-export interface EventState {
-  item: EventName;
-  state: boolean;
-}
-
-export enum EventName {
-  Station = 'Station',
-  Content = 'Content',
-  Measurements = 'Measurements'
-}
 
 export function NavBar({ onEvent }: { onEvent: any }) {
   return (
     <div className='nav-bar'>
-      <NavBarItem onEvent={reactOnEvent} eventName={EventName.Content} />
-      <NavBarItem onEvent={reactOnEvent} eventName={EventName.Station} />
-      <NavBarItem onEvent={reactOnEvent} eventName={EventName.Measurements} />
+      <NavBarItem onEvent={reactOnEvent} eventName={texts.content} />
+      <NavBarItem onEvent={reactOnEvent} eventName={texts.about} />
+      <NavBarItem onEvent={reactOnEvent} eventName={texts.measurements} />
     </div>
   );
 
-  function reactOnEvent(event: any) {
+  function reactOnEvent(event: any): void {
     onEvent(event);
   }
 }

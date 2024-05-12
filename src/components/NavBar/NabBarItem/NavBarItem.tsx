@@ -1,4 +1,5 @@
-import './NavBarItem.css'
+import { useState } from 'react';
+import './NavBarItem.css';
 
 export function NavBarItem({
   eventName,
@@ -7,9 +8,18 @@ export function NavBarItem({
   eventName: string;
   onEvent: any;
 }) {
+  const [isActive, setIsActive] = useState(false);
   return (
-    <div className='nav-bar-item flex-center component' onClick={() => onEvent(eventName)}>
+    <div
+      className='nav-bar-item flex-center component'
+      onClick={() => reactOnEvent(eventName)}
+    >
       <h1>{eventName}</h1>
     </div>
   );
+
+  function reactOnEvent(eventName: string): void {
+    setIsActive(!isActive);
+    onEvent({ name: eventName, state: !isActive });
+  }
 }
