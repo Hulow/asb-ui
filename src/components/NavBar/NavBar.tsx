@@ -26,7 +26,7 @@ export function NavBar({ onEvent }: { onEvent: any }) {
       />
       <NavBarItem
         onEvent={reactOnEvent}
-        eventName={texts.measurements}
+        eventName={texts.cabinets}
         activeEventName={activeEventName}
       />
     </div>
