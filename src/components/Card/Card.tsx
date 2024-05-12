@@ -9,13 +9,13 @@ export const Card = ({
 }) => {
   return (
     <CustomLink
-      href={`cabinets/measurement/${cabinetContent.cabinet.uid}`}
-      children={<CabinetCard cabinetContent={cabinetContent} />}
+      href={`cabinets/${cabinetContent.cabinet.uid}`}
+      children={<CardContent cabinetContent={cabinetContent} />}
     />
   );
 };
 
-const CabinetCard = ({
+const CardContent = ({
   cabinetContent,
 }: {
   cabinetContent: CabinetOverview;
