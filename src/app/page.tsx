@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Logo } from '../components/Logo/Logo';
 import { NavBar, OnEvent } from '../components/NavBar/NavBar';
 import texts from '../data/texts.json';
+import { Cabinets } from '../components/Cabinets/Cabinets';
 
 export default function Home() {
   const [event, setEvent] = useState<undefined | OnEvent>(undefined);
@@ -24,10 +25,10 @@ export default function Home() {
 function Content({ event }: { event: OnEvent }) {
   switch (event?.name) {
     case texts.content:
-      return <div>CONTENT</div>;
+      return <div>texts.content</div>;
     case texts.about:
-      return <div>STATION</div>;
-    case texts.measurements:
-      return <div>MEASUREMENTS</div>;
+      return <div>texts.about</div>;
+    case texts.cabinets:
+      return <Cabinets/>;
   }
 }
