@@ -4,11 +4,18 @@ import './NavBarItem.css';
 export function NavBarItem({
   eventName,
   onEvent,
+  activeEventName,
 }: {
   eventName: string;
   onEvent: any;
+  activeEventName?: string;
 }) {
-  const [isActive, setIsActive] = useState(false);
+  let [isActive, setIsActive] = useState(false);
+
+  if (activeEventName !== eventName) {
+    isActive = false;
+  }
+
   return (
     <div
       className='nav-bar-item flex-center component'
