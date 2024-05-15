@@ -49,7 +49,27 @@ export default function MeasurementPage({ params }: Params) {
         borderColor: 'orange',
       },
     ],
+    yMin: 50,
+    yMax: 90
   };
+
+  const impedanceChart: ChartProps = {
+    labels: measurements.impedance.frequencies,
+    datasets: [
+     {
+      label: 'Ohms',
+      data: measurements.impedance.impedances,
+      borderColor: 'blue'
+     },
+     {
+      label: 'Phase',
+      data: measurements.impedance.phases,
+      borderColor: 'red'
+     }
+    ],
+    yMin: -100,
+    yMax: 200
+  }
 
   return (
     <main className='measurement flex-column-center'>
@@ -199,6 +219,10 @@ export default function MeasurementPage({ params }: Params) {
         <div className="settings-item">
           <p>{measurements.frequency.note}</p>
         </div>
+      </div>
+      <h1>Impedance Response</h1>
+      <div className='chart'>
+          <Chart props={impedanceChart} />
       </div>
     </main>
   );

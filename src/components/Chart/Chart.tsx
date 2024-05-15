@@ -20,6 +20,8 @@ ChartJS.register(
 export interface ChartProps {
   labels: number[];
   datasets: DataSet[];
+  yMin: number,
+  yMax: number
 }
 
 export interface DataSet {
@@ -63,8 +65,8 @@ export function Chart({ props }: { props: ChartProps }) {
           y: {
             display: true,
             type: 'linear',
-            min: 50,
-            max: 90,
+            min: props.yMin,
+            max: props.yMax,
             ticks: {
               color: 'grey',
               callback: (val) => val,
