@@ -91,8 +91,12 @@ export default function MeasurementPage({ params }: Params) {
               <h1>Driver</h1>
               <div className='speaker-items'>
                 <div className='speaker-item'>
-                  <p>Manufacturer</p>
-                  <p>{driver.brandName}</p>
+                  <div className='speaker-sub-item'>
+                    <p>Manufacturer</p>
+                  </div>
+                  <div className='speaker-sub-item'>
+                    <p>{driver.brandName}</p>
+                  </div>
                 </div>
                 <div className='speaker-item'>
                   <div className='speaker-sub-item'>
@@ -146,9 +150,6 @@ export default function MeasurementPage({ params }: Params) {
             </div>
           );
         })}
-      </div>
-      <div className="flex-center">
-        
       </div>
     </main>
   );
