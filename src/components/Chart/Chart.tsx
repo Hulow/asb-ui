@@ -1,3 +1,4 @@
+import './Chart.css';
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import {
@@ -16,7 +17,7 @@ ChartJS.register(
   LogarithmicScale
 );
 
-interface ChartProps {
+export interface ChartProps {
   labels: number[];
   datasets: DataSet[];
 }
@@ -24,10 +25,10 @@ interface ChartProps {
 export interface DataSet {
   label: string;
   data: number[];
-  bordelColor: string;
+  borderColor: string;
 }
 
-export function Chart(props: ChartProps) {
+export function Chart({ props }: { props: ChartProps }) {
   return (
     <Line
       data={{
@@ -62,8 +63,8 @@ export function Chart(props: ChartProps) {
           y: {
             display: true,
             type: 'linear',
-            min: -100,
-            max: 200,
+            min: 50,
+            max: 90,
             ticks: {
               color: 'grey',
               callback: (val) => val,

@@ -6,6 +6,7 @@ import { config } from '../../../config/config';
 import { Measurement } from '../../../types/measurements';
 import texts from '../../../data/texts.json';
 import { Picture } from '../../../components/Picture/Picture';
+import { Chart, ChartProps } from '../../../components/Chart/Chart';
 
 interface Params {
   params: {
@@ -34,6 +35,21 @@ export default function MeasurementPage({ params }: Params) {
   if (loading) {
     return <div></div>;
   }
+
+  if (!measurements) {
+    return <div></div>;
+  }
+
+  const frequencyChat: ChartProps = {
+    labels: measurements?.frequency.frequencies,
+    datasets: [
+      {
+        label: 'SPL',
+        data: measurements.frequency.spls,
+        borderColor: 'orange',
+      },
+    ],
+  };
 
   return (
     <main className='measurement flex-column-center'>
@@ -85,9 +101,12 @@ export default function MeasurementPage({ params }: Params) {
             </div>
           </div>
         </div>
-        {measurements?.drivers.map((driver) => {
+        {measurements?.drivers.map((driver, index) => {
           return (
-            <div className='speaker-overview flex-column-center component'>
+            <div
+              className='speaker-overview flex-column-center component'
+              key={index}
+            >
               <h1>Driver</h1>
               <div className='speaker-items'>
                 <div className='speaker-item'>
@@ -150,6 +169,10 @@ export default function MeasurementPage({ params }: Params) {
             </div>
           );
         })}
+      </div>
+      <h1>Frequency Response</h1>
+      <div className='chart flex-center'>
+        <Chart props={frequencyChat} />
       </div>
     </main>
   );
