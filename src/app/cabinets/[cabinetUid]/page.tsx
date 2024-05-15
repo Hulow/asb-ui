@@ -171,8 +171,34 @@ export default function MeasurementPage({ params }: Params) {
         })}
       </div>
       <h1>Frequency Response</h1>
-      <div className='chart flex-center'>
-        <Chart props={frequencyChat} />
+      <div className='chart'>
+          <Chart props={frequencyChat} />
+      </div>
+      <div className="settings">
+        <div className="settings-item">
+          <p>{measurements.frequency.source}</p>
+        </div>
+        <div className="settings-item">
+          <p>{measurements.frequency.measuredAt}</p>
+        </div>
+        <div className="settings-item">
+          <p>{measurements.frequency.measuredBy}</p>
+        </div>
+        <div className="settings-item">
+          <p>{measurements.frequency.smoothing}</p>
+        </div>
+        <div className="settings-item">
+          <p>{measurements.frequency.frequencyWeightings}</p>
+        </div>
+        <div className="settings-item">
+          <p>{measurements.frequency.sweepLength}</p>
+        </div>
+        <div className="settings-item">
+          <p>{measurements.frequency.targetLevel} Target</p>
+        </div>
+        <div className="settings-item">
+          <p>{measurements.frequency.note}</p>
+        </div>
       </div>
     </main>
   );
