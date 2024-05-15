@@ -20,8 +20,8 @@ ChartJS.register(
 export interface ChartProps {
   labels: number[];
   datasets: DataSet[];
-  yMin: number,
-  yMax: number
+  yMin: number;
+  yMax: number;
 }
 
 export interface DataSet {

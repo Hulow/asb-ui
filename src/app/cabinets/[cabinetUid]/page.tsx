@@ -50,26 +50,26 @@ export default function MeasurementPage({ params }: Params) {
       },
     ],
     yMin: 50,
-    yMax: 90
+    yMax: 90,
   };
 
   const impedanceChart: ChartProps = {
     labels: measurements.impedance.frequencies,
     datasets: [
-     {
-      label: 'Ohms',
-      data: measurements.impedance.impedances,
-      borderColor: 'blue'
-     },
-     {
-      label: 'Phase',
-      data: measurements.impedance.phases,
-      borderColor: 'red'
-     }
+      {
+        label: 'Ohms',
+        data: measurements.impedance.impedances,
+        borderColor: 'blue',
+      },
+      {
+        label: 'Phase',
+        data: measurements.impedance.phases,
+        borderColor: 'red',
+      },
     ],
     yMin: -100,
-    yMax: 200
-  }
+    yMax: 200,
+  };
 
   return (
     <main className='measurement flex-column-center'>
@@ -192,37 +192,84 @@ export default function MeasurementPage({ params }: Params) {
       </div>
       <h1>Frequency Response</h1>
       <div className='chart'>
-          <Chart props={frequencyChat} />
+        <Chart props={frequencyChat} />
       </div>
-      <div className="settings">
-        <div className="settings-item">
+      <div className='settings'>
+        <div className='settings-item'>
           <p>{measurements.frequency.source}</p>
         </div>
-        <div className="settings-item">
+        <div className='settings-item'>
           <p>{measurements.frequency.measuredAt}</p>
         </div>
-        <div className="settings-item">
+        <div className='settings-item'>
           <p>{measurements.frequency.measuredBy}</p>
         </div>
-        <div className="settings-item">
+        <div className='settings-item'>
           <p>{measurements.frequency.smoothing}</p>
         </div>
-        <div className="settings-item">
+        <div className='settings-item'>
           <p>{measurements.frequency.frequencyWeightings}</p>
         </div>
-        <div className="settings-item">
+        <div className='settings-item'>
           <p>{measurements.frequency.sweepLength}</p>
         </div>
-        <div className="settings-item">
+        <div className='settings-item'>
           <p>{measurements.frequency.targetLevel} Target</p>
         </div>
-        <div className="settings-item">
+        <div className='settings-item'>
           <p>{measurements.frequency.note}</p>
         </div>
       </div>
       <h1>Impedance Response</h1>
       <div className='chart'>
-          <Chart props={impedanceChart} />
+        <Chart props={impedanceChart} />
+      </div>
+      <div className='settings'>
+        <div className='settings-item'>
+          <p>{measurements.impedance.acResistance}</p>
+        </div>
+        <div className='settings-item'>
+          <p>{measurements.impedance.coneMass}</p>
+        </div>
+        <div className='settings-item'>
+          <p>{measurements.impedance.dcResistance}</p>
+        </div>
+        <div className='settings-item'>
+          <p>{measurements.impedance.efficiency}</p>
+        </div>
+        <div className='settings-item'>
+          <p>{measurements.impedance.electricalDamping}</p>
+        </div>
+        <div className='settings-item'>
+          <p>{measurements.impedance.equivalenceCompliance}</p>
+        </div>
+        <div className='settings-item'>
+          <p>{measurements.impedance.forceFactor}</p>
+        </div>
+        <div className='settings-item'>
+          <p>{measurements.impedance.mechanicalDamping}</p>
+        </div>
+        <div className='settings-item'>
+          <p>{measurements.impedance.pistonDiameter}</p>
+        </div>
+        <div className='settings-item'>
+          <p>{measurements.impedance.resonanceFrequency}</p>
+        </div>
+        <div className='settings-item'>
+          <p>{measurements.impedance.sensitivity}</p>
+        </div>
+        <div className='settings-item'>
+          <p>{measurements.impedance.source}</p>
+        </div>
+        <div className='settings-item'>
+          <p>{measurements.impedance.suspensionCompliance}</p>
+        </div>
+        <div className='settings-item'>
+          <p>{measurements.impedance.totalDamping}</p>
+        </div>
+        <div className='settings-item'>
+          <p>{measurements.impedance.voiceCoilInductance}</p>
+        </div>
       </div>
     </main>
   );
