@@ -20,6 +20,7 @@ export function Picture({
       }}
       alt={''}
       radius={15}
+      priority={true}
     />
   );
 }
