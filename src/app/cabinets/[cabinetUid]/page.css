@@ -1,0 +1,24 @@
+.measurement {
+  width: 80%;
+}
+
+.speaker-overview {
+  width: 25vh;
+  height: 400px;
+  margin-left: 20px;
+}
+
+.speaker-items {
+  width: 100%;
+}
+
+.speaker-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.speaker-sub-item {
+  flex: 1;
+  text-align: center;
+}
