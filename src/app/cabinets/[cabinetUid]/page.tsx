@@ -7,7 +7,11 @@ import { Driver, Measurement } from '../../../types/measurements';
 import texts from '../../../data/texts.json';
 import { Picture } from '../../../components/Picture/Picture';
 import { Chart, ChartProps } from '../../../components/Chart/Chart';
-import { Settings, SettingsProp } from '../../../components/Settings/Settings';
+import {
+  Settings,
+  SettingsProp,
+  getImpedanceSettings,
+} from '../../../components/Settings/Settings';
 
 interface Params {
   params: {
@@ -171,71 +175,8 @@ export default function MeasurementPage({ params }: Params) {
     },
   ];
 
-  const impedanceSettings = (): SettingsProp[] => [
-    {
-      name: <h1>TS Parameters</h1>,
-    },
-    {
-      name: <p>Measured by</p>,
-      value: <p>{measurements.impedance.source}</p>,
-    },
-    {
-      name: <p>F(s)</p>,
-      value: <p>{measurements.impedance.resonanceFrequency} Hz</p>,
-    },
-    {
-      name: <p>AC Res.</p>,
-      value: <p>{measurements.impedance.acResistance} Ohms</p>,
-    },
-    {
-      name: <p>DC Res.</p>,
-      value: <p>{measurements.impedance.dcResistance}</p>,
-    },
-    {
-      name: <p>Q(ts)</p>,
-      value: <p>{measurements.impedance.totalDamping}</p>,
-    },
-    {
-      name: <p>Q(es)</p>,
-      value: <p>{measurements.impedance.electricalDamping}</p>,
-    },
-    {
-      name: <p>Q(ms)</p>,
-      value: <p>{measurements.impedance.mechanicalDamping}</p>,
-    },
-    {
-      name: <p>V(as)</p>,
-      value: <p>{measurements.impedance.equivalenceCompliance} L</p>,
-    },
-    {
-      name: <p>C(ms)</p>,
-      value: <p>{measurements.impedance.suspensionCompliance} mm/N</p>,
-    },
-    {
-      name: <p>Cone Mass</p>,
-      value: <p>{measurements.impedance.coneMass} g</p>,
-    },
-    {
-      name: <p>Efficiency</p>,
-      value: <p>{measurements.impedance.efficiency} %</p>,
-    },
-    {
-      name: <p>BL</p>,
-      value: <p>{measurements.impedance.forceFactor}</p>,
-    },
-    {
-      name: <p>Piston</p>,
-      value: <p>⌀ {measurements.impedance.pistonDiameter} mm</p>,
-    },
-    {
-      name: <p>SPL</p>,
-      value: <p>{measurements.impedance.sensitivity} 1W/1M</p>,
-    },
-    {
-      name: <p>L(e)</p>,
-      value: <p>{measurements.impedance.voiceCoilInductance} mH</p>,
-    },
-  ];
+  const impedanceSettings = getImpedanceSettings(measurements.impedance);
+
   return (
     <main className='measurement flex-column-center'>
       <h1>{texts.measurements}</h1>
@@ -298,7 +239,7 @@ export default function MeasurementPage({ params }: Params) {
         <Chart props={impedanceChart} />
       </div>
       <div className='settings flex-row'>
-        {impedanceSettings().map((setting) => {
+        {impedanceSettings.map((setting) => {
           return <Settings props={setting} />;
         })}
       </div>
