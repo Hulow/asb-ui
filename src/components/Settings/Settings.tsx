@@ -1,4 +1,4 @@
-import { Impedance } from '../../types/measurements';
+import { Frequency, Impedance } from '../../types/measurements';
 import './Settings.css';
 
 export interface SettingsProp {
@@ -12,6 +12,46 @@ export function Settings({ props }: { props: SettingsProp }) {
       {props.name} {props.value}
     </div>
   );
+}
+
+export function getFrequencySettings(frequency: Frequency): SettingsProp[] {
+  return [
+    {
+      name: <h1>Settings</h1>,
+    },
+    {
+      name: <p>Audio Interface</p>,
+      value: <p>{frequency.source}</p>,
+    },
+    {
+      name: <p>Measured at</p>,
+      value: <p>{frequency.measuredAt}</p>,
+    },
+    {
+      name: <p>Measured by</p>,
+      value: <p>{frequency.measuredBy}</p>,
+    },
+    {
+      name: <p>Smoothing</p>,
+      value: <p>{frequency.smoothing}</p>,
+    },
+    {
+      name: <p>Weightings</p>,
+      value: <p>{frequency.frequencyWeightings}</p>,
+    },
+    {
+      name: <p>Sweep length</p>,
+      value: <p>{frequency.sweepLength}</p>,
+    },
+    {
+      name: <p>Target</p>,
+      value: <p>{frequency.targetLevel}</p>,
+    },
+    {
+      name: <p>Note</p>,
+      value: <p>{frequency.note}</p>,
+    },
+  ];
 }
 
 export function getImpedanceSettings(impedance: Impedance): SettingsProp[] {

@@ -10,6 +10,7 @@ import { Chart, ChartProps } from '../../../components/Chart/Chart';
 import {
   Settings,
   SettingsProp,
+  getFrequencySettings,
   getImpedanceSettings,
 } from '../../../components/Settings/Settings';
 
@@ -137,44 +138,7 @@ export default function MeasurementPage({ params }: Params) {
     ];
   };
 
-  const frequencySettings = (): SettingsProp[] => [
-    {
-      name: <h1>Settings</h1>,
-    },
-    {
-      name: <p>Audio Interface</p>,
-      value: <p>{measurements.frequency.source}</p>,
-    },
-    {
-      name: <p>Measured at</p>,
-      value: <p>{measurements.frequency.measuredAt}</p>,
-    },
-    {
-      name: <p>Measured by</p>,
-      value: <p>{measurements.frequency.measuredBy}</p>,
-    },
-    {
-      name: <p>Smoothing</p>,
-      value: <p>{measurements.frequency.smoothing}</p>,
-    },
-    {
-      name: <p>Weightings</p>,
-      value: <p>{measurements.frequency.frequencyWeightings}</p>,
-    },
-    {
-      name: <p>Sweep length</p>,
-      value: <p>{measurements.frequency.sweepLength}</p>,
-    },
-    {
-      name: <p>Target</p>,
-      value: <p>{measurements.frequency.targetLevel}</p>,
-    },
-    {
-      name: <p>Note</p>,
-      value: <p>{measurements.frequency.note}</p>,
-    },
-  ];
-
+  const frequencySettings = getFrequencySettings(measurements.frequency)
   const impedanceSettings = getImpedanceSettings(measurements.impedance);
 
   return (
@@ -229,7 +193,7 @@ export default function MeasurementPage({ params }: Params) {
         <Chart props={frequencyChat} />
       </div>
       <div className='settings flex-row'>
-        {frequencySettings().map((setting) => {
+        {frequencySettings.map((setting) => {
           return <Settings props={setting} />;
         })}
       </div>
