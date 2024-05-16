@@ -3,30 +3,16 @@
   margin-bottom: 8vh;
 }
 
-.speaker-props {
+.speakers-props {
   width: 25vh;
   height: 400px;
   margin-left: 20px;
 }
 
-.speaker-items {
+.speaker-props {
   width: 100%;
-}
-
-.chart {
-  width: 100%;
-  height: 50vh;
 }
 
 .settings {
   gap: 15px;
-}
-
-.horizontal-padding {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.note {
-  flex: 1;
 }

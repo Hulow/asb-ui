@@ -89,9 +89,9 @@ export default function MeasurementPage({ params }: Params) {
       <h1>{texts.measurements}</h1>
       <div className='flex-center'>
         <Picture height={400} width={500} src='cld-sample-5' />
-        <div className='speaker-props flex-column-center component'>
+        <div className='speakers-props flex-column-center component'>
           <h1>Cabinet</h1>
-          <div className='speaker-items'>
+          <div className='speaker-props'>
             {cabinetProperties.map((property) => {
               return <Speaker props={property} />;
             })}
@@ -101,11 +101,11 @@ export default function MeasurementPage({ params }: Params) {
           const driverProperties = getDriverProperties(driver);
           return (
             <div
-              className='speaker-props flex-column-center component'
+              className='speakers-props flex-column-center component'
               key={index}
             >
               <h1>Driver</h1>
-              <div className='speaker-items'>
+              <div className='speaker-props'>
                 {driverProperties.map((property) => {
                   return <Speaker props={property} />;
                 })}
@@ -115,9 +115,7 @@ export default function MeasurementPage({ params }: Params) {
         })}
       </div>
       <h1>Frequency Response</h1>
-      <div className='chart'>
-        <Chart props={frequencyChat} />
-      </div>
+      <Chart props={frequencyChat} />
       <div className='settings flex-row'>
         {frequencySettings.map((setting) => {
           return <Settings props={setting} />;
@@ -125,9 +123,7 @@ export default function MeasurementPage({ params }: Params) {
       </div>
 
       <h1>Impedance Response</h1>
-      <div className='chart'>
-        <Chart props={impedanceChart} />
-      </div>
+      <Chart props={impedanceChart} />
       <div className='settings flex-row'>
         {impedanceSettings.map((setting) => {
           return <Settings props={setting} />;
