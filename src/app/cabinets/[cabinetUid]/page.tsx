@@ -12,6 +12,10 @@ import {
   getFrequencySettings,
   getImpedanceSettings,
 } from '../../../components/Settings/Settings';
+import {
+  Speaker,
+  getCabinetProperties,
+} from '../../../components/Speaker/Speaker';
 
 interface Params {
   params: {
@@ -81,29 +85,6 @@ export default function MeasurementPage({ params }: Params) {
     yMax: 200,
   };
 
-  const cabinetProperties = (): Properties[] => [
-    {
-      name: 'Name',
-      value: measurements.cabinet.productName,
-    },
-    {
-      name: 'Enclosure',
-      value: measurements.cabinet.enclosureType,
-    },
-    {
-      name: 'Dimension',
-      value: measurements?.cabinet.dimension,
-    },
-    {
-      name: 'Year',
-      value: measurements?.cabinet.manufacturingYear,
-    },
-    {
-      name: 'Weight',
-      value: `${measurements?.cabinet.weight} Kg`,
-    },
-  ];
-
   const driverProperties = (driver: Driver): Properties[] => {
     return [
       {
@@ -136,7 +117,7 @@ export default function MeasurementPage({ params }: Params) {
       },
     ];
   };
-
+  const cabinetProperties = getCabinetProperties(measurements.cabinet);
   const frequencySettings = getFrequencySettings(measurements.frequency);
   const impedanceSettings = getImpedanceSettings(measurements.impedance);
 
@@ -148,17 +129,8 @@ export default function MeasurementPage({ params }: Params) {
         <div className='speaker-props flex-column-center component'>
           <h1>Cabinet</h1>
           <div className='speaker-items'>
-            {cabinetProperties().map((property) => {
-              return (
-                <div className='flex-row'>
-                  <div className='speaker item'>
-                    <p>{property.name}</p>
-                  </div>
-                  <div className='speaker item'>
-                    <p>{property.value}</p>
-                  </div>
-                </div>
-              );
+            {cabinetProperties.map((property) => {
+              return <Speaker props={property} />;
             })}
           </div>
         </div>
