@@ -7,6 +7,7 @@ import { Driver, Measurement } from '../../../types/measurements';
 import texts from '../../../data/texts.json';
 import { Picture } from '../../../components/Picture/Picture';
 import { Chart, ChartProps } from '../../../components/Chart/Chart';
+import { Settings, SettingsProp } from '../../../components/Settings/Settings';
 
 interface Params {
   params: {
@@ -132,6 +133,44 @@ export default function MeasurementPage({ params }: Params) {
     ];
   };
 
+  const frequencySettings = (): SettingsProp[] => [
+    {
+      name: <h1>Settings</h1>,
+    },
+    {
+      name: <p>Audio Interface</p>,
+      value: <p>{measurements.frequency.source}</p>,
+    },
+    {
+      name: <p>Measured at</p>,
+      value: <p>{measurements.frequency.measuredAt}</p>,
+    },
+    {
+      name: <p>Measured by</p>,
+      value: <p>{measurements.frequency.measuredBy}</p>,
+    },
+    {
+      name: <p>Smoothing</p>,
+      value: <p>{measurements.frequency.smoothing}</p>,
+    },
+    {
+      name: <p>Weightings</p>,
+      value: <p>{measurements.frequency.frequencyWeightings}</p>,
+    },
+    {
+      name: <p>Sweep length</p>,
+      value: <p>{measurements.frequency.sweepLength}</p>,
+    },
+    {
+      name: <p>Target</p>,
+      value: <p>{measurements.frequency.targetLevel}</p>,
+    },
+    {
+      name: <p>Note</p>,
+      value: <p>{measurements.frequency.note}</p>,
+    },
+  ];
+
   return (
     <main className='measurement flex-column-center'>
       <h1>{texts.measurements}</h1>
@@ -184,42 +223,11 @@ export default function MeasurementPage({ params }: Params) {
         <Chart props={frequencyChat} />
       </div>
       <div className='settings flex-row'>
-        <div className='item horizontal-padding component flex-center'>
-          <h1>Settings</h1>
-        </div>
-        <div className='item horizontal-padding component'>
-          <p>Audio Interface</p>
-          <p>{measurements.frequency.source}</p>
-        </div>
-        <div className='item horizontal-padding component'>
-          <p>Measured at</p>
-          <p>{measurements.frequency.measuredAt}</p>
-        </div>
-        <div className='item horizontal-padding component'>
-          <p>Measured by</p>
-          <p>{measurements.frequency.measuredBy}</p>
-        </div>
-        <div className='item horizontal-padding component'>
-          <p>Smoothing</p>
-          <p>{measurements.frequency.smoothing}</p>
-        </div>
-        <div className='item horizontal-padding component'>
-          <p>Weightings</p>
-          <p>{measurements.frequency.frequencyWeightings}</p>
-        </div>
-        <div className='item horizontal-padding component'>
-          <p>Sweep length</p>
-          <p>{measurements.frequency.sweepLength}</p>
-        </div>
-        <div className='item horizontal-padding component'>
-          <p>Target</p>
-          <p>{measurements.frequency.targetLevel}</p>
-        </div>
-        <div className='item horizontal-padding component note'>
-          <p>Note</p>
-          <p>{measurements.frequency.note}</p>
-        </div>
+        {frequencySettings().map((setting) => {
+          return <Settings props={setting} />;
+        })}
       </div>
+
       <h1>Impedance Response</h1>
       <div className='chart'>
         <Chart props={impedanceChart} />
