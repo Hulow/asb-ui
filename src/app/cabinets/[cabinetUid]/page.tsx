@@ -194,29 +194,40 @@ export default function MeasurementPage({ params }: Params) {
       <div className='chart'>
         <Chart props={frequencyChat} />
       </div>
-      <div className='settings'>
-        <div className='settings-item'>
+      <div className='settings flex-row'>
+        <div className='settings-item component flex-center'>
+          <h1>Settings</h1>
+        </div>
+        <div className='settings-item component'>
+          <p>Audio Interface</p>
           <p>{measurements.frequency.source}</p>
         </div>
-        <div className='settings-item'>
+        <div className='settings-item component'>
+          <p>Measured at</p>
           <p>{measurements.frequency.measuredAt}</p>
         </div>
-        <div className='settings-item'>
+        <div className='settings-item component'>
+          <p>Measured by</p>
           <p>{measurements.frequency.measuredBy}</p>
         </div>
-        <div className='settings-item'>
+        <div className='settings-item component'>
+          <p>Smoothing</p>
           <p>{measurements.frequency.smoothing}</p>
         </div>
-        <div className='settings-item'>
+        <div className='settings-item component'>
+          <p>Weightings</p>
           <p>{measurements.frequency.frequencyWeightings}</p>
         </div>
-        <div className='settings-item'>
+        <div className='settings-item component'>
+          <p>Sweep length</p>
           <p>{measurements.frequency.sweepLength}</p>
         </div>
-        <div className='settings-item'>
-          <p>{measurements.frequency.targetLevel} Target</p>
+        <div className='settings-item component'>
+          <p>Target</p>
+          <p>{measurements.frequency.targetLevel}</p>
         </div>
-        <div className='settings-item'>
+        <div className='settings-item component note'>
+          <p>Note</p>
           <p>{measurements.frequency.note}</p>
         </div>
       </div>
@@ -224,51 +235,74 @@ export default function MeasurementPage({ params }: Params) {
       <div className='chart'>
         <Chart props={impedanceChart} />
       </div>
-      <div className='settings'>
-        <div className='settings-item'>
-          <p>{measurements.impedance.acResistance}</p>
+      <div className='settings flex-row'>
+        <div className='settings-item component flex-center'>
+          <h1>TS Parameters</h1>
         </div>
-        <div className='settings-item'>
-          <p>{measurements.impedance.coneMass}</p>
-        </div>
-        <div className='settings-item'>
-          <p>{measurements.impedance.dcResistance}</p>
-        </div>
-        <div className='settings-item'>
-          <p>{measurements.impedance.efficiency}</p>
-        </div>
-        <div className='settings-item'>
-          <p>{measurements.impedance.electricalDamping}</p>
-        </div>
-        <div className='settings-item'>
-          <p>{measurements.impedance.equivalenceCompliance}</p>
-        </div>
-        <div className='settings-item'>
-          <p>{measurements.impedance.forceFactor}</p>
-        </div>
-        <div className='settings-item'>
-          <p>{measurements.impedance.mechanicalDamping}</p>
-        </div>
-        <div className='settings-item'>
-          <p>{measurements.impedance.pistonDiameter}</p>
-        </div>
-        <div className='settings-item'>
-          <p>{measurements.impedance.resonanceFrequency}</p>
-        </div>
-        <div className='settings-item'>
-          <p>{measurements.impedance.sensitivity}</p>
-        </div>
-        <div className='settings-item'>
+        <div className='settings-item component'>
+          <p>Measured by</p>
           <p>{measurements.impedance.source}</p>
         </div>
-        <div className='settings-item'>
-          <p>{measurements.impedance.suspensionCompliance}</p>
+        <div className='settings-item component'>
+          <p>F(s)</p>
+          <p>{measurements.impedance.resonanceFrequency} Hertz</p>
         </div>
-        <div className='settings-item'>
+        <div className='settings-item component'>
+          <p>AC Res.</p>
+          <p>{measurements.impedance.acResistance} Ohms</p>
+        </div>
+        <div className='settings-item component'>
+          <p>DC Res.</p>
+          <p>{measurements.impedance.dcResistance}</p>
+        </div>
+        <div className='settings-item component'>
+          <p>Q(ts)</p>
           <p>{measurements.impedance.totalDamping}</p>
         </div>
-        <div className='settings-item'>
-          <p>{measurements.impedance.voiceCoilInductance}</p>
+        <div className='settings-item component'>
+          <p>Q(es)</p>
+          <p>{measurements.impedance.electricalDamping}</p>
+        </div>
+        <div className='settings-item component'>
+          <p>Q(ms)</p>
+          <p>{measurements.impedance.mechanicalDamping}</p>
+        </div>
+        <div className='settings-item component'>
+          <p>V(as)</p>
+          <p>{measurements.impedance.equivalenceCompliance} L</p>
+        </div>
+        <div className='settings-item component'>
+          <p>C(ms)</p>
+          <p>{measurements.impedance.suspensionCompliance} mm/N</p>
+        </div>
+        <div className='settings-item component'>
+          <p>Cone Mass</p>
+          <p>{measurements.impedance.coneMass} g</p>
+        </div>
+
+        <div className='settings-item component'>
+          <p>Efficiency</p>
+          <p>{measurements.impedance.efficiency} %</p>
+        </div>
+
+        <div className='settings-item component'>
+          <p>BL</p>
+          <p>{measurements.impedance.forceFactor}</p>
+        </div>
+
+        <div className='settings-item component'>
+          <p>Piston</p>
+          <p>⌀ {measurements.impedance.pistonDiameter} mm</p>
+        </div>
+
+        <div className='settings-item component'>
+          <p>SPL</p>
+          <p>{measurements.impedance.sensitivity} 1W/1M</p>
+        </div>
+
+        <div className='settings-item component'>
+          <p>L(e)</p>
+          <p>{measurements.impedance.voiceCoilInductance} mH</p>
         </div>
       </div>
     </main>
