@@ -32,52 +32,54 @@ export interface DataSet {
 
 export function Chart({ props }: { props: ChartProps }) {
   return (
-    <Line
-      data={{
-        labels: props.labels,
-        datasets: props.datasets,
-      }}
-      options={{
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          x: {
-            bounds: 'ticks',
-            display: true,
-            type: 'logarithmic',
-            min: 20,
-            max: 20000,
-            ticks: {
-              color: 'grey',
-              callback: (val) => {
-                if (val === 1000) return val / 1000 + ' KHz';
-                if (val === 5000) return val / 1000 + ' KHz';
-                if (val === 10000) return val / 1000 + ' KHz';
-                return val + ' Hz';
+    <div className='chart'>
+      <Line
+        data={{
+          labels: props.labels,
+          datasets: props.datasets,
+        }}
+        options={{
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              bounds: 'ticks',
+              display: true,
+              type: 'logarithmic',
+              min: 20,
+              max: 20000,
+              ticks: {
+                color: 'grey',
+                callback: (val) => {
+                  if (val === 1000) return val / 1000 + ' KHz';
+                  if (val === 5000) return val / 1000 + ' KHz';
+                  if (val === 10000) return val / 1000 + ' KHz';
+                  return val + ' Hz';
+                },
+                autoSkip: true,
+                maxTicksLimit: 8,
               },
-              autoSkip: true,
-              maxTicksLimit: 8,
+              grid: {
+                color: '#343235',
+              },
             },
-            grid: {
-              color: '#343235',
-            },
-          },
-          y: {
-            display: true,
-            type: 'linear',
-            min: props.yMin,
-            max: props.yMax,
-            ticks: {
-              color: 'grey',
-              callback: (val) => val,
-            },
-            grid: {
-              color: '#343235',
+            y: {
+              display: true,
+              type: 'linear',
+              min: props.yMin,
+              max: props.yMax,
+              ticks: {
+                color: 'grey',
+                callback: (val) => val,
+              },
+              grid: {
+                color: '#343235',
+              },
             },
           },
-        },
-        animation: false,
-      }}
-    />
+          animation: false,
+        }}
+      />
+    </div>
   );
 }
