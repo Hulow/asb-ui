@@ -171,6 +171,71 @@ export default function MeasurementPage({ params }: Params) {
     },
   ];
 
+  const impedanceSettings = (): SettingsProp[] => [
+    {
+      name: <h1>TS Parameters</h1>,
+    },
+    {
+      name: <p>Measured by</p>,
+      value: <p>{measurements.impedance.source}</p>,
+    },
+    {
+      name: <p>F(s)</p>,
+      value: <p>{measurements.impedance.resonanceFrequency} Hz</p>,
+    },
+    {
+      name: <p>AC Res.</p>,
+      value: <p>{measurements.impedance.acResistance} Ohms</p>,
+    },
+    {
+      name: <p>DC Res.</p>,
+      value: <p>{measurements.impedance.dcResistance}</p>,
+    },
+    {
+      name: <p>Q(ts)</p>,
+      value: <p>{measurements.impedance.totalDamping}</p>,
+    },
+    {
+      name: <p>Q(es)</p>,
+      value: <p>{measurements.impedance.electricalDamping}</p>,
+    },
+    {
+      name: <p>Q(ms)</p>,
+      value: <p>{measurements.impedance.mechanicalDamping}</p>,
+    },
+    {
+      name: <p>V(as)</p>,
+      value: <p>{measurements.impedance.equivalenceCompliance} L</p>,
+    },
+    {
+      name: <p>C(ms)</p>,
+      value: <p>{measurements.impedance.suspensionCompliance} mm/N</p>,
+    },
+    {
+      name: <p>Cone Mass</p>,
+      value: <p>{measurements.impedance.coneMass} g</p>,
+    },
+    {
+      name: <p>Efficiency</p>,
+      value: <p>{measurements.impedance.efficiency} %</p>,
+    },
+    {
+      name: <p>BL</p>,
+      value: <p>{measurements.impedance.forceFactor}</p>,
+    },
+    {
+      name: <p>Piston</p>,
+      value: <p>⌀ {measurements.impedance.pistonDiameter} mm</p>,
+    },
+    {
+      name: <p>SPL</p>,
+      value: <p>{measurements.impedance.sensitivity} 1W/1M</p>,
+    },
+    {
+      name: <p>L(e)</p>,
+      value: <p>{measurements.impedance.voiceCoilInductance} mH</p>,
+    },
+  ];
   return (
     <main className='measurement flex-column-center'>
       <h1>{texts.measurements}</h1>
@@ -233,74 +298,9 @@ export default function MeasurementPage({ params }: Params) {
         <Chart props={impedanceChart} />
       </div>
       <div className='settings flex-row'>
-        <div className='item horizontal-padding component flex-center'>
-          <h1>TS Parameters</h1>
-        </div>
-        <div className='item horizontal-padding component'>
-          <p>Measured by</p>
-          <p>{measurements.impedance.source}</p>
-        </div>
-        <div className='item horizontal-padding component'>
-          <p>F(s)</p>
-          <p>{measurements.impedance.resonanceFrequency} Hz</p>
-        </div>
-        <div className='item horizontal-padding component'>
-          <p>AC Res.</p>
-          <p>{measurements.impedance.acResistance} Ohms</p>
-        </div>
-        <div className='item horizontal-padding component'>
-          <p>DC Res.</p>
-          <p>{measurements.impedance.dcResistance}</p>
-        </div>
-        <div className='item horizontal-padding component'>
-          <p>Q(ts)</p>
-          <p>{measurements.impedance.totalDamping}</p>
-        </div>
-        <div className='item horizontal-padding component'>
-          <p>Q(es)</p>
-          <p>{measurements.impedance.electricalDamping}</p>
-        </div>
-        <div className='item horizontal-padding component'>
-          <p>Q(ms)</p>
-          <p>{measurements.impedance.mechanicalDamping}</p>
-        </div>
-        <div className='item horizontal-padding component'>
-          <p>V(as)</p>
-          <p>{measurements.impedance.equivalenceCompliance} L</p>
-        </div>
-        <div className='item horizontal-padding component'>
-          <p>C(ms)</p>
-          <p>{measurements.impedance.suspensionCompliance} mm/N</p>
-        </div>
-        <div className='item horizontal-padding component'>
-          <p>Cone Mass</p>
-          <p>{measurements.impedance.coneMass} g</p>
-        </div>
-
-        <div className='item horizontal-padding component'>
-          <p>Efficiency</p>
-          <p>{measurements.impedance.efficiency} %</p>
-        </div>
-
-        <div className='item horizontal-padding component'>
-          <p>BL</p>
-          <p>{measurements.impedance.forceFactor}</p>
-        </div>
-
-        <div className='item horizontal-padding component'>
-          <p>Piston</p>
-          <p>⌀ {measurements.impedance.pistonDiameter} mm</p>
-        </div>
-
-        <div className='item horizontal-padding component'>
-          <p>SPL</p>
-          <p>{measurements.impedance.sensitivity} 1W/1M</p>
-        </div>
-
-        <div className='item horizontal-padding component'>
-          <p>L(e)</p>
-          <p>{measurements.impedance.voiceCoilInductance} mH</p>
-        </div>
+        {impedanceSettings().map((setting) => {
+          return <Settings props={setting} />;
+        })}
       </div>
     </main>
   );
