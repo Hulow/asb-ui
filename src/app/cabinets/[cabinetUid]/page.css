@@ -3,7 +3,7 @@
   margin-bottom: 8vh;
 }
 
-.speaker-overview {
+.speaker-props {
   width: 25vh;
   height: 400px;
   margin-left: 20px;
@@ -11,6 +11,14 @@
 
 .speaker-items {
   width: 100%;
+}
+
+.item {
+  text-align: center;
+}
+
+.speaker {
+  flex: 1;
 }
 
 .chart {
@@ -25,14 +33,6 @@
 .horizontal-padding {
   padding-left: 10px;
   padding-right: 10px;
-}
-
-.item {
-  text-align: center;
-}
-
-.speaker {
-  flex: 1;
 }
 
 .note {

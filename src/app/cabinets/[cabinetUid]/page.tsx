@@ -137,25 +137,27 @@ export default function MeasurementPage({ params }: Params) {
       <h1>{texts.measurements}</h1>
       <div className='flex-center'>
         <Picture height={400} width={500} src='cld-sample-5' />
-        <div className='speaker-overview flex-column-center component'>
+        <div className='speaker-props flex-column-center component'>
           <h1>Cabinet</h1>
-          {cabinetProperties().map((property) => {
-            return (
-              <div className='speaker-items'>
-                <div className='item speaker'>
-                  <p>{property.name}</p>
+          <div className='speaker-items'>
+            {cabinetProperties().map((property) => {
+              return (
+                <div className='flex-row'>
+                  <div className='item speaker'>
+                    <p>{property.name}</p>
+                  </div>
+                  <div className='item speaker'>
+                    <p>{property.value}</p>
+                  </div>
                 </div>
-                <div className='item speaker'>
-                  <p>{property.value}</p>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
         {measurements?.drivers.map((driver, index) => {
           return (
             <div
-              className='speaker-overview flex-column-center component'
+              className='speaker-props flex-column-center component'
               key={index}
             >
               <h1>Driver</h1>
