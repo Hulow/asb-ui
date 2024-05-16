@@ -79,7 +79,7 @@ export default function MeasurementPage({ params }: Params) {
         <div className='speaker-overview flex-column-center component'>
           <h1>Cabinet</h1>
           <div className='speaker-items'>
-            <div className='speaker-item'>
+            <div className='flex-row'>
               <div className='speaker-sub-item'>
                 <p>Name</p>
               </div>
@@ -87,7 +87,7 @@ export default function MeasurementPage({ params }: Params) {
                 <p>{measurements?.cabinet.productName}</p>
               </div>
             </div>
-            <div className='speaker-item'>
+            <div className='flex-row'>
               <div className='speaker-sub-item'>
                 <p>Enclosure</p>
               </div>
@@ -95,7 +95,7 @@ export default function MeasurementPage({ params }: Params) {
                 <p>{measurements?.cabinet.enclosureType}</p>
               </div>
             </div>
-            <div className='speaker-item'>
+            <div className='flex-row'>
               <div className='speaker-sub-item'>
                 <p>Dimension</p>
               </div>
@@ -103,7 +103,7 @@ export default function MeasurementPage({ params }: Params) {
                 <p>{measurements?.cabinet.dimension}</p>
               </div>
             </div>
-            <div className='speaker-item'>
+            <div className='flex-row'>
               <div className='speaker-sub-item'>
                 <p>Year</p>
               </div>
@@ -111,7 +111,7 @@ export default function MeasurementPage({ params }: Params) {
                 <p>{measurements?.cabinet.manufacturingYear}</p>
               </div>
             </div>
-            <div className='speaker-item'>
+            <div className='flex-row'>
               <div className='speaker-sub-item'>
                 <p>Weight</p>
               </div>
@@ -129,7 +129,7 @@ export default function MeasurementPage({ params }: Params) {
             >
               <h1>Driver</h1>
               <div className='speaker-items'>
-                <div className='speaker-item'>
+                <div className='flex-row'>
                   <div className='speaker-sub-item'>
                     <p>Manufacturer</p>
                   </div>
@@ -137,7 +137,7 @@ export default function MeasurementPage({ params }: Params) {
                     <p>{driver.brandName}</p>
                   </div>
                 </div>
-                <div className='speaker-item'>
+                <div className='flex-row'>
                   <div className='speaker-sub-item'>
                     <p>Product</p>
                   </div>
@@ -145,7 +145,7 @@ export default function MeasurementPage({ params }: Params) {
                     <p>{driver.productName}</p>
                   </div>
                 </div>
-                <div className='speaker-item'>
+                <div className='flex-row'>
                   <div className='speaker-sub-item'>
                     <p>Type</p>
                   </div>
@@ -153,7 +153,7 @@ export default function MeasurementPage({ params }: Params) {
                     <p>{driver.driverType}</p>
                   </div>
                 </div>
-                <div className='speaker-item'>
+                <div className='flex-row'>
                   <div className='speaker-sub-item'>
                     <p>RMS</p>
                   </div>
@@ -161,7 +161,7 @@ export default function MeasurementPage({ params }: Params) {
                     <p>{driver.continuousPowerHandling} W</p>
                   </div>
                 </div>
-                <div className='speaker-item'>
+                <div className='flex-row'>
                   <div className='speaker-sub-item'>
                     <p>Diameter</p>
                   </div>
@@ -169,7 +169,7 @@ export default function MeasurementPage({ params }: Params) {
                     <p>{driver.nominalDiameter} Inch</p>
                   </div>
                 </div>
-                <div className='speaker-item'>
+                <div className='flex-row'>
                   <div className='speaker-sub-item'>
                     <p>Impedance</p>
                   </div>
@@ -177,7 +177,7 @@ export default function MeasurementPage({ params }: Params) {
                     <p>{driver.nominalImpedance} Ohm</p>
                   </div>
                 </div>
-                <div className='speaker-item'>
+                <div className='flex-row'>
                   <div className='speaker-sub-item'>
                     <p>Year</p>
                   </div>
