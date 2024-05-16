@@ -3,7 +3,7 @@
 import './page.css';
 import { useEffect, useState } from 'react';
 import { config } from '../../../config/config';
-import { Driver, Measurement } from '../../../types/measurements';
+import { Measurement } from '../../../types/measurements';
 import texts from '../../../data/texts.json';
 import { Picture } from '../../../components/Picture/Picture';
 import { Chart, ChartProps } from '../../../components/Chart/Chart';
