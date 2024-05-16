@@ -3,7 +3,7 @@
 import './page.css';
 import { useEffect, useState } from 'react';
 import { config } from '../../../config/config';
-import { Measurement } from '../../../types/measurements';
+import { Driver, Measurement } from '../../../types/measurements';
 import texts from '../../../data/texts.json';
 import { Picture } from '../../../components/Picture/Picture';
 import { Chart, ChartProps } from '../../../components/Chart/Chart';
@@ -76,7 +76,7 @@ export default function MeasurementPage({ params }: Params) {
     yMax: 200,
   };
 
-  const cabinetProperties: Properties[] = [
+  const cabinetProperties = (): Properties[] => [
     {
       name: 'Name',
       value: measurements.cabinet.productName,
@@ -99,6 +99,39 @@ export default function MeasurementPage({ params }: Params) {
     },
   ];
 
+  const driverProperties = (driver: Driver): Properties[] => {
+    return [
+      {
+        name: 'Manufacturer',
+        value: driver.brandName,
+      },
+      {
+        name: 'Product',
+        value: driver.productName,
+      },
+      {
+        name: 'Type',
+        value: driver.driverType,
+      },
+      {
+        name: 'RMS',
+        value: `${driver.continuousPowerHandling} W`,
+      },
+      {
+        name: 'Diameter',
+        value: `${driver.nominalDiameter} Inches`,
+      },
+      {
+        name: 'Impedance',
+        value: `${driver.nominalImpedance} Ohms`,
+      },
+      {
+        name: 'Year',
+        value: driver.manufacturingYear,
+      },
+    ];
+  };
+
   return (
     <main className='measurement flex-column-center'>
       <h1>{texts.measurements}</h1>
@@ -106,7 +139,7 @@ export default function MeasurementPage({ params }: Params) {
         <Picture height={400} width={500} src='cld-sample-5' />
         <div className='speaker-overview flex-column-center component'>
           <h1>Cabinet</h1>
-          {cabinetProperties.map((property) => {
+          {cabinetProperties().map((property) => {
             return (
               <div className='speaker-items'>
                 <div className='item speaker'>
@@ -127,62 +160,18 @@ export default function MeasurementPage({ params }: Params) {
             >
               <h1>Driver</h1>
               <div className='speaker-items'>
-                <div className='flex-row'>
-                  <div className='item speaker'>
-                    <p>Manufacturer</p>
-                  </div>
-                  <div className='item speaker'>
-                    <p>{driver.brandName}</p>
-                  </div>
-                </div>
-                <div className='flex-row'>
-                  <div className='item speaker'>
-                    <p>Product</p>
-                  </div>
-                  <div className='item speaker'>
-                    <p>{driver.productName}</p>
-                  </div>
-                </div>
-                <div className='flex-row'>
-                  <div className='item speaker'>
-                    <p>Type</p>
-                  </div>
-                  <div className='item speaker'>
-                    <p>{driver.driverType}</p>
-                  </div>
-                </div>
-                <div className='flex-row'>
-                  <div className='item speaker'>
-                    <p>RMS</p>
-                  </div>
-                  <div className='item speaker'>
-                    <p>{driver.continuousPowerHandling} W</p>
-                  </div>
-                </div>
-                <div className='flex-row'>
-                  <div className='item speaker'>
-                    <p>Diameter</p>
-                  </div>
-                  <div className='item speaker'>
-                    <p>{driver.nominalDiameter} Inch</p>
-                  </div>
-                </div>
-                <div className='flex-row'>
-                  <div className='item speaker'>
-                    <p>Impedance</p>
-                  </div>
-                  <div className='item speaker'>
-                    <p>{driver.nominalImpedance} Ohm</p>
-                  </div>
-                </div>
-                <div className='flex-row'>
-                  <div className='item speaker'>
-                    <p>Year</p>
-                  </div>
-                  <div className='item speaker'>
-                    <p>{driver.manufacturingYear}</p>
-                  </div>
-                </div>
+                {driverProperties(driver).map((driverProp) => {
+                  return (
+                    <div className='flex-row'>
+                      <div className='item speaker'>
+                        <p>{driverProp.name}</p>
+                      </div>
+                      <div className='item speaker'>
+                        <p>{driverProp.value}</p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           );
