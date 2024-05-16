@@ -9,7 +9,6 @@ import { Picture } from '../../../components/Picture/Picture';
 import { Chart, ChartProps } from '../../../components/Chart/Chart';
 import {
   Settings,
-  SettingsProp,
   getFrequencySettings,
   getImpedanceSettings,
 } from '../../../components/Settings/Settings';
@@ -138,7 +137,7 @@ export default function MeasurementPage({ params }: Params) {
     ];
   };
 
-  const frequencySettings = getFrequencySettings(measurements.frequency)
+  const frequencySettings = getFrequencySettings(measurements.frequency);
   const impedanceSettings = getImpedanceSettings(measurements.impedance);
 
   return (
