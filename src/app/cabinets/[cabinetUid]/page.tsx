@@ -14,6 +14,11 @@ interface Params {
   };
 }
 
+interface Properties {
+  name: string;
+  value: string | number;
+}
+
 export default function MeasurementPage({ params }: Params) {
   const endpoint = config.endpoints.measurements;
   const [measurements, setMeasurements] = useState<Measurement | null>(null);
@@ -71,6 +76,29 @@ export default function MeasurementPage({ params }: Params) {
     yMax: 200,
   };
 
+  const cabinetProperties: Properties[] = [
+    {
+      name: 'Name',
+      value: measurements.cabinet.productName,
+    },
+    {
+      name: 'Enclosure',
+      value: measurements.cabinet.enclosureType,
+    },
+    {
+      name: 'Dimension',
+      value: measurements?.cabinet.dimension,
+    },
+    {
+      name: 'Year',
+      value: measurements?.cabinet.manufacturingYear,
+    },
+    {
+      name: 'Weight',
+      value: `${measurements?.cabinet.weight} Kg`,
+    },
+  ];
+
   return (
     <main className='measurement flex-column-center'>
       <h1>{texts.measurements}</h1>
@@ -78,48 +106,18 @@ export default function MeasurementPage({ params }: Params) {
         <Picture height={400} width={500} src='cld-sample-5' />
         <div className='speaker-overview flex-column-center component'>
           <h1>Cabinet</h1>
-          <div className='speaker-items'>
-            <div className='flex-row'>
-              <div className='item speaker'>
-                <p>Name</p>
+          {cabinetProperties.map((property) => {
+            return (
+              <div className='speaker-items'>
+                <div className='item speaker'>
+                  <p>{property.name}</p>
+                </div>
+                <div className='item speaker'>
+                  <p>{property.value}</p>
+                </div>
               </div>
-              <div className='item speaker'>
-                <p>{measurements?.cabinet.productName}</p>
-              </div>
-            </div>
-            <div className='flex-row'>
-              <div className='item speaker'>
-                <p>Enclosure</p>
-              </div>
-              <div className='item speaker'>
-                <p>{measurements?.cabinet.enclosureType}</p>
-              </div>
-            </div>
-            <div className='flex-row'>
-              <div className='item speaker'>
-                <p>Dimension</p>
-              </div>
-              <div className='item speaker'>
-                <p>{measurements?.cabinet.dimension}</p>
-              </div>
-            </div>
-            <div className='flex-row'>
-              <div className='item speaker'>
-                <p>Year</p>
-              </div>
-              <div className='item speaker'>
-                <p>{measurements?.cabinet.manufacturingYear}</p>
-              </div>
-            </div>
-            <div className='flex-row'>
-              <div className='item speaker'>
-                <p>Weight</p>
-              </div>
-              <div className='item speaker'>
-                <p>{measurements?.cabinet.weight} Kg</p>
-              </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
         {measurements?.drivers.map((driver, index) => {
           return (
