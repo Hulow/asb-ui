@@ -15,17 +15,13 @@ import {
 import {
   Speaker,
   getCabinetProperties,
+  getDriverProperties,
 } from '../../../components/Speaker/Speaker';
 
 interface Params {
   params: {
     cabinetUid: string;
   };
-}
-
-interface Properties {
-  name: string;
-  value: string | number;
 }
 
 export default function MeasurementPage({ params }: Params) {
@@ -84,39 +80,6 @@ export default function MeasurementPage({ params }: Params) {
     yMin: -100,
     yMax: 200,
   };
-
-  const driverProperties = (driver: Driver): Properties[] => {
-    return [
-      {
-        name: 'Manufacturer',
-        value: driver.brandName,
-      },
-      {
-        name: 'Product',
-        value: driver.productName,
-      },
-      {
-        name: 'Type',
-        value: driver.driverType,
-      },
-      {
-        name: 'RMS',
-        value: `${driver.continuousPowerHandling} W`,
-      },
-      {
-        name: 'Diameter',
-        value: `${driver.nominalDiameter} Inches`,
-      },
-      {
-        name: 'Impedance',
-        value: `${driver.nominalImpedance} Ohms`,
-      },
-      {
-        name: 'Year',
-        value: driver.manufacturingYear,
-      },
-    ];
-  };
   const cabinetProperties = getCabinetProperties(measurements.cabinet);
   const frequencySettings = getFrequencySettings(measurements.frequency);
   const impedanceSettings = getImpedanceSettings(measurements.impedance);
@@ -135,6 +98,7 @@ export default function MeasurementPage({ params }: Params) {
           </div>
         </div>
         {measurements?.drivers.map((driver, index) => {
+          const driverProperties = getDriverProperties(driver);
           return (
             <div
               className='speaker-props flex-column-center component'
@@ -142,17 +106,8 @@ export default function MeasurementPage({ params }: Params) {
             >
               <h1>Driver</h1>
               <div className='speaker-items'>
-                {driverProperties(driver).map((driverProp) => {
-                  return (
-                    <div className='flex-row'>
-                      <div className='speaker item'>
-                        <p>{driverProp.name}</p>
-                      </div>
-                      <div className='speaker item'>
-                        <p>{driverProp.value}</p>
-                      </div>
-                    </div>
-                  );
+                {driverProperties.map((property) => {
+                  return <Speaker props={property} />;
                 })}
               </div>
             </div>

@@ -1,4 +1,4 @@
-import { Cabinet } from '../../types/measurements';
+import { Cabinet, Driver } from '../../types/measurements';
 import './Speaker.css';
 
 interface Properties {
@@ -40,6 +40,39 @@ export function getCabinetProperties(cabinet: Cabinet): Properties[] {
     {
       name: 'Weight',
       value: `${cabinet.weight} Kg`,
+    },
+  ];
+}
+
+export function getDriverProperties(driver: Driver): Properties[] {
+  return [
+    {
+      name: 'Manufacturer',
+      value: driver.brandName,
+    },
+    {
+      name: 'Product',
+      value: driver.productName,
+    },
+    {
+      name: 'Type',
+      value: driver.driverType,
+    },
+    {
+      name: 'RMS',
+      value: `${driver.continuousPowerHandling} W`,
+    },
+    {
+      name: 'Diameter',
+      value: `${driver.nominalDiameter} Inches`,
+    },
+    {
+      name: 'Impedance',
+      value: `${driver.nominalImpedance} Ohms`,
+    },
+    {
+      name: 'Year',
+      value: driver.manufacturingYear,
     },
   ];
 }
