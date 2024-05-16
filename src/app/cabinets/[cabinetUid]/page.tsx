@@ -143,10 +143,10 @@ export default function MeasurementPage({ params }: Params) {
             {cabinetProperties().map((property) => {
               return (
                 <div className='flex-row'>
-                  <div className='item speaker'>
+                  <div className='speaker item'>
                     <p>{property.name}</p>
                   </div>
-                  <div className='item speaker'>
+                  <div className='speaker item'>
                     <p>{property.value}</p>
                   </div>
                 </div>
@@ -165,10 +165,10 @@ export default function MeasurementPage({ params }: Params) {
                 {driverProperties(driver).map((driverProp) => {
                   return (
                     <div className='flex-row'>
-                      <div className='item speaker'>
+                      <div className='speaker item'>
                         <p>{driverProp.name}</p>
                       </div>
-                      <div className='item speaker'>
+                      <div className='speaker item'>
                         <p>{driverProp.value}</p>
                       </div>
                     </div>
