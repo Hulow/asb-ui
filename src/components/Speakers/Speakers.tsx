@@ -13,7 +13,7 @@ export function Speakers({
   props: Property[];
 }) {
   return (
-    <div className='speakers-props flex-column-center component'>
+    <div className='speakers-props flex-column-center item'>
       <h2>{title}</h2>
       <div className='speaker-props'>
         {props.map((prop, index) => {
@@ -26,7 +26,7 @@ export function Speakers({
 
 export function Speaker({ prop }: { prop: Property }) {
   return (
-    <div className='flex-row'>
+    <div className='color-transition flex-row'>
       <div className='speaker'>
         <p>{prop.name}</p>
       </div>

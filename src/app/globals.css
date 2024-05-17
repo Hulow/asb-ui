@@ -22,7 +22,7 @@ main {
   width: 70%;
 }
 
-.component {
+.interaction {
   background-color: rgba(255, 255, 255, 0.029);
   border-radius: 15px;
   border-style: solid;
@@ -30,7 +30,7 @@ main {
   border-color: transparent;
 }
 
-.component:hover {
+.interaction:hover {
   border-color: rgb(81, 245, 2);
 }
 
@@ -49,4 +49,14 @@ main {
 .flex-row {
   display: flex;
   flex-direction: row;
+}
+
+.item {
+  background-color: rgba(255, 255, 255, 0.029);
+  border-radius: 15px;
+}
+
+.color-transition:hover {
+  background-color: rgba(255, 255, 255, 0.066);
+  transition: 2s;
 }
