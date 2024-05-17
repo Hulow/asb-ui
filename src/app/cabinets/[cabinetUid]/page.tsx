@@ -87,11 +87,11 @@ export default function MeasurementPage({ params }: Params) {
       <h1>{texts.measurements}</h1>
       <div className='flex-center'>
         <Picture height={400} width={500} src='cld-sample-5' />
-        <Speakers title={texts.cabinets} props={cabinetProperties} />
+        <Speakers title={texts.cabinet} props={cabinetProperties} />
         {measurements.drivers.map((driver) => {
           const driverProperties = getDriverProperties(driver);
 
-          return <Speakers title={texts.cabinets} props={driverProperties} />;
+          return <Speakers title={texts.driver} props={driverProperties} />;
         })}
       </div>
 

@@ -49,7 +49,7 @@ export default function Home() {
         return <ProjectOverview />;
       case texts.station:
         return <Station />;
-      case texts.cabinets:
+      case texts.measurements:
         return <Cabinets cabinets={cabinets} />;
     }
   }
