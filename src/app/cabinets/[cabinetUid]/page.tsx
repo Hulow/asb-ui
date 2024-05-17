@@ -167,38 +167,38 @@ function getDriverProperties(driver: Driver): Property[] {
 function getFrequencySettings(frequency: Frequency): SettingsProp[] {
   return [
     {
-      name: <h1>Settings</h1>,
+      name: <h1>{texts.frequencySettings.title}</h1>,
     },
     {
-      name: <p>Audio Interface</p>,
+      name: <p>{texts.frequencySettings.source}</p>,
       value: <p>{frequency.source}</p>,
     },
     {
-      name: <p>Measured at</p>,
+      name: <p>{texts.frequencySettings.measuredAt}</p>,
       value: <p>{frequency.measuredAt}</p>,
     },
     {
-      name: <p>Measured by</p>,
+      name: <p>{texts.frequencySettings.measuredBy}</p>,
       value: <p>{frequency.measuredBy}</p>,
     },
     {
-      name: <p>Smoothing</p>,
+      name: <p>{texts.frequencySettings.smoothing}</p>,
       value: <p>{frequency.smoothing}</p>,
     },
     {
-      name: <p>Weightings</p>,
+      name: <p>{texts.frequencySettings.weightings}</p>,
       value: <p>{frequency.frequencyWeightings}</p>,
     },
     {
-      name: <p>Sweep length</p>,
+      name: <p>{texts.frequencySettings.sweepLength}</p>,
       value: <p>{frequency.sweepLength}</p>,
     },
     {
-      name: <p>Target</p>,
+      name: <p>{texts.frequencySettings.target}</p>,
       value: <p>{frequency.targetLevel}</p>,
     },
     {
-      name: <p>Note</p>,
+      name: <p>{texts.frequencySettings.note}</p>,
       value: <p>{frequency.note}</p>,
     },
   ];

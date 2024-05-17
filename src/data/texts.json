@@ -26,5 +26,16 @@
     "dimension": "Dimension",
     "manufacturingYear": "Year",
     "weight": "Weight"
+  },
+  "frequencySettings": {
+    "title": "Settings",
+    "source": "Audio Interface",
+    "measuredAt": "Measured at",
+    "measuredBy": "Measured by",
+    "smoothing": "Smoothing",
+    "weightings": "Weightings",
+    "sweepLength": "Sweep length",
+    "target": "Target",
+    "note": "Note"
   }
 }
