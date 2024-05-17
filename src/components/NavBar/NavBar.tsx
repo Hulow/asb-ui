@@ -16,12 +16,12 @@ export function NavBar({ onEvent }: { onEvent: any }) {
     <div className='nav-bar'>
       <NavBarItem
         onEvent={reactOnEvent}
-        eventName={texts.projectOverview}
+        eventName={texts.about}
         activeEventName={activeEventName}
       />
       <NavBarItem
         onEvent={reactOnEvent}
-        eventName={texts.station}
+        eventName={texts.projectOverview}
         activeEventName={activeEventName}
       />
       <NavBarItem

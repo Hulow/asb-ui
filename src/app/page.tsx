@@ -47,7 +47,7 @@ export default function Home() {
     switch (event?.name) {
       case texts.projectOverview:
         return <ProjectOverview />;
-      case texts.station:
+      case texts.about:
         return <Station />;
       case texts.measurements:
         return <Cabinets cabinets={cabinets} />;
