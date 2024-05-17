@@ -13,7 +13,7 @@ import {
   getImpedanceSettings,
 } from '../../../components/Settings/Settings';
 import {
-  Speaker,
+  Speakers,
   getCabinetProperties,
   getDriverProperties,
 } from '../../../components/Speaker/Speaker';
@@ -51,7 +51,7 @@ export default function MeasurementPage({ params }: Params) {
   }
 
   const frequencyChat: ChartProps = {
-    labels: measurements?.frequency.frequencies,
+    labels: measurements.frequency.frequencies,
     datasets: [
       {
         label: 'SPL',
@@ -89,40 +89,20 @@ export default function MeasurementPage({ params }: Params) {
       <h1>{texts.measurements}</h1>
       <div className='flex-center'>
         <Picture height={400} width={500} src='cld-sample-5' />
-        <div className='speakers-props flex-column-center component'>
-          <h1>Cabinet</h1>
-          <div className='speaker-props'>
-            {cabinetProperties.map((property) => {
-              return <Speaker props={property} />;
-            })}
-          </div>
-        </div>
-        {measurements?.drivers.map((driver, index) => {
+        <Speakers title={texts.cabinets} props={cabinetProperties} />
+        {measurements.drivers.map((driver) => {
           const driverProperties = getDriverProperties(driver);
-          return (
-            <div
-              className='speakers-props flex-column-center component'
-              key={index}
-            >
-              <h1>Driver</h1>
-              <div className='speaker-props'>
-                {driverProperties.map((property) => {
-                  return <Speaker props={property} />;
-                })}
-              </div>
-            </div>
-          );
+          return <Speakers title={texts.cabinets} props={driverProperties} />;
         })}
       </div>
-      <h1>Frequency Response</h1>
+      <h1>{texts.frequencyResponse}</h1>
       <Chart props={frequencyChat} />
       <div className='settings flex-row'>
         {frequencySettings.map((setting) => {
           return <Settings props={setting} />;
         })}
       </div>
-
-      <h1>Impedance Response</h1>
+      <h1>{texts.impedanceResponse}</h1>
       <Chart props={impedanceChart} />
       <div className='settings flex-row'>
         {impedanceSettings.map((setting) => {

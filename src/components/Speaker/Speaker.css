@@ -1,3 +1,13 @@
 .speaker {
   flex: 1;
 }
+
+.speakers-props {
+  width: 25vh;
+  height: 400px;
+  margin-left: 20px;
+}
+
+.speaker-props {
+  width: 100%;
+}

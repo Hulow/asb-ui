@@ -1,25 +1,44 @@
 import { Cabinet, Driver } from '../../types/measurements';
 import './Speaker.css';
 
-interface Properties {
+interface Property {
   name: string;
   value: string | number;
 }
 
-export function Speaker({ props }: { props: Properties }) {
+export function Speakers({
+  title,
+  props,
+}: {
+  title: string;
+  props: Property[];
+}) {
   return (
-    <div className='flex-row'>
-      <div className='speaker item'>
-        <p>{props.name}</p>
-      </div>
-      <div className='speaker item'>
-        <p>{props.value}</p>
+    <div className='speakers-props flex-column-center component'>
+      <h1>{title}</h1>
+      <div className='speaker-props'>
+        {props.map((prop) => {
+          return <Speaker prop={prop} />;
+        })}
       </div>
     </div>
   );
 }
 
-export function getCabinetProperties(cabinet: Cabinet): Properties[] {
+export function Speaker({ prop }: { prop: Property }) {
+  return (
+    <div className='flex-row'>
+      <div className='speaker item'>
+        <p>{prop.name}</p>
+      </div>
+      <div className='speaker item'>
+        <p>{prop.value}</p>
+      </div>
+    </div>
+  );
+}
+
+export function getCabinetProperties(cabinet: Cabinet): Property[] {
   return [
     {
       name: 'Name',
@@ -44,7 +63,7 @@ export function getCabinetProperties(cabinet: Cabinet): Properties[] {
   ];
 }
 
-export function getDriverProperties(driver: Driver): Properties[] {
+export function getDriverProperties(driver: Driver): Property[] {
   return [
     {
       name: 'Manufacturer',

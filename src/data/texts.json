@@ -6,5 +6,9 @@
   "station": "Station",
   "cabinets": "Cabinets",
   "projectOverview": "Overview",
-  "measurements": "Measurements"
+  "measurements": "Measurements",
+  "cabinet": "Cabinet",
+  "driver": "Driver",
+  "frequencyResponse": "Frequency Response",
+  "impedanceResponse": "Impedance Response"
 }
