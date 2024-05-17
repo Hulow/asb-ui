@@ -9,7 +9,7 @@ export function Settings({ props }: { props: SettingsProp[] }) {
   return (
     <div className='settings flex-row'>
       {props.map((prop, index) => {
-        return <Setting prop={prop} key={index}/>;
+        return <Setting prop={prop} key={index} />;
       })}
     </div>
   );

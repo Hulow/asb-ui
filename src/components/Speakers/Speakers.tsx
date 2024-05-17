@@ -16,8 +16,8 @@ export function Speakers({
     <div className='speakers-props flex-column-center component'>
       <h1>{title}</h1>
       <div className='speaker-props'>
-        {props.map((prop) => {
-          return <Speaker prop={prop} />;
+        {props.map((prop, index) => {
+          return <Speaker prop={prop} key={index} />;
         })}
       </div>
     </div>
