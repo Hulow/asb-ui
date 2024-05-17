@@ -48,17 +48,21 @@ export default function MeasurementPage({ params }: Params) {
     return <div></div>;
   }
 
-  const frequencyChat: ChartProps = {
+  const frequencyChart: ChartProps = {
     labels: measurements.frequency.frequencies,
     datasets: [
       {
         label: 'SPL',
+        title: 'SPL',
         data: measurements.frequency.spls,
-        borderColor: 'orange',
+        borderColor: 'rgb(240, 40, 5)',
+        yAxisID: 'y1',
+        position: 'left',
+        unity: 'Db',
+        yMin: 50,
+        yMax: 90,
       },
     ],
-    yMin: 50,
-    yMax: 90,
   };
 
   const impedanceChart: ChartProps = {
@@ -66,17 +70,27 @@ export default function MeasurementPage({ params }: Params) {
     datasets: [
       {
         label: 'Ohms',
+        title: 'Impedance',
         data: measurements.impedance.impedances,
         borderColor: 'blue',
+        yAxisID: 'y1',
+        position: 'left',
+        unity: 'Ω',
+        yMin: 0,
+        yMax: 160,
       },
       {
         label: 'Phase',
+        title: 'Phase',
         data: measurements.impedance.phases,
         borderColor: 'red',
+        yAxisID: 'y2',
+        position: 'right',
+        unity: '°',
+        yMin: -80,
+        yMax: 80,
       },
     ],
-    yMin: -100,
-    yMax: 200,
   };
   const cabinetProperties = getCabinetProperties(measurements.cabinet);
   const frequencySettings = getFrequencySettings(measurements.frequency);
@@ -85,7 +99,7 @@ export default function MeasurementPage({ params }: Params) {
   return (
     <main className='measurement flex-column-center'>
       <h1>{texts.measurements}</h1>
-      <div className='flex-center'>
+      {/* <div className='flex-center'>
         <Picture height={400} width={500} src='cld-sample-5' />
         <Speakers title={texts.cabinet} props={cabinetProperties} />
         {measurements.drivers.map((driver) => {
@@ -93,10 +107,10 @@ export default function MeasurementPage({ params }: Params) {
 
           return <Speakers title={texts.driver} props={driverProperties} />;
         })}
-      </div>
+      </div> */}
 
       <h1>{texts.frequencyResponse}</h1>
-      <Chart props={frequencyChat} />
+      <Chart props={frequencyChart} />
       <Settings props={frequencySettings} />
 
       <h1>{texts.impedanceResponse}</h1>
