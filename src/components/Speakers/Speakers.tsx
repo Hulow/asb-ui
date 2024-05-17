@@ -1,4 +1,4 @@
-import './Speaker.css';
+import './Speakers.css';
 
 export interface Property {
   name: string;
