@@ -10,5 +10,14 @@
   "cabinet": "Cabinet",
   "driver": "Driver",
   "frequencyResponse": "Frequency Response",
-  "impedanceResponse": "Impedance Response"
+  "impedanceResponse": "Impedance Response",
+  "driverProps": {
+    "brandName": "Manufacturer",
+    "productName": "Product",
+    "type": "Type",
+    "continuousPowerHandling": "RMS",
+    "diameter": "Diameter",
+    "impedance": "Impedance",
+    "manufacturingYear": "Year"
+  }
 }

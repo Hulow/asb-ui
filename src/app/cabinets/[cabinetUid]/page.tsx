@@ -134,31 +134,31 @@ function getCabinetProperties(cabinet: Cabinet): Property[] {
 function getDriverProperties(driver: Driver): Property[] {
   return [
     {
-      name: 'Manufacturer',
+      name: texts.driverProps.brandName,
       value: driver.brandName,
     },
     {
-      name: 'Product',
+      name: texts.driverProps.productName,
       value: driver.productName,
     },
     {
-      name: 'Type',
+      name: texts.driverProps.type,
       value: driver.driverType,
     },
     {
-      name: 'RMS',
+      name: texts.driverProps.continuousPowerHandling,
       value: `${driver.continuousPowerHandling} W`,
     },
     {
-      name: 'Diameter',
+      name: texts.driverProps.diameter,
       value: `${driver.nominalDiameter} Inches`,
     },
     {
-      name: 'Impedance',
+      name: texts.driverProps.impedance,
       value: `${driver.nominalImpedance} Ohms`,
     },
     {
-      name: 'Year',
+      name: texts.driverProps.manufacturingYear,
       value: driver.manufacturingYear,
     },
   ];
