@@ -8,7 +8,7 @@ export const DropdownItem = ({
   selectedOwner: any;
 }) => {
   return (
-    <div className='dropdown-item component' onClick={selectProp}>
+    <div className='dropdown-item interaction' onClick={selectProp}>
       <h1>{owner}</h1>
     </div>
   );

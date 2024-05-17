@@ -20,7 +20,7 @@ export function NavBarItem({
 
   return (
     <div
-      className={`nav-bar-item flex-center component ${activeClassName}`}
+      className={`nav-bar-item flex-center interaction ${activeClassName}`}
       onClick={() => reactOnEvent(eventName)}
     >
       <h1>{eventName}</h1>

@@ -17,7 +17,7 @@ export function Settings({ props }: { props: SettingsProp[] }) {
 
 export function Setting({ prop }: { prop: SettingsProp }) {
   return (
-    <div className='setting'>
+    <div className='setting color-transition'>
       {prop.name} {prop.value}
     </div>
   );

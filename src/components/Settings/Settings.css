@@ -6,4 +6,5 @@
 .setting {
   text-align: center;
   flex-grow: 1;
+  border-radius: 15px;
 }

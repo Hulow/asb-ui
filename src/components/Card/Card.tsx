@@ -22,7 +22,7 @@ const CardContent = ({
 }) => {
   const { cabinet, drivers } = cabinetContent;
   return (
-    <div className='card flex-column-center component'>
+    <div className='card flex-column-center interaction'>
       <CardTitle children={<h1>{cabinet.productName}</h1>} />
       <CardItem children={<h2>{cabinet.enclosureType}</h2>} />
       <CardItem

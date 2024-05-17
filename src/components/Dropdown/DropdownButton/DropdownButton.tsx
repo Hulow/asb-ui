@@ -15,7 +15,7 @@ export const DropdownButton = ({
     dropDownState(state);
   }
   return (
-    <div className='dropdown-btn component' onClick={activateState}>
+    <div className='dropdown-btn interaction' onClick={activateState}>
       <h1>{owner}</h1>
     </div>
   );

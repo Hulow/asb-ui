@@ -13,7 +13,7 @@ export function Button({
 }) {
   const [isActive, setIsActive] = useState(false);
   if (onEvent) onEvent(isActive);
-  const className = getClassNames('button flex-center component', classNames);
+  const className = getClassNames('button flex-center interaction', classNames);
 
   return (
     <div className={className} onClick={() => setIsActive(!isActive)}>
