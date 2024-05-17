@@ -17,7 +17,7 @@ export function Settings({ props }: { props: SettingsProp[] }) {
 
 export function Setting({ prop }: { prop: SettingsProp }) {
   return (
-    <div className='item horizontal-padding component'>
+    <div className='setting'>
       {prop.name} {prop.value}
     </div>
   );
