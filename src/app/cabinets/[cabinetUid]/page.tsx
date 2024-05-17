@@ -98,7 +98,9 @@ export default function MeasurementPage({ params }: Params) {
 
   return (
     <main className='measurement flex-column-center'>
-      <h1>{texts.measurements}</h1>
+      <div className='measurement-title'>
+        <h1>{texts.measurements}</h1>
+      </div>
       <div className='flex-center'>
         <Picture height={350} width={500} src='cld-sample-5' />
         <Speakers title={texts.cabinet} props={cabinetProperties} />
@@ -115,13 +117,13 @@ export default function MeasurementPage({ params }: Params) {
         })}
       </div>
 
-      <div className='measurement-title component'>
+      <div className='measurement-sub-title component'>
         <h1>{texts.frequencyResponse}</h1>
       </div>
       <Chart props={frequencyChart} />
       <Settings props={frequencySettings} />
 
-      <div className='measurement-title component'>
+      <div className='measurement-sub-title component'>
         <h1>{texts.impedanceResponse}</h1>
       </div>
       <Chart props={impedanceChart} />

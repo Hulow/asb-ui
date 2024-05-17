@@ -4,6 +4,10 @@
 }
 
 .measurement-title {
+  font-size: 30px;
+}
+
+.measurement-sub-title {
   width: 100%;
   text-align: center;
   margin-top: 30px;
