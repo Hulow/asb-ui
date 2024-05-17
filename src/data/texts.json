@@ -37,5 +37,23 @@
     "sweepLength": "Sweep length",
     "target": "Target",
     "note": "Note"
+  },
+  "impedanceSettings": {
+    "title": "TS Parameters",
+    "source": "Measured by",
+    "resonanceFrequency": "F(s)",
+    "acResistance": "AC Res.",
+    "dcResistance": "DC Res.",
+    "totalDamping": "Q(ts)",
+    "electricalDamping": "Q(es)",
+    "mechanicalDamping": "Q(ms)",
+    "equivalenceCompliance": "V(as)",
+    "suspensionCompliance": "C(ms)",
+    "coneMass": "C(ms)",
+    "efficiency": "Efficiency",
+    "forceFactor": "BL",
+    "pistonDiameter": "Piston",
+    "sensitivity": "SPL",
+    "voiceCoilInductance": "L(e)"
   }
 }

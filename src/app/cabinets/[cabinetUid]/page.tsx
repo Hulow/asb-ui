@@ -207,66 +207,66 @@ function getFrequencySettings(frequency: Frequency): SettingsProp[] {
 function getImpedanceSettings(impedance: Impedance): SettingsProp[] {
   return [
     {
-      name: <h1>TS Parameters</h1>,
+      name: <h1>{texts.impedanceSettings.title}</h1>,
     },
     {
-      name: <p>Measured by</p>,
+      name: <p>{texts.impedanceSettings.source}</p>,
       value: <p>{impedance.source}</p>,
     },
     {
-      name: <p>F(s)</p>,
+      name: <p>{texts.impedanceSettings.resonanceFrequency}</p>,
       value: <p>{impedance.resonanceFrequency} Hz</p>,
     },
     {
-      name: <p>AC Res.</p>,
+      name: <p>{texts.impedanceSettings.acResistance}</p>,
       value: <p>{impedance.acResistance} Ohms</p>,
     },
     {
-      name: <p>DC Res.</p>,
+      name: <p>{texts.impedanceSettings.dcResistance}</p>,
       value: <p>{impedance.dcResistance}</p>,
     },
     {
-      name: <p>Q(ts)</p>,
+      name: <p>{texts.impedanceSettings.totalDamping}</p>,
       value: <p>{impedance.totalDamping}</p>,
     },
     {
-      name: <p>Q(es)</p>,
+      name: <p>{texts.impedanceSettings.electricalDamping}</p>,
       value: <p>{impedance.electricalDamping}</p>,
     },
     {
-      name: <p>Q(ms)</p>,
+      name: <p>{texts.impedanceSettings.mechanicalDamping}</p>,
       value: <p>{impedance.mechanicalDamping}</p>,
     },
     {
-      name: <p>V(as)</p>,
+      name: <p>{texts.impedanceSettings.equivalenceCompliance}</p>,
       value: <p>{impedance.equivalenceCompliance} L</p>,
     },
     {
-      name: <p>C(ms)</p>,
+      name: <p>{texts.impedanceSettings.suspensionCompliance}</p>,
       value: <p>{impedance.suspensionCompliance} mm/N</p>,
     },
     {
-      name: <p>Cone Mass</p>,
+      name: <p>{texts.impedanceSettings.coneMass}</p>,
       value: <p>{impedance.coneMass} g</p>,
     },
     {
-      name: <p>Efficiency</p>,
+      name: <p>{texts.impedanceSettings.efficiency}</p>,
       value: <p>{impedance.efficiency} %</p>,
     },
     {
-      name: <p>BL</p>,
+      name: <p>{texts.impedanceSettings.forceFactor}</p>,
       value: <p>{impedance.forceFactor}</p>,
     },
     {
-      name: <p>Piston</p>,
+      name: <p>{texts.impedanceSettings.pistonDiameter}</p>,
       value: <p>⌀ {impedance.pistonDiameter} mm</p>,
     },
     {
-      name: <p>SPL</p>,
+      name: <p>{texts.impedanceSettings.sensitivity}</p>,
       value: <p>{impedance.sensitivity} 1W/1M</p>,
     },
     {
-      name: <p>L(e)</p>,
+      name: <p>{texts.impedanceSettings.voiceCoilInductance}</p>,
       value: <p>{impedance.voiceCoilInductance} mH</p>,
     },
   ];
