@@ -23,17 +23,17 @@ const CardContent = ({
   const { cabinet, drivers } = cabinetContent;
   return (
     <div className='card flex-column-center component'>
-      <CardItem children={<h1>{cabinet.productName}</h1>} />
+      <CardTitle children={<h1>{cabinet.productName}</h1>} />
       <CardItem children={<h2>{cabinet.enclosureType}</h2>} />
       <CardItem
         children={drivers.map((driver: any, index: number) => {
           return (
-            <CardItem
+            <CardSubItem
               key={index}
               children={
-                <h3>
+                <p>
                   {driver.brandName} - {driver.productName}
-                </h3>
+                </p>
               }
             />
           );
@@ -43,6 +43,14 @@ const CardContent = ({
   );
 };
 
+const CardTitle = ({ children }: { children: React.ReactNode }) => {
+  return <div className='card-title'>{children}</div>;
+};
+
 const CardItem = ({ children }: { children: React.ReactNode }) => {
-  return <div className='card-item flex-column-center'>{children}</div>;
+  return <div className='card-item'>{children}</div>;
+};
+
+const CardSubItem = ({ children }: { children: React.ReactNode }) => {
+  return <div className='card-sub-item'>{children}</div>;
 };

@@ -1,7 +1,15 @@
 .card {
-  height: 35vh;
+  height: 30vh;
 }
 
+.card-title {
+  font-size: 20px;
+  text-align: center;
+}
+
+
 .card-item {
-  flex-grow: 1;
+  width: 100%;
+   padding-left: 100px; 
+
 }
