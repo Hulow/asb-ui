@@ -5,7 +5,7 @@ import { DropdownButton } from '../Dropdown/DropdownButton/DropdownButton';
 import { DropdownItem } from '../Dropdown/DropdownItem/DropdownItem';
 import { Card } from '../Card/Card';
 
-const ALL_CABINETS = 'ALL';
+const ALL_CABINETS = 'All cabinets';
 
 export function Cabinets({ cabinets }: { cabinets: CabinetOverview[] }) {
   const [dropdownState, setDropdownState] = useState<boolean>(false);
