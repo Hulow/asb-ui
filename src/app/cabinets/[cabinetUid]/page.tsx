@@ -3,7 +3,7 @@
 import './page.css';
 import { useEffect, useState } from 'react';
 import { config } from '../../../config/config';
-import { Measurement } from '../../../types/measurements';
+import { Cabinet, Driver, Measurement } from '../../../types/measurements';
 import texts from '../../../data/texts.json';
 import { Picture } from '../../../components/Picture/Picture';
 import { Chart, ChartProps } from '../../../components/Chart/Chart';
@@ -13,9 +13,8 @@ import {
   getImpedanceSettings,
 } from '../../../components/Settings/Settings';
 import {
+  Property,
   Speakers,
-  getCabinetProperties,
-  getDriverProperties,
 } from '../../../components/Speakers/Speakers';
 
 interface Params {
@@ -107,3 +106,62 @@ export default function MeasurementPage({ params }: Params) {
     </main>
   );
 }
+
+function getCabinetProperties(cabinet: Cabinet): Property[] {
+  return [
+    {
+      name: 'Name',
+      value: cabinet.productName,
+    },
+    {
+      name: 'Enclosure',
+      value: cabinet.enclosureType,
+    },
+    {
+      name: 'Dimension',
+      value: cabinet.dimension,
+    },
+    {
+      name: 'Year',
+      value: cabinet.manufacturingYear,
+    },
+    {
+      name: 'Weight',
+      value: `${cabinet.weight} Kg`,
+    },
+  ];
+}
+
+function getDriverProperties(driver: Driver): Property[] {
+  return [
+    {
+      name: 'Manufacturer',
+      value: driver.brandName,
+    },
+    {
+      name: 'Product',
+      value: driver.productName,
+    },
+    {
+      name: 'Type',
+      value: driver.driverType,
+    },
+    {
+      name: 'RMS',
+      value: `${driver.continuousPowerHandling} W`,
+    },
+    {
+      name: 'Diameter',
+      value: `${driver.nominalDiameter} Inches`,
+    },
+    {
+      name: 'Impedance',
+      value: `${driver.nominalImpedance} Ohms`,
+    },
+    {
+      name: 'Year',
+      value: driver.manufacturingYear,
+    },
+  ];
+}
+
