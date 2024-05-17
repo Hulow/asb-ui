@@ -115,11 +115,16 @@ export default function MeasurementPage({ params }: Params) {
         })}
       </div>
 
-      <h1>{texts.frequencyResponse}</h1>
+      <div className='measurement-title component'>
+        <h1>{texts.frequencyResponse}</h1>
+      </div>
       <Chart props={frequencyChart} />
       <Settings props={frequencySettings} />
+      
+      <div className='measurement-title component'>
+        <h1>{texts.impedanceResponse}</h1>
+      </div>
 
-      <h1>{texts.impedanceResponse}</h1>
       <Chart props={impedanceChart} />
       <Settings props={impedanceSettings} />
     </main>
