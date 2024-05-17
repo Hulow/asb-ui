@@ -19,5 +19,12 @@
     "diameter": "Diameter",
     "impedance": "Impedance",
     "manufacturingYear": "Year"
+  },
+  "cabinetProps": {
+    "productName": "Name",
+    "type": "Enclosure",
+    "dimension": "Dimension",
+    "manufacturingYear": "Year",
+    "weight": "Weight"
   }
 }

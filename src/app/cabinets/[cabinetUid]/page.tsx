@@ -109,23 +109,23 @@ export default function MeasurementPage({ params }: Params) {
 function getCabinetProperties(cabinet: Cabinet): Property[] {
   return [
     {
-      name: 'Name',
+      name: texts.cabinetProps.productName,
       value: cabinet.productName,
     },
     {
-      name: 'Enclosure',
+      name: texts.cabinetProps.type,
       value: cabinet.enclosureType,
     },
     {
-      name: 'Dimension',
+      name: texts.cabinetProps.dimension,
       value: cabinet.dimension,
     },
     {
-      name: 'Year',
+      name: texts.cabinetProps.manufacturingYear,
       value: cabinet.manufacturingYear,
     },
     {
-      name: 'Weight',
+      name: texts.cabinetProps.weight,
       value: `${cabinet.weight} Kg`,
     },
   ];
