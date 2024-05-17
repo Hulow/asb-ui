@@ -6,10 +6,20 @@ export interface SettingsProp {
   value?: React.ReactNode;
 }
 
-export function Settings({ props }: { props: SettingsProp }) {
+export function Settings({ props }: { props: SettingsProp[] }) {
+  return (
+    <div className='settings flex-row'>
+      {props.map((prop) => {
+        return <Setting prop={prop} />;
+      })}
+    </div>
+  );
+}
+
+export function Setting({ prop }: { prop: SettingsProp }) {
   return (
     <div className='item horizontal-padding component'>
-      {props.name} {props.value}
+      {prop.name} {prop.value}
     </div>
   );
 }

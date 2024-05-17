@@ -16,7 +16,7 @@ import {
   Speakers,
   getCabinetProperties,
   getDriverProperties,
-} from '../../../components/Speaker/Speaker';
+} from '../../../components/Speakers/Speakers';
 
 interface Params {
   params: {
@@ -92,23 +92,18 @@ export default function MeasurementPage({ params }: Params) {
         <Speakers title={texts.cabinets} props={cabinetProperties} />
         {measurements.drivers.map((driver) => {
           const driverProperties = getDriverProperties(driver);
+
           return <Speakers title={texts.cabinets} props={driverProperties} />;
         })}
       </div>
+
       <h1>{texts.frequencyResponse}</h1>
       <Chart props={frequencyChat} />
-      <div className='settings flex-row'>
-        {frequencySettings.map((setting) => {
-          return <Settings props={setting} />;
-        })}
-      </div>
+      <Settings props={frequencySettings} />
+
       <h1>{texts.impedanceResponse}</h1>
       <Chart props={impedanceChart} />
-      <div className='settings flex-row'>
-        {impedanceSettings.map((setting) => {
-          return <Settings props={setting} />;
-        })}
-      </div>
+      <Settings props={impedanceSettings} />
     </main>
   );
 }

@@ -1,3 +1,7 @@
+.settings {
+  gap: 15px;
+}
+
 .horizontal-padding {
   padding-left: 10px;
   padding-right: 10px;
