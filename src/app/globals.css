@@ -26,11 +26,12 @@ main {
   background-color: rgba(255, 255, 255, 0.029);
   border-radius: 15px;
   border-style: solid;
+  border-width: 1px;
   border-color: transparent;
 }
 
 .component:hover {
-  background-color: rgba(255, 255, 255, 0.129);
+  border-color: rgb(81, 245, 2);
 }
 
 .flex-center {
@@ -48,9 +49,4 @@ main {
 .flex-row {
   display: flex;
   flex-direction: row;
-}
-
-.item {
-  text-align: center;
-  flex-grow: 1;
 }
