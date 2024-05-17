@@ -16,9 +16,11 @@ export function NavBarItem({
     isActive = false;
   }
 
+  const activeClassName = isActive ? 'active' : '';
+
   return (
     <div
-      className='nav-bar-item flex-center'
+      className={`nav-bar-item flex-center component ${activeClassName}`}
       onClick={() => reactOnEvent(eventName)}
     >
       <h1>{eventName}</h1>
