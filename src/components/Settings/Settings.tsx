@@ -1,4 +1,3 @@
-import { Frequency, Impedance } from '../../types/measurements';
 import './Settings.css';
 
 export interface SettingsProp {
@@ -9,8 +8,8 @@ export interface SettingsProp {
 export function Settings({ props }: { props: SettingsProp[] }) {
   return (
     <div className='settings flex-row'>
-      {props.map((prop) => {
-        return <Setting prop={prop} />;
+      {props.map((prop, index) => {
+        return <Setting prop={prop} key={index}/>;
       })}
     </div>
   );
