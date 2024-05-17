@@ -100,7 +100,7 @@ export default function MeasurementPage({ params }: Params) {
     <main className='measurement flex-column-center'>
       <h1>{texts.measurements}</h1>
       <div className='flex-center'>
-        <Picture height={400} width={500} src='cld-sample-5' />
+        <Picture height={350} width={500} src='cld-sample-5' />
         <Speakers title={texts.cabinet} props={cabinetProperties} />
         {measurements.drivers.map((driver, index) => {
           const driverProperties = getDriverProperties(driver);
@@ -194,35 +194,35 @@ function getFrequencySettings(frequency: Frequency): SettingsProp[] {
       name: <h1>{texts.frequencySettings.title}</h1>,
     },
     {
-      name: <p>{texts.frequencySettings.source}</p>,
+      name: <h3>{texts.frequencySettings.source}:</h3>,
       value: <p>{frequency.source}</p>,
     },
     {
-      name: <p>{texts.frequencySettings.measuredAt}</p>,
+      name: <h3>{texts.frequencySettings.measuredAt}:</h3>,
       value: <p>{frequency.measuredAt}</p>,
     },
     {
-      name: <p>{texts.frequencySettings.measuredBy}</p>,
+      name: <h3>{texts.frequencySettings.measuredBy}:</h3>,
       value: <p>{frequency.measuredBy}</p>,
     },
     {
-      name: <p>{texts.frequencySettings.smoothing}</p>,
+      name: <h3>{texts.frequencySettings.smoothing}:</h3>,
       value: <p>{frequency.smoothing}</p>,
     },
     {
-      name: <p>{texts.frequencySettings.weightings}</p>,
+      name: <h3>{texts.frequencySettings.weightings}:</h3>,
       value: <p>{frequency.frequencyWeightings}</p>,
     },
     {
-      name: <p>{texts.frequencySettings.sweepLength}</p>,
+      name: <h3>{texts.frequencySettings.sweepLength}:</h3>,
       value: <p>{frequency.sweepLength}</p>,
     },
     {
-      name: <p>{texts.frequencySettings.target}</p>,
+      name: <h3>{texts.frequencySettings.target}:</h3>,
       value: <p>{frequency.targetLevel}</p>,
     },
     {
-      name: <p>{texts.frequencySettings.note}</p>,
+      name: <h3>{texts.frequencySettings.note}:</h3>,
       value: <p>{frequency.note}</p>,
     },
   ];
@@ -234,63 +234,63 @@ function getImpedanceSettings(impedance: Impedance): SettingsProp[] {
       name: <h1>{texts.impedanceSettings.title}</h1>,
     },
     {
-      name: <p>{texts.impedanceSettings.source}</p>,
+      name: <h3>{texts.impedanceSettings.source}:</h3>,
       value: <p>{impedance.source}</p>,
     },
     {
-      name: <p>{texts.impedanceSettings.resonanceFrequency}</p>,
+      name: <h3>{texts.impedanceSettings.resonanceFrequency}:</h3>,
       value: <p>{impedance.resonanceFrequency} Hz</p>,
     },
     {
-      name: <p>{texts.impedanceSettings.acResistance}</p>,
+      name: <h3>{texts.impedanceSettings.acResistance}:</h3>,
       value: <p>{impedance.acResistance} Ohms</p>,
     },
     {
-      name: <p>{texts.impedanceSettings.dcResistance}</p>,
+      name: <h3>{texts.impedanceSettings.dcResistance}:</h3>,
       value: <p>{impedance.dcResistance}</p>,
     },
     {
-      name: <p>{texts.impedanceSettings.totalDamping}</p>,
+      name: <h3>{texts.impedanceSettings.totalDamping}:</h3>,
       value: <p>{impedance.totalDamping}</p>,
     },
     {
-      name: <p>{texts.impedanceSettings.electricalDamping}</p>,
+      name: <h3>{texts.impedanceSettings.electricalDamping}:</h3>,
       value: <p>{impedance.electricalDamping}</p>,
     },
     {
-      name: <p>{texts.impedanceSettings.mechanicalDamping}</p>,
+      name: <h3>{texts.impedanceSettings.mechanicalDamping}:</h3>,
       value: <p>{impedance.mechanicalDamping}</p>,
     },
     {
-      name: <p>{texts.impedanceSettings.equivalenceCompliance}</p>,
+      name: <h3>{texts.impedanceSettings.equivalenceCompliance}:</h3>,
       value: <p>{impedance.equivalenceCompliance} L</p>,
     },
     {
-      name: <p>{texts.impedanceSettings.suspensionCompliance}</p>,
+      name: <h3>{texts.impedanceSettings.suspensionCompliance}:</h3>,
       value: <p>{impedance.suspensionCompliance} mm/N</p>,
     },
     {
-      name: <p>{texts.impedanceSettings.coneMass}</p>,
+      name: <h3>{texts.impedanceSettings.coneMass}:</h3>,
       value: <p>{impedance.coneMass} g</p>,
     },
     {
-      name: <p>{texts.impedanceSettings.efficiency}</p>,
+      name: <h3>{texts.impedanceSettings.efficiency}:</h3>,
       value: <p>{impedance.efficiency} %</p>,
     },
     {
-      name: <p>{texts.impedanceSettings.forceFactor}</p>,
+      name: <h3>{texts.impedanceSettings.forceFactor}:</h3>,
       value: <p>{impedance.forceFactor}</p>,
     },
     {
-      name: <p>{texts.impedanceSettings.pistonDiameter}</p>,
+      name: <h3>{texts.impedanceSettings.pistonDiameter}:</h3>,
       value: <p>⌀ {impedance.pistonDiameter} mm</p>,
     },
     {
-      name: <p>{texts.impedanceSettings.sensitivity}</p>,
+      name: <h3>{texts.impedanceSettings.sensitivity}:</h3>,
       value: <p>{impedance.sensitivity} 1W/1M</p>,
     },
     {
-      name: <p>{texts.impedanceSettings.voiceCoilInductance}</p>,
+      name: <h3>{texts.impedanceSettings.voiceCoilInductance}:</h3>,
       value: <p>{impedance.voiceCoilInductance} mH</p>,
     },
   ];
