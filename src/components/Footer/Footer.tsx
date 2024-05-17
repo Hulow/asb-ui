@@ -8,19 +8,19 @@ export function Footer() {
       <div className='asb-ui'>
         <CustomLink
           href='https://github.com/Hulow/asb-ui'
-          children={<h3>{texts.asbUi}</h3>}
+          children={<h4>{texts.asbUi}</h4>}
           target={true}
         />
       </div>
       <div className='asb-app'>
         <CustomLink
           href='https://github.com/Hulow/asb-app'
-          children={<h3>{texts.asbApp}</h3>}
+          children={<h4>{texts.asbApp}</h4>}
           target={true}
         />
       </div>
       <div className='email'>
-        <h3>{texts.emailAddress}</h3>
+        <h4>{texts.emailAddress}</h4>
       </div>
     </div>
   );
