@@ -7,14 +7,14 @@ export function Footer() {
     <div className='footer layout'>
       <div className='asb-ui'>
         <CustomLink
-          href='https://github.com/Hulow/asb-ui'
+          href={texts.asbUiUrl}
           children={<h4>{texts.asbUi}</h4>}
           target={true}
         />
       </div>
       <div className='asb-app'>
         <CustomLink
-          href='https://github.com/Hulow/asb-app'
+          href={texts.asbAppUrl}
           children={<h4>{texts.asbApp}</h4>}
           target={true}
         />
