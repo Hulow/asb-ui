@@ -98,8 +98,11 @@ export default function MeasurementPage({ params }: Params) {
 
   return (
     <main className='measurement flex-column-center'>
-      <div className='measurement-title'>
-        <h1>{texts.measurements}</h1>
+      <div className='measurement-title flex-center'>
+        <div className="measurement-title-item"></div>
+        <div className="measurement-title-item flex-center"><h1>{texts.measurements}</h1></div>
+        <div className="measurement-title-item flex-center">hey</div>
+                
       </div>
       <div className='flex-center'>
         <Picture height={350} width={500} src='cabinets/test_picture' />

@@ -9,7 +9,7 @@ export const Card = ({
 }) => {
   return (
     <CustomLink
-      href={`cabinets/${cabinetContent.cabinet.uid}`}
+      href={`measurements/${cabinetContent.cabinet.uid}`}
       children={<CardContent cabinetContent={cabinetContent} />}
     />
   );
