@@ -14,12 +14,8 @@ export function Picture({
       width={width}
       height={height}
       src={src}
-      crop={{
-        type: 'auto',
-        source: true,
-      }}
       alt={''}
-      radius={15}
+      radius={150}
       priority={true}
     />
   );
