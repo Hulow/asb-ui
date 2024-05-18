@@ -3,10 +3,21 @@
   margin-bottom: 8vh;
 }
 
-.measurement-title {
+.measurement-header {
   width: 100%;
-  font-size: 30px;
-  background-color: blue;
+}
+
+.measurement-header-item {
+  flex-grow: 1;
+}
+
+.measurement-header-item > h1 {
+  font-size: 55px;
+}
+
+.measurement-header-button {
+  width: 20%;
+  margin-left: auto;
 }
 
 .measurement-sub-title {
@@ -14,10 +25,4 @@
   text-align: center;
   margin-top: 30px;
   margin-bottom: 20px;
-}
-
-.measurement-title-item {
-  flex-grow: 1;
-  border-style: solid;
-  border-color: red;
 }

@@ -15,6 +15,8 @@ import { Picture } from '../../../components/Picture/Picture';
 import { Chart, ChartProps } from '../../../components/Chart/Chart';
 import { Settings, SettingsProp } from '../../../components/Settings/Settings';
 import { Property, Speakers } from '../../../components/Speakers/Speakers';
+import { Button } from '../../../components/Button/Button';
+import { CustomLink } from '../../../components/Link/Link';
 
 interface Params {
   params: {
@@ -98,11 +100,20 @@ export default function MeasurementPage({ params }: Params) {
 
   return (
     <main className='measurement flex-column-center'>
-      <div className='measurement-title flex-center'>
-        <div className="measurement-title-item"></div>
-        <div className="measurement-title-item flex-center"><h1>{texts.measurements}</h1></div>
-        <div className="measurement-title-item flex-center">hey</div>
-                
+      <div className='measurement-header flex-center'>
+        <div className='measurement-header-item'></div>
+
+        <div className='measurement-header-item flex-center'>
+          <h1>{texts.measurements}</h1>
+        </div>
+
+        <div className='measurement-header-item'>
+          <div className='measurement-header-button'>
+            <Button
+              children={<CustomLink href={'/'} children={<h3>BACK</h3>} />}
+            />
+          </div>
+        </div>
       </div>
       <div className='flex-center'>
         <Picture height={350} width={500} src='cabinets/test_picture' />
