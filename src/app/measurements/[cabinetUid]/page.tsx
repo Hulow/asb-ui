@@ -40,7 +40,7 @@ export default function MeasurementPage({ params }: Params) {
         setLoading(false);
         setMeasurements(data);
       });
-  }, [endpoint]);
+  }, [endpoint, params.cabinetUid]);
 
   if (loading) {
     return <div></div>;
