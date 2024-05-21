@@ -109,9 +109,11 @@ export default function MeasurementPage({ params }: Params) {
 
         <div className='measurement-header-item'>
           <div className='measurement-header-button'>
-            <Button
-              children={<CustomLink href={'/'} children={<h3>BACK</h3>} />}
-            />
+            <Button>
+              <CustomLink href={'/'}>
+                <h3>BACK</h3>
+              </CustomLink>
+            </Button>
           </div>
         </div>
       </div>
