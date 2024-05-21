@@ -8,10 +8,9 @@ export const Card = ({
   cabinetContent: CabinetOverview;
 }) => {
   return (
-    <CustomLink
-      href={`measurements/${cabinetContent.cabinet.uid}`}
-      children={<CardContent cabinetContent={cabinetContent} />}
-    />
+    <CustomLink href={`measurements/${cabinetContent.cabinet.uid}`}>
+      <CardContent cabinetContent={cabinetContent} />
+    </CustomLink>
   );
 };
 
@@ -23,22 +22,23 @@ const CardContent = ({
   const { cabinet, drivers } = cabinetContent;
   return (
     <div className='card flex-column-center interaction'>
-      <CardTitle children={<h1>{cabinet.productName}</h1>} />
-      <CardItem children={<h2>{cabinet.enclosureType}</h2>} />
-      <CardItem
-        children={drivers.map((driver: any, index: number) => {
+      <CardTitle>
+        <h1>{cabinet.productName}</h1>
+      </CardTitle>
+      <CardItem>
+        <h2>{cabinet.enclosureType}</h2>
+      </CardItem>
+      <CardItem>
+        {drivers.map((driver: any, index: number) => {
           return (
-            <CardSubItem
-              key={index}
-              children={
-                <p>
-                  {driver.brandName} - {driver.productName}
-                </p>
-              }
-            />
+            <CardSubItem key={index}>
+              <p>
+                {driver.brandName} - {driver.productName}
+              </p>
+            </CardSubItem>
           );
         })}
-      />
+      </CardItem>
     </div>
   );
 };
