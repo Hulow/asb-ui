@@ -10,6 +10,8 @@ services:
       - '3000:3000'
     env_file:
       - /var/www/shared/env/.env
+    networks:
+      - app_network
 
 networks:
   app_network:
