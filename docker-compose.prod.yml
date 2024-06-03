@@ -1,17 +1,15 @@
-version: '3'
+version: '2.4'
 services:
   frontend:
     image: asb-ui:latest
     container_name: asb-ui
-    networks:
-      - app_network
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - '3000:3000'
     env_file:
-      - .env
+      - /var/www/shared/env/.env
 
 networks:
   app_network:
