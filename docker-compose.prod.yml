@@ -1,7 +1,6 @@
 version: '2.4'
 services:
   frontend:
-    image: asb-ui:latest
     container_name: asb-ui
     build:
       context: .
