@@ -1,4 +1,4 @@
-name: Deploy
+name: Continuous Deployment
 
 on:
   push:
@@ -6,25 +6,51 @@ on:
       - deploy
 
 jobs:
-  build-and-deploy:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout files
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build and push app docker app image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/asb-ui:app
+          file: Dockerfile
+
+  deploy:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v1
+      - name: Install SSH client
+        run: sudo apt-get install -y openssh-client
 
-      - name: Log in to Docker Hub
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        run: echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
-
-      - name: Build and push Docker images
-        run: cd /var/www/frontend
-          docker-compose up --build --force-recreate --remove-orphans
-
-      - name: Log out from Docker Hub
-        run: docker logout
+      - name: SSH into Droplet, pull image, and run container
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.DROPLET_IP }}
+          username: ${{ secrets.DROPLET_USER }}
+          key: ${{ secrets.DROPLET_SSH_KEY }}
+          port: ${{ secrets.DROPLET_SSH_PORT }}
+          script: |
+            if [ ! -d "/var/www/frontend/.git" ]; then
+            git clone https://github.com/Hulow/asb-ui.git /var/www/frontend
+            fi
+            cd /var/www/frontend
+            git pull origin deploy
