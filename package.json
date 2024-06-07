@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "chart.js": "^4.4.2",
-    "dotenv": "^16.4.5",
     "next": "14.2.3",
     "next-cloudinary": "^6.5.2",
     "react": "^18",
