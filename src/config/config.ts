@@ -15,5 +15,3 @@ export const config: Config = {
     measurements: '/api/measurement',
   },
 };
-
-console.log(config);
