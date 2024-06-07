@@ -1,6 +1,9 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
+const result = dotenv.config(); // Load environment variables from .env file
+console.log('Loaded environment variables:', result.parsed);
+
 interface Config {
   asbBaseUrl: string;
   asbKeyUrl: string;
