@@ -1,3 +1,4 @@
+import getConfig from 'next/config';
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -10,9 +11,11 @@ interface Config {
   };
 }
 
+const { nextConfig } = getConfig();
+
 export const config: Config = {
-  asbBaseUrl: process.env.NEXT_PUBLIC_ASB_BASE_URL!,
-  asbKeyUrl: process.env.NEXT_PUBLIC_ASB_KEY_URL!,
+  asbBaseUrl: nextConfig.asbBaseUrl,
+  asbKeyUrl: nextConfig.asbKeyUrl,
   endpoints: {
     cabinets: '/api/cabinets',
     measurements: '/api/measurement',
