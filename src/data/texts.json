@@ -2,7 +2,7 @@
   "project": "Here is a side project related to Acoustic. I am currently building an anechoic chamber in a Soviet bunker somewhere in Berlin. This control room is focused on making electroacoustic measurements on sound systems. This application is going to process all data recorded from this room such as: Impulse response, Frequency response, Impedance response. The main focus of this project is learning and helping people to have a better understanding of the balance between: Loudspeaker driver characteristics choice and Loudspeaker enclosure design. This application architecture follows the Hexagonal pattern introduced by Alistair Cockburn in 2005, segregating the application & adapter throught different ports. This pattern helps applications to be more testable, decoupled, flexible, and more maintainable. The mechanism of this application is driven by the IoC container provided by InversifyJS. This container is responsible for managing dependencies and orchestrating the flow of control. It allows you to decouple components by injecting dependencies into class constructors. This approach promotes loose coupling, improves testability, and enhances code modularity.",
   "asbUi": "ASB UI",
   "asbUiUrl": "https://github.com/Hulow/asb-ui",
-  "asbApp": "ASB Service",
+  "asbApp": "ASB APP",
   "asbAppUrl": "https://github.com/Hulow/asb-app",
   "emailAddress": "victor@anechoic-station-berlin.com",
   "about": "About",
