@@ -30,7 +30,7 @@ export default function MeasurementPage({ params }: Params) {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    fetch(`${config.asbBaseUrl}${endpoint}/${params.cabinetUid}`, {
+    fetch(`${endpoint}/${params.cabinetUid}`, {
       method: 'get',
       headers: { Authorization: config.asbKeyUrl },
       cache: 'no-store',
