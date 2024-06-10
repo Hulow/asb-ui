@@ -5,6 +5,6 @@ export interface Cabinet {
   enclosureType: string;
   weight: number;
   dimension: string;
-  description: string;
+  description?: string;
   ownerUid: string;
 }
