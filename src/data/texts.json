@@ -26,7 +26,6 @@
     "productName": "Name",
     "type": "Enclosure",
     "dimension": "Dimension",
-    "manufacturingYear": "Year",
     "weight": "Weight"
   },
   "frequencySettings": {

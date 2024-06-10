@@ -163,10 +163,6 @@ function getCabinetProperties(cabinet: Cabinet): Property[] {
       value: cabinet.dimension,
     },
     {
-      name: texts.cabinetProps.manufacturingYear,
-      value: cabinet.manufacturingYear,
-    },
-    {
       name: texts.cabinetProps.weight,
       value: `${cabinet.weight} Kg`,
     },

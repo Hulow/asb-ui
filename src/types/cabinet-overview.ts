@@ -11,7 +11,6 @@ interface Cabinet {
   enclosureType: string;
   weight: number;
   dimension: string;
-  manufacturingYear: number;
   description: string;
   ownerUid: string;
 }
