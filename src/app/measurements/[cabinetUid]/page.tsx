@@ -3,13 +3,6 @@
 import './page.css';
 import { useEffect, useState } from 'react';
 import { config } from '../../../config/config';
-import {
-  Cabinet,
-  Driver,
-  Frequency,
-  Impedance,
-  Measurement,
-} from '../../../types/measurements';
 import texts from '../../../data/texts.json';
 import { Picture } from '../../../components/Picture/Picture';
 import { Chart, ChartProps } from '../../../components/Chart/Chart';
@@ -17,6 +10,11 @@ import { Settings, SettingsProp } from '../../../components/Settings/Settings';
 import { Property, Speakers } from '../../../components/Speakers/Speakers';
 import { Button } from '../../../components/Button/Button';
 import { CustomLink } from '../../../components/Link/Link';
+import { Measurement } from '../../../types/measurement';
+import { Cabinet } from '../../../types/cabinet';
+import { Driver } from '../../../types/driver';
+import { Frequency } from '../../../types/frequency';
+import { Impedance } from '../../../types/impedance';
 
 interface Params {
   params: {
