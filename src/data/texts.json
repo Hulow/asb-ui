@@ -19,8 +19,7 @@
     "type": "Type",
     "continuousPowerHandling": "RMS",
     "diameter": "Diameter",
-    "impedance": "Impedance",
-    "manufacturingYear": "Year"
+    "impedance": "Impedance"
   },
   "cabinetProps": {
     "productName": "Name",

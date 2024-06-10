@@ -193,10 +193,6 @@ function getDriverProperties(driver: Driver): Property[] {
       name: texts.driverProps.impedance,
       value: `${driver.nominalImpedance} Ohms`,
     },
-    {
-      name: texts.driverProps.manufacturingYear,
-      value: driver.manufacturingYear,
-    },
   ];
 }
 
