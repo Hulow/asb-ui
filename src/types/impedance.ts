@@ -20,7 +20,14 @@ export interface Impedance {
   kI: string;
   xI: string;
   cabinetUid: string;
+  driverUid: string;
   frequencies: number[];
+  lowestFrequency: number;
+  highestFrequency: number;
   impedances: number[];
+  lowestImpedance: number;
+  highestImpedance: number;
   phases: number[];
+  lowestPhase: number;
+  highestPhase: number;
 }
