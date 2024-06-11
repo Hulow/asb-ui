@@ -23,6 +23,8 @@ ChartJS.register(
 
 export interface ChartProps {
   labels: number[];
+  xMin: number;
+  xMax: number;
   datasets: DataSet[];
 }
 
@@ -90,8 +92,8 @@ function mapOptions(props: ChartProps): ChartOptions<'line'> {
   const datasetContainsPhase = props.datasets.length === 2;
   const horizontalScalesAxeProps: ScalesAxeProps = {
     type: 'logarithmic',
-    min: 20,
-    max: 20000,
+    min: props.xMin,
+    max: props.xMax,
     position: undefined,
     title: {
       display: false,
