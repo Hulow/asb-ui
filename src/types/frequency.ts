@@ -9,7 +9,11 @@ export interface Frequency {
   note: string;
   smoothing: string;
   frequencies: number[];
+  highestFrequency: number;
+  lowestFrequency: number;
   spls: number[];
   phases: number[];
+  highestSpl: number;
+  lowestSpl: number;
   cabinetUid: string;
 }
