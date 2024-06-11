@@ -1,7 +1,4 @@
-'use client';
-
 import './page.css';
-import { useEffect, useState } from 'react';
 import { config } from '../../../config/config';
 import texts from '../../../data/texts.json';
 import { Picture } from '../../../components/Picture/Picture';
@@ -15,6 +12,7 @@ import { Cabinet } from '../../../types/cabinet';
 import { Driver } from '../../../types/driver';
 import { Frequency } from '../../../types/frequency';
 import { Impedance } from '../../../types/impedance';
+import { apiClient } from '../../../services/http-client';
 
 interface Params {
   params: {
@@ -22,27 +20,12 @@ interface Params {
   };
 }
 
-export default function MeasurementPage({ params }: Params) {
+export default async function MeasurementPage({ params }: Params) {
   const endpoint = config.endpoints.measurements;
-  const [measurements, setMeasurements] = useState<Measurement | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
 
-  useEffect(() => {
-    fetch(`${endpoint}/${params.cabinetUid}`, {
-      method: 'get',
-      headers: { Authorization: config.asbKeyUrl },
-      cache: 'no-store',
-    })
-      .then((data) => data.json())
-      .then((data) => {
-        setLoading(false);
-        setMeasurements(data);
-      });
-  }, [endpoint, params.cabinetUid]);
-
-  if (loading) {
-    return <div></div>;
-  }
+  const measurements = await getMeasurements(
+    `${config.asbBaseUrl}${endpoint}/${params.cabinetUid}`
+  );
 
   if (!measurements) {
     return <div></div>;
@@ -50,6 +33,8 @@ export default function MeasurementPage({ params }: Params) {
 
   const frequencyChart: ChartProps = {
     labels: measurements.frequency.frequencies,
+    xMin: measurements.frequency.lowestFrequency,
+    xMax: measurements.frequency.highestFrequency,
     datasets: [
       {
         label: 'SPL',
@@ -59,42 +44,54 @@ export default function MeasurementPage({ params }: Params) {
         yAxisID: 'y1',
         position: 'left',
         unity: 'Db',
-        yMin: 50,
-        yMax: 90,
+        yMin: measurements.frequency.lowestSpl,
+        yMax: measurements.frequency.highestSpl,
       },
     ],
   };
 
-  const impedanceChart: ChartProps = {
-    labels: measurements.impedance.frequencies,
-    datasets: [
-      {
-        label: 'Ohms',
-        title: 'Impedance',
-        data: measurements.impedance.impedances,
-        borderColor: 'blue',
-        yAxisID: 'y1',
-        position: 'left',
-        unity: 'Ω',
-        yMin: 0,
-        yMax: 160,
-      },
-      {
-        label: 'Phase',
-        title: 'Phase',
-        data: measurements.impedance.phases,
-        borderColor: 'red',
-        yAxisID: 'y2',
-        position: 'right',
-        unity: '°',
-        yMin: -80,
-        yMax: 80,
-      },
-    ],
-  };
+  const impedanceChartsAndSettings: {
+    chart: ChartProps;
+    settings: SettingsProp[];
+  }[] = [];
+
+  for (const impedance of measurements.impedances) {
+    const chart: ChartProps = {
+      labels: impedance.frequencies,
+      xMin: impedance.lowestFrequency,
+      xMax: impedance.highestFrequency,
+      datasets: [
+        {
+          label: 'Ohms',
+          title: 'Impedance',
+          data: impedance.impedances,
+          borderColor: 'blue',
+          yAxisID: 'y1',
+          position: 'left',
+          unity: 'Ω',
+          yMin: impedance.lowestImpedance,
+          yMax: impedance.highestImpedance,
+        },
+        {
+          label: 'Phase',
+          title: 'Phase',
+          data: impedance.phases,
+          borderColor: 'red',
+          yAxisID: 'y2',
+          position: 'right',
+          unity: '°',
+          yMin: impedance.lowestPhase,
+          yMax: impedance.highestPhase,
+        },
+      ],
+    };
+
+    const settings = getImpedanceSettings(impedance);
+    impedanceChartsAndSettings.push({ chart, settings });
+  }
+
   const cabinetProperties = getCabinetProperties(measurements.cabinet);
   const frequencySettings = getFrequencySettings(measurements.frequency);
-  const impedanceSettings = getImpedanceSettings(measurements.impedance);
 
   return (
     <main className='measurement flex-column-center'>
@@ -136,14 +133,25 @@ export default function MeasurementPage({ params }: Params) {
       </div>
       <Chart props={frequencyChart} />
       <Settings props={frequencySettings} />
-
-      <div className='measurement-sub-title item'>
-        <h1>{texts.impedanceResponse}</h1>
-      </div>
-      <Chart props={impedanceChart} />
-      <Settings props={impedanceSettings} />
+      {impedanceChartsAndSettings.map(({ chart, settings }, index) => (
+        <div key={index}>
+          <div className='measurement-sub-title item'>
+            <h1>{texts.impedanceResponse}</h1>
+          </div>
+          <Chart props={chart} />
+          <Settings props={settings} />
+        </div>
+      ))}
     </main>
   );
+}
+
+async function getMeasurements(endpoint: string): Promise<Measurement> {
+  try {
+    return await apiClient(endpoint);
+  } catch (error) {
+    throw new Error('Unable to find the measurement');
+  }
 }
 
 function getCabinetProperties(cabinet: Cabinet): Property[] {
