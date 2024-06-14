@@ -1,9 +1,12 @@
 import './page.css';
 import { config } from '../../../config/config';
 import texts from '../../../data/texts.json';
+import { Measurement } from '../../../types/measurement';
 import { Button } from '../../../components/Button/Button';
 import { CustomLink } from '../../../components/Link/Link';
 import { Measurements } from '../../../components/Measurement/Measurement';
+import { client } from '../../../services/client';
+
 interface Params {
   params: {
     cabinetUid: string;
@@ -36,4 +39,9 @@ export default async function MeasurementPage({ params }: Params) {
       <Measurements measurements={measurements} />
     </main>
   );
+}
+
+async function getMeasurements(endpoint: string): Promise<Measurement> {
+  const response = await client.get(endpoint);
+  return response.data;
 }
