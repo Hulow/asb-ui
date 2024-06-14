@@ -2,6 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   env: {
+    ASB_BASE_URL: process.env.ASB_BASE_URL,
+    ASB_KEY_URL: process.env.ASB_KEY_URL,
     NEXT_PUBLIC_ASB_BASE_URL: process.env.NEXT_PUBLIC_ASB_BASE_URL,
     NEXT_PUBLIC_ASB_KEY_URL: process.env.NEXT_PUBLIC_ASB_KEY_URL,
     NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME:
