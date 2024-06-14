@@ -1,3 +1,4 @@
+'use client';
 import './Button.css';
 import { useState } from 'react';
 import { getClassNames } from '../../util/util';
