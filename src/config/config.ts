@@ -5,6 +5,9 @@ interface Config {
     cabinets: string;
     measurements: string;
   };
+  cloudinary: {
+    name: string;
+  };
 }
 
 export const config: Config = {
@@ -13,5 +16,8 @@ export const config: Config = {
   endpoints: {
     cabinets: '/api/cabinets',
     measurements: '/api/measurement',
+  },
+  cloudinary: {
+    name: process.env.CLOUDINARY_CLOUD_NAME!,
   },
 };
