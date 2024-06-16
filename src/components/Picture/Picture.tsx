@@ -1,4 +1,6 @@
-import { CldImage } from 'next-cloudinary';
+'use client';
+import Image from 'next/image';
+import { config } from '../../config/config';
 
 export function Picture({
   width,
@@ -10,13 +12,11 @@ export function Picture({
   src: string;
 }) {
   return (
-    <CldImage
+    <Image
+      src={`https://res.cloudinary.com/${config.cloudinary.name}/image/upload/${src}`}
       width={width}
       height={height}
-      src={src}
-      alt={''}
-      radius={150}
-      priority={true}
+      alt='Speaker'
     />
   );
 }

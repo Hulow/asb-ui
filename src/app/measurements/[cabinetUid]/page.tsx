@@ -6,6 +6,7 @@ import { Button } from '../../../components/Button/Button';
 import { CustomLink } from '../../../components/Link/Link';
 import { Measurements } from '../../../components/Measurement/Measurement';
 import { asbClient } from '../../../services/client';
+import { Picture } from '../../../components/Picture/Picture';
 
 interface Params {
   params: {
@@ -36,6 +37,7 @@ export default async function MeasurementPage({ params }: Params) {
           </div>
         </div>
       </div>
+      <Picture height={350} width={500} src='cabinets/test_picture' />
       <Measurements measurements={measurements} />
     </main>
   );
