@@ -4,13 +4,17 @@ const nextConfig = {
   env: {
     ASB_BASE_URL: process.env.ASB_BASE_URL,
     ASB_KEY_URL: process.env.ASB_KEY_URL,
-    NEXT_PUBLIC_ASB_BASE_URL: process.env.NEXT_PUBLIC_ASB_BASE_URL,
-    NEXT_PUBLIC_ASB_KEY_URL: process.env.NEXT_PUBLIC_ASB_KEY_URL,
-    NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME:
-      process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
-    NEXT_PUBLIC_CLOUDINARY_API_KEY: process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
-    NEXT_PUBLIC_CLOUDINARY_API_SECRET:
-      process.env.NEXT_PUBLIC_CLOUDINARY_API_SECRET,
+    CLOUDINARY_CLOUD_NAME: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
+    CLOUDINARY_API_KEY: process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
+    CLOUDINARY_API_SECRET: process.env.NEXT_PUBLIC_CLOUDINARY_API_SECRET,
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
+    ],
   },
 };
 
