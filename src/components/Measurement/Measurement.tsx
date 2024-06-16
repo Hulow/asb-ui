@@ -10,17 +10,12 @@ import { Cabinet } from '../../types/cabinet';
 import { Driver } from '../../types/driver';
 import { Frequency } from '../../types/frequency';
 import { Impedance } from '../../types/impedance';
-import { Picture } from '../Picture/Picture';
 
 interface MeasurementsProps {
   measurements: Measurement;
 }
 
 export const Measurements: React.FC<MeasurementsProps> = ({ measurements }) => {
-  if (!measurements) {
-    return <div>No measurements found.</div>;
-  }
-
   const frequencyChart: ChartProps = {
     labels: measurements.frequency.frequencies,
     xMin: measurements.frequency.lowestFrequency,
@@ -85,7 +80,6 @@ export const Measurements: React.FC<MeasurementsProps> = ({ measurements }) => {
 
   return (
     <div className='flex-center'>
-      <Picture height={350} width={500} src='cabinets/test_picture' />
       <Speakers title={texts.cabinet} props={cabinetProperties} />
       {measurements.drivers.map((driver, index) => {
         const driverProperties = getDriverProperties(driver);
