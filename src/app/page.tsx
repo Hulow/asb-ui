@@ -37,7 +37,7 @@ export default function Home() {
 
   return (
     <main className='flex-column-center'>
-      <Logo route='/ASB.svg' width={800} height={600} alt='ASB logo' />
+      <Logo route='/ASB.svg' alt='Anechoic Station Berlin' />
       <NavBar onEvent={handleEvent} />
       {event?.state ? <Content event={event} /> : null}
     </main>
