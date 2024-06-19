@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './NavBarItem.css';
+import '../../../styles/components/navbar-item.scss';
 
 export function NavBarItem({
   eventName,
@@ -23,7 +23,7 @@ export function NavBarItem({
       className={`nav-bar-item flex-center interaction ${activeClassName}`}
       onClick={() => reactOnEvent(eventName)}
     >
-      <h1>{eventName}</h1>
+      <p>{eventName}</p>
     </div>
   );
 

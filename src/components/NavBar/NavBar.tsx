@@ -1,4 +1,4 @@
-import './NavBar.css';
+import '../../styles/components/navbar.scss';
 import texts from '../../data/texts.json';
 import { NavBarItem } from './NabBarItem/NavBarItem';
 import { useState } from 'react';

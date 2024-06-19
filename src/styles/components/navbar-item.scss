@@ -1,0 +1,74 @@
+@import '../variables';
+
+.nav-bar-item {
+  border-radius: 10px;
+  border-style: solid;
+}
+
+.active {
+  border-color: rgb(81, 245, 2);
+}
+
+@media (max-width: $mobile) {
+  .nav-bar-item {
+    height: 100px;
+  }
+
+  .nav-bar-item > p {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
+  .nav-bar-item {
+    height: 110px;
+  }
+
+  .nav-bar-item > p {
+    font-size: 35px;
+  }
+}
+
+@media (min-width: $tablet) and (max-width: ($laptop - 1)) {
+  .nav-bar-item {
+    width: 300px;
+    height: 130px;
+  }
+
+  .nav-bar-item > p {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: $laptop) and (max-width: ($desktop - 1)) {
+  .nav-bar-item {
+    width: 300px;
+    height: 140px;
+  }
+
+  .nav-bar-item > p {
+    font-size: 35px;
+  }
+}
+
+@media (min-width: $desktop) and (max-width: ($cinema - 1)) {
+  .nav-bar-item {
+    width: 300px;
+    height: 140px;
+  }
+
+  .nav-bar-item > p {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: $cinema) {
+  .nav-bar-item {
+    width: 450px;
+    height: 200px;
+  }
+
+  .nav-bar-item > p {
+    font-size: 55px;
+  }
+}

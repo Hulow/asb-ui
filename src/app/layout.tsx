@@ -1,4 +1,3 @@
-import './layout.css';
 import './globals.scss';
 import { Footer } from '../components/Footer/Footer';
 
