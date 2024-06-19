@@ -1,22 +1,22 @@
-import './Footer.css';
+import '../../styles/components/footer.scss';
 import texts from '../../data/texts.json';
 import { CustomLink } from '../Link/Link';
 
 export function Footer() {
   return (
     <div className='footer layout'>
-      <div className='asb-ui'>
+      <div className='footer-item'>
         <CustomLink href={texts.asbUiUrl} target={true}>
-          <h4>{texts.asbUi}</h4>
+          <p>{texts.asbUi}</p>
         </CustomLink>
       </div>
-      <div className='asb-app'>
+      <div className='footer-item'>
         <CustomLink href={texts.asbAppUrl} target={true}>
-          <h4>{texts.asbApp}</h4>
+          <p>{texts.asbApp}</p>
         </CustomLink>
       </div>
-      <div className='email'>
-        <h4>{texts.emailAddress}</h4>
+      <div className='footer-item'>
+        <p>{texts.emailAddress}</p>
       </div>
     </div>
   );
