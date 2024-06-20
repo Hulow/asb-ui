@@ -1,50 +1,50 @@
 @import '../variables';
 
 .nav-bar {
-  width: 95%;
   display: flex;
+  justify-content: space-between;
   gap: 20px;
 }
 
 @media (max-width: $mobile) {
   .nav-bar {
-    justify-content: space-between;
+    width: 95%;
     flex-direction: column;
   }
 }
 
 @media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
   .nav-bar {
-    justify-content: space-between;
+    width: 95%;
     flex-direction: column;
   }
 }
 
 @media (min-width: $tablet) and (max-width: ($laptop - 1)) {
   .nav-bar {
-    justify-content: space-between;
+    width: 95%;
     flex-direction: row;
   }
 }
 
 @media (min-width: $laptop) and (max-width: ($desktop - 1)) {
   .nav-bar {
-    justify-content: space-between;
+    width: 85%;
     flex-direction: row;
   }
 }
 
 @media (min-width: $desktop) and (max-width: ($cinema - 1)) {
   .nav-bar {
-    justify-content: center;
     flex-direction: row;
+    width: 65%;
   }
 }
 
 @media (min-width: $cinema) {
   .nav-bar {
-    justify-content: center;
     flex-direction: row;
+    width: 55%;
     gap: 30px;
   }
 }
