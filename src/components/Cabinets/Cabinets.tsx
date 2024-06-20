@@ -36,11 +36,11 @@ export function Cabinets({ cabinets }: { cabinets: CabinetOverview[] }) {
             ))
           : null}
       </div>
-      {/* <div className='cabinet-cards'>
+      <div className='cabinet-cards'>
         {cabinetsContent.map((cabinet, index) => {
           return <Card key={index} cabinetContent={cabinet} />;
         })}
-      </div> */}
+      </div>
     </div>
   );
 

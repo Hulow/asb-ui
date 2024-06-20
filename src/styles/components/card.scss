@@ -1,0 +1,117 @@
+@import '../variables';
+
+.card-title {
+  text-align: center;
+}
+
+.card-item {
+  width: 100%;
+}
+
+@media (max-width: $mobile) {
+  .card {
+    height: 150px;
+  }
+  .card-title > p {
+    font-size: 12px;
+  }
+  .card-item > p {
+    font-size: 10px;
+  }
+  .card-item {
+    padding-left: 30px;
+  }
+  .card-sub-item > p {
+    font-size: 8px;
+  }
+}
+
+@media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
+  .card {
+    height: 200px;
+  }
+  .card-title > p {
+    font-size: 15px;
+  }
+  .card-item > p {
+    font-size: 14px;
+  }
+  .card-item {
+    padding-left: 30px;
+  }
+  .card-sub-item > p {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: $tablet) and (max-width: ($laptop - 1)) {
+  .card {
+    height: 240px;
+  }
+  .card-title > p {
+    font-size: 20px;
+  }
+  .card-item > p {
+    font-size: 16px;
+  }
+  .card-item {
+    padding-left: 40px;
+  }
+  .card-sub-item > p {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: $laptop) and (max-width: ($desktop - 1)) {
+  .card {
+    height: 250px;
+  }
+  .card-title > p {
+    font-size: 21px;
+  }
+  .card-item > p {
+    font-size: 18px;
+  }
+  .card-item {
+    padding-left: 60px;
+  }
+  .card-sub-item > p {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: $desktop) and (max-width: ($cinema - 1)) {
+  .card {
+    height: 280px;
+  }
+  .card-title > p {
+    font-size: 24px;
+  }
+  .card-item > p {
+    font-size: 20px;
+  }
+  .card-item {
+    padding-left: 80px;
+  }
+  .card-sub-item > p {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: $cinema) {
+  .card {
+    height: 400px;
+  }
+  .card-title > p {
+    font-size: 32px;
+  }
+  .card-item > p {
+    font-size: 28px;
+  }
+  .card-item {
+    padding-left: 100px;
+  }
+  .card-sub-item > p {
+    font-size: 22px;
+  }
+}

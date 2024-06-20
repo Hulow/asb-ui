@@ -1,6 +1,6 @@
 import { CabinetOverview } from '../../types/cabinet-overview';
 import { CustomLink } from '../Link/Link';
-import './Card.css';
+import '../../styles/components/card.scss';
 
 export const Card = ({
   cabinetContent,
@@ -22,35 +22,23 @@ const CardContent = ({
   const { cabinet, drivers } = cabinetContent;
   return (
     <div className='card flex-column-center interaction'>
-      <CardTitle>
-        <h1>{cabinet.productName}</h1>
-      </CardTitle>
-      <CardItem>
-        <h2>{cabinet.enclosureType}</h2>
-      </CardItem>
-      <CardItem>
+      <div className='card-title'>
+        <p>{cabinet.productName}</p>
+      </div>
+      <div className='card-item'>
+        <p>{cabinet.enclosureType}</p>
+      </div>
+      <div className='card-item'>
         {drivers.map((driver: any, index: number) => {
           return (
-            <CardSubItem key={index}>
+            <div className='card-sub-item' key={index}>
               <p>
                 {driver.brandName} - {driver.productName}
               </p>
-            </CardSubItem>
+            </div>
           );
         })}
-      </CardItem>
+      </div>
     </div>
   );
-};
-
-const CardTitle = ({ children }: { children: React.ReactNode }) => {
-  return <div className='card-title'>{children}</div>;
-};
-
-const CardItem = ({ children }: { children: React.ReactNode }) => {
-  return <div className='card-item'>{children}</div>;
-};
-
-const CardSubItem = ({ children }: { children: React.ReactNode }) => {
-  return <div className='card-sub-item'>{children}</div>;
 };
