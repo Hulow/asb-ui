@@ -1,0 +1,110 @@
+@import '../variables';
+
+.cabinets {
+  background-color: blue;
+}
+
+.cabinet-cards {
+  margin-top: 20px;
+  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, auto);
+}
+
+@media (max-width: $mobile) {
+  .cabinets {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 95%;
+  }
+
+  //   .cabinet-cards {
+  //     margin-top: 20px;
+  //     gap: 20px;
+  //     display: grid;
+  //     grid-template-columns: repeat(4, 1fr);
+  //     grid-template-rows: repeat(3, auto);
+  //   }
+}
+
+@media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
+  .cabinets {
+    margin-top: 25px;
+    margin-bottom: 50px;
+    width: 95%;
+  }
+
+  // .cabinet-cards {
+  //   margin-top: 20px;
+  //   gap: 20px;
+  //   display: grid;
+  //   grid-template-columns: repeat(4, 1fr);
+  //   grid-template-rows: repeat(3, auto);
+  // }
+}
+
+@media (min-width: $tablet) and (max-width: ($laptop - 1)) {
+  .cabinets {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 95%;
+  }
+
+  // .cabinet-cards {
+  //   margin-top: 20px;
+  //   gap: 20px;
+  //   display: grid;
+  //   grid-template-columns: repeat(4, 1fr);
+  //   grid-template-rows: repeat(3, auto);
+  // }
+}
+
+@media (min-width: $laptop) and (max-width: ($desktop - 1)) {
+  .cabinets {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 85%;
+  }
+
+  // .cabinet-cards {
+  //   margin-top: 20px;
+  //   gap: 20px;
+  //   display: grid;
+  //   grid-template-columns: repeat(4, 1fr);
+  //   grid-template-rows: repeat(3, auto);
+  // }
+}
+
+@media (min-width: $desktop) and (max-width: ($cinema - 1)) {
+  .cabinets {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 65%;
+    background-color: red;
+  }
+
+  // .cabinet-cards {
+  //   margin-top: 20px;
+  //   gap: 20px;
+  //   display: grid;
+  //   grid-template-columns: repeat(4, 1fr);
+  //   grid-template-rows: repeat(3, auto);
+  // }
+}
+
+@media (min-width: $cinema) {
+  .cabinets {
+    margin-top: 35px;
+    margin-bottom: 80px;
+    width: 55%;
+  }
+
+  // .cabinet-cards {
+  //   margin-top: 20px;
+  //   gap: 20px;
+  //   display: grid;
+  //   grid-template-columns: repeat(4, 1fr);
+  //   grid-template-rows: repeat(3, auto);
+  // }
+}

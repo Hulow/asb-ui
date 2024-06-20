@@ -1,4 +1,4 @@
-import './Cabinets.css';
+import '../../styles/components/cabinets.scss';
 import { CabinetOverview } from '../../types/cabinet-overview';
 import { useState } from 'react';
 import { DropdownButton } from '../Dropdown/DropdownButton/DropdownButton';
