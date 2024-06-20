@@ -1,0 +1,42 @@
+@import '../variables';
+
+.dropdown-btn {
+  text-align: center;
+}
+
+@media (max-width: $mobile) {
+  .dropdown-btn {
+    width: $maxMobileCabinetsWidth;
+  }
+}
+
+@media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
+  .dropdown-btn {
+    width: $minMobileMaxTabletCabinetsWidth;
+  }
+}
+
+@media (min-width: $tablet) and (max-width: ($laptop - 1)) {
+  .dropdown-btn {
+    width: $minTabletMaxLaptopCabinetsWidth;
+  }
+}
+
+@media (min-width: $laptop) and (max-width: ($desktop - 1)) {
+  .dropdown-btn {
+    width: $minLaptopMaxDesktopCabinetsWidth;
+  }
+}
+
+@media (min-width: $desktop) and (max-width: ($cinema - 1)) {
+  .dropdown-btn {
+    width: $minDesktopMaxCinemaCabinetsWidth;
+  }
+}
+
+@media (min-width: $cinema) {
+  .dropdown-btn {
+    width: $maxCinemaCabinetsWidth;
+    background-color: red;
+  }
+}

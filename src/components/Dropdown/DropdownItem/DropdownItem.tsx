@@ -1,4 +1,4 @@
-import './DropdownItem.css';
+import '../../../styles/components/dropdown-item.scss';
 
 export const DropdownItem = ({
   owner,

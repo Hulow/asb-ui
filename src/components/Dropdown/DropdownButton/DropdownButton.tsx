@@ -1,4 +1,5 @@
-import './DropdownButton.css';
+import './../../../styles/components/dropdown-button.scss';
+import '../../../app/globals.scss';
 import { useState } from 'react';
 
 export const DropdownButton = ({

@@ -1,4 +1,5 @@
 import '../../styles/components/cabinets.scss';
+import '../../app/globals.scss';
 import { CabinetOverview } from '../../types/cabinet-overview';
 import { useState } from 'react';
 import { DropdownButton } from '../Dropdown/DropdownButton/DropdownButton';
@@ -19,7 +20,7 @@ export function Cabinets({ cabinets }: { cabinets: CabinetOverview[] }) {
   const cabinetsContent = getSelectedCabinets();
 
   return (
-    <div className='cabinets'>
+    <div className='cabinets flex-column-center'>
       <div className='cabinets-menu flex-column-center'>
         <DropdownButton
           owner={selectedOwner ?? ALL_CABINETS}
@@ -35,11 +36,11 @@ export function Cabinets({ cabinets }: { cabinets: CabinetOverview[] }) {
             ))
           : null}
       </div>
-      <div className='cabinet-cards'>
+      {/* <div className='cabinet-cards'>
         {cabinetsContent.map((cabinet, index) => {
           return <Card key={index} cabinetContent={cabinet} />;
         })}
-      </div>
+      </div> */}
     </div>
   );
 
