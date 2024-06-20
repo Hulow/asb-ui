@@ -9,25 +9,25 @@ export const DropdownItem = ({
 }) => {
   return (
     <div className='dropdown-item interaction' onClick={selectProp}>
-      <h1>{owner}</h1>
+      <p>{owner}</p>
     </div>
   );
 
   function selectProp(event: any): void {
-    const h1Tags = document.querySelectorAll('.dropdown-item h1');
-    const targetOwner = getTargetOwner(h1Tags, event.target.innerHTML);
+    const pTags = document.querySelectorAll('.dropdown-item p');
+    const targetOwner = getTargetOwner(pTags, event.target.innerHTML);
     selectedOwner(targetOwner);
   }
 
-  function getTargetOwner(h2Tags: NodeListOf<Element>, event: string): string {
-    for (const h1 of h2Tags) {
-      const h2Content = h1.textContent as string;
-      if (matchEvent(h2Content, event)) return h2Content;
+  function getTargetOwner(pTags: NodeListOf<Element>, event: string): string {
+    for (const p of pTags) {
+      const pContent = p.textContent as string;
+      if (matchEvent(pContent, event)) return pContent;
     }
     return event;
   }
 
-  function matchEvent(h2Content: string, event: string): boolean {
-    return new RegExp(h2Content).test(event);
+  function matchEvent(pContent: string, event: string): boolean {
+    return new RegExp(pContent).test(event);
   }
 };

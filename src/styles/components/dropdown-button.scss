@@ -8,11 +8,17 @@
   .dropdown-btn {
     width: $maxMobileCabinetsWidth;
   }
+  .dropdown-btn > p {
+    font-size: $maxMobileDropdownFont;
+  }
 }
 
 @media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
   .dropdown-btn {
     width: $minMobileMaxTabletCabinetsWidth;
+  }
+  .dropdown-btn > p {
+    font-size: $minMobileMaxTabletDropdownFont;
   }
 }
 
@@ -20,11 +26,17 @@
   .dropdown-btn {
     width: $minTabletMaxLaptopCabinetsWidth;
   }
+  .dropdown-btn > p {
+    font-size: $minTabletMaxLaptopDropdownFont;
+  }
 }
 
 @media (min-width: $laptop) and (max-width: ($desktop - 1)) {
   .dropdown-btn {
     width: $minLaptopMaxDesktopCabinetsWidth;
+  }
+  .dropdown-btn > p {
+    font-size: $minLaptopMaxDesktopDropdownFont;
   }
 }
 
@@ -32,11 +44,16 @@
   .dropdown-btn {
     width: $minDesktopMaxCinemaCabinetsWidth;
   }
+  .dropdown-btn > p {
+    font-size: $minDesktopMaxCinemaDropdownFont;
+  }
 }
 
 @media (min-width: $cinema) {
   .dropdown-btn {
     width: $maxCinemaCabinetsWidth;
-    background-color: red;
+  }
+  .dropdown-btn > p {
+    font-size: $maxCinemaCabinetsDropdownFont;
   }
 }
