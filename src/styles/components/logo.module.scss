@@ -9,8 +9,9 @@
 
 @media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
   .logo-image {
-    width: 400px;
-    height: 350px;
+    margin-top: -30px;
+    width: 370px;
+    height: 320px;
   }
 }
 
