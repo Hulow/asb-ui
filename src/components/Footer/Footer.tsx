@@ -4,7 +4,7 @@ import { CustomLink } from '../Link/Link';
 
 export function Footer() {
   return (
-    <div className='footer layout'>
+    <div className='footer'>
       <div className='footer-item'>
         <CustomLink href={texts.asbUiUrl} target={true}>
           <p>{texts.asbUi}</p>
