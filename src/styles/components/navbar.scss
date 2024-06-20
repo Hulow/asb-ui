@@ -3,42 +3,47 @@
 .nav-bar {
   width: 95%;
   display: flex;
-  justify-content: center;
   gap: 20px;
 }
 
 @media (max-width: $mobile) {
   .nav-bar {
+    justify-content: space-between;
     flex-direction: column;
   }
 }
 
 @media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
   .nav-bar {
+    justify-content: space-between;
     flex-direction: column;
   }
 }
 
 @media (min-width: $tablet) and (max-width: ($laptop - 1)) {
   .nav-bar {
+    justify-content: space-between;
     flex-direction: row;
   }
 }
 
 @media (min-width: $laptop) and (max-width: ($desktop - 1)) {
   .nav-bar {
+    justify-content: space-between;
     flex-direction: row;
   }
 }
 
 @media (min-width: $desktop) and (max-width: ($cinema - 1)) {
   .nav-bar {
+    justify-content: center;
     flex-direction: row;
   }
 }
 
 @media (min-width: $cinema) {
   .nav-bar {
+    justify-content: center;
     flex-direction: row;
     gap: 30px;
   }
