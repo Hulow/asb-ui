@@ -8,28 +8,28 @@
 
 @media (max-width: $mobile) {
   .nav-bar {
-    width: 95%;
+    width: $maxMobileCabinetsWidth;
     flex-direction: column;
   }
 }
 
 @media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
   .nav-bar {
-    width: 95%;
+    width: $minMobileMaxTabletCabinetsWidth;
     flex-direction: column;
   }
 }
 
 @media (min-width: $tablet) and (max-width: ($laptop - 1)) {
   .nav-bar {
-    width: 95%;
+    width: $minTabletMaxLaptopCabinetsWidth;
     flex-direction: row;
   }
 }
 
 @media (min-width: $laptop) and (max-width: ($desktop - 1)) {
   .nav-bar {
-    width: 85%;
+    width: $minLaptopMaxDesktopCabinetsWidth;
     flex-direction: row;
   }
 }
@@ -37,14 +37,14 @@
 @media (min-width: $desktop) and (max-width: ($cinema - 1)) {
   .nav-bar {
     flex-direction: row;
-    width: 65%;
+    width: $minDesktopMaxCinemaCabinetsWidth;
   }
 }
 
 @media (min-width: $cinema) {
   .nav-bar {
     flex-direction: row;
-    width: 55%;
+    width: $maxCinemaCabinetsWidth;
     gap: 30px;
   }
 }

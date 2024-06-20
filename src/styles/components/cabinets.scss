@@ -16,7 +16,7 @@
   .cabinets {
     margin-top: 20px;
     margin-bottom: 40px;
-    width: 95%;
+    width: $maxMobileCabinetsWidth;
   }
 
   //   .cabinet-cards {
@@ -32,7 +32,7 @@
   .cabinets {
     margin-top: 25px;
     margin-bottom: 50px;
-    width: 95%;
+    width: $minMobileMaxTabletCabinetsWidth;
   }
 
   // .cabinet-cards {
@@ -48,7 +48,7 @@
   .cabinets {
     margin-top: 20px;
     margin-bottom: 50px;
-    width: 95%;
+    width: $minTabletMaxLaptopCabinetsWidth;
   }
 
   // .cabinet-cards {
@@ -64,7 +64,7 @@
   .cabinets {
     margin-top: 20px;
     margin-bottom: 50px;
-    width: 85%;
+    width: $minLaptopMaxDesktopCabinetsWidth;
   }
 
   // .cabinet-cards {
@@ -80,8 +80,7 @@
   .cabinets {
     margin-top: 20px;
     margin-bottom: 50px;
-    width: 65%;
-    background-color: red;
+    width: $minDesktopMaxCinemaCabinetsWidth;
   }
 
   // .cabinet-cards {
@@ -97,7 +96,7 @@
   .cabinets {
     margin-top: 35px;
     margin-bottom: 80px;
-    width: 55%;
+    width: $maxCinemaCabinetsWidth;
   }
 
   // .cabinet-cards {
