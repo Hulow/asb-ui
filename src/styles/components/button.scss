@@ -1,0 +1,26 @@
+@import '../variables';
+
+@media (max-width: $mobile) {
+}
+
+@media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
+}
+
+@media (min-width: $tablet) and (max-width: ($laptop - 1)) {
+}
+
+@media (min-width: $laptop) and (max-width: ($desktop - 1)) {
+}
+
+@media (min-width: $desktop) and (max-width: ($cinema - 1)) {
+  .button {
+    width: 80px;
+    background-color: blue;
+  }
+}
+
+@media (min-width: $cinema) {
+  .button {
+    width: 110px;
+  }
+}

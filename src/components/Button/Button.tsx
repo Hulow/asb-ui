@@ -1,5 +1,5 @@
 'use client';
-import './Button.css';
+import '../../styles/components/button.scss';
 import { useState } from 'react';
 import { getClassNames } from '../../util/util';
 
