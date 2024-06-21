@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'font';
-  src:
-    local('AirbnbCerealLight'),
-    url('../../public/font/modern_sans.otf') format('OpenType');
+  font-weight: 200;
+  font-style: normal;
+  src: url('../../public/font/ibm-plex-mono-latin-200-normal.ttf')
+    format('truetype');
 }
-
 html {
   background-color: rgb(29, 28, 31);
   color: rgb(81, 245, 2);
