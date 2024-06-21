@@ -1,5 +1,5 @@
 'use client';
-import './Measurement.css';
+import '../../styles/components/measurement.scss';
 import React from 'react';
 import { Chart, ChartProps } from '../Chart/Chart';
 import { Settings, SettingsProp } from '../Settings/Settings';
