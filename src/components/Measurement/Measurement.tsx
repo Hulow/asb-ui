@@ -3,11 +3,8 @@ import '../../styles/components/measurement.scss';
 import React from 'react';
 import { Chart, ChartProps } from '../Chart/Chart';
 import { Settings, SettingsProp } from '../Settings/Settings';
-import { Property, Speakers } from '../Speakers/Speakers';
 import { Measurement } from '../../types/measurement';
 import texts from '../../data/texts.json';
-import { Cabinet } from '../../types/cabinet';
-import { Driver } from '../../types/driver';
 import { Frequency } from '../../types/frequency';
 import { Impedance } from '../../types/impedance';
 
@@ -75,18 +72,10 @@ export const Measurements: React.FC<MeasurementsProps> = ({ measurements }) => {
     impedanceChartsAndSettings.push({ chart, settings });
   }
 
-  const cabinetProperties = getCabinetProperties(measurements.cabinet);
   const frequencySettings = getFrequencySettings(measurements.frequency);
 
   return (
     <div className='flex-center'>
-      <Speakers title={texts.cabinet} props={cabinetProperties} />
-      {measurements.drivers.map((driver, index) => {
-        const driverProperties = getDriverProperties(driver);
-        return (
-          <Speakers title={texts.driver} props={driverProperties} key={index} />
-        );
-      })}
       <div className='measurement-sub-title item'>
         <h1>{texts.frequencyResponse}</h1>
       </div>
@@ -104,35 +93,6 @@ export const Measurements: React.FC<MeasurementsProps> = ({ measurements }) => {
     </div>
   );
 };
-
-function getCabinetProperties(cabinet: Cabinet): Property[] {
-  return [
-    { name: texts.cabinetProps.productName, value: cabinet.productName },
-    { name: texts.cabinetProps.type, value: cabinet.enclosureType },
-    { name: texts.cabinetProps.dimension, value: cabinet.dimension },
-    { name: texts.cabinetProps.weight, value: `${cabinet.weight} Kg` },
-  ];
-}
-
-function getDriverProperties(driver: Driver): Property[] {
-  return [
-    { name: texts.driverProps.brandName, value: driver.brandName },
-    { name: texts.driverProps.productName, value: driver.productName },
-    { name: texts.driverProps.type, value: driver.driverType },
-    {
-      name: texts.driverProps.continuousPowerHandling,
-      value: `${driver.continuousPowerHandling} W`,
-    },
-    {
-      name: texts.driverProps.diameter,
-      value: `${driver.nominalDiameter} Inches`,
-    },
-    {
-      name: texts.driverProps.impedance,
-      value: `${driver.nominalImpedance} Ohms`,
-    },
-  ];
-}
 
 function getFrequencySettings(frequency: Frequency): SettingsProp[] {
   return [

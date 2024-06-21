@@ -1,21 +1,23 @@
+@import '../variables';
+
 .measurement {
   width: 95%;
   margin-bottom: 8vh;
 }
 
-.measurement-header {
+.header {
   width: 100%;
 }
 
-.measurement-header-item {
+.header-item {
   flex-grow: 1;
 }
 
-.measurement-header-item > h1 {
+.header-item > h1 {
   font-size: 55px;
 }
 
-.measurement-header-button {
+.header-button {
   width: 20%;
   margin-left: auto;
 }
