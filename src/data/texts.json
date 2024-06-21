@@ -14,7 +14,7 @@
   "frequencyResponse": "Frequency Response",
   "impedanceResponse": "Impedance Response",
   "driverProps": {
-    "brandName": "Manufacturer",
+    "brandName": "Mfr.",
     "productName": "Product",
     "type": "Type",
     "continuousPowerHandling": "RMS",
