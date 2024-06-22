@@ -15,28 +15,15 @@
   margin-left: 15px;
 }
 
-// .prop {
-//   flex: 1;
-//   margin-left: 25px;
-//   margin-bottom: -10px;
-// }
-
-// .props {
-//   width: 25vh;
-//   height: 350px;
-//   margin-left: 20px;
-// }
-
-// .props {
-//   width: 100%;
-// }
-
 @media (max-width: $mobile) {
   .speaker {
     height: $maxMobileSpeakerItemsHeight;
   }
   .speaker > p {
     font-size: 15px;
+  }
+  .prop {
+    margin-left: 10px;
   }
   .prop > p {
     font-size: 10px;
@@ -50,6 +37,9 @@
   .speaker > p {
     font-size: 20px;
   }
+  .prop {
+    margin-left: 10px;
+  }
   .prop > p {
     font-size: 15px;
   }
@@ -57,30 +47,46 @@
 
 @media (min-width: $tablet) and (max-width: ($laptop - 1)) {
   .speaker {
-    height: $minTabletMaxLaptopSpeakerItemsHeight;
-    width: 100px;
+    height: 290px;
+    flex-grow: 1;
   }
   .speaker > p {
-    font-size: 15px;
+    font-size: 20px;
+  }
+  .prop {
+    margin-left: 10px;
   }
   .prop > p {
-    font-size: 5px;
+    font-size: 10px;
   }
 }
 
 @media (min-width: $laptop) and (max-width: ($desktop - 1)) {
   .speaker {
     height: $minLaptopMaxDesktopSpeakerItemsHeight;
+    flex-grow: 1;
+  }
+  .speaker > p {
+    font-size: 20px;
+  }
+  .prop {
+    margin-left: 10px;
+  }
+  .prop > p {
+    font-size: 10px;
   }
 }
 
 @media (min-width: $desktop) and (max-width: ($cinema - 1)) {
   .speaker {
     height: $minDesktopMaxCinemaSpeakerItemsHeight;
-    width: 220px;
+    width: 180px;
   }
   .speaker > p {
-    font-size: 25px;
+    font-size: 20px;
+  }
+  .prop {
+    margin-left: 8px;
   }
   .prop > p {
     font-size: 10px;
@@ -93,7 +99,7 @@
     width: 320px;
   }
   .speaker > p {
-    font-size: 35px;
+    font-size: 30px;
   }
   .prop > p {
     font-size: 19px;

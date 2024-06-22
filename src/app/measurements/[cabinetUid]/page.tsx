@@ -43,19 +43,21 @@ export default async function MeasurementPage({ params }: Params) {
           </Button>
         </div>
       </div>
-      <div className='speaker-items'>
+      <div className='overview'>
         <CustomImage src='cabinets/test_picture' />
-        <SpeakerItems title={texts.cabinet} props={cabinetProps} />
-        {drivers.map((driver, index) => {
-          const driverProps = getDriverProperties(driver);
-          return (
-            <SpeakerItems
-              title={texts.driver}
-              props={driverProps}
-              key={index}
-            />
-          );
-        })}
+        <div className='items'>
+          <SpeakerItems title={texts.cabinet} props={cabinetProps} />
+          {drivers.map((driver, index) => {
+            const driverProps = getDriverProperties(driver);
+            return (
+              <SpeakerItems
+                title={texts.driver}
+                props={driverProps}
+                key={index}
+              />
+            );
+          })}
+        </div>
       </div>
 
       {/* <Measurements measurements={measurements} /> */}

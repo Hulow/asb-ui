@@ -16,21 +16,21 @@
 
 @media (min-width: $tablet) and (max-width: ($laptop - 1)) {
   .image {
-    width: 400px;
+    width: 100%;
     height: $minTabletMaxLaptopSpeakerItemsHeight;
   }
 }
 
 @media (min-width: $laptop) and (max-width: ($desktop - 1)) {
   .image {
-    width: 450px;
+    width: 380px;
     height: $minLaptopMaxDesktopSpeakerItemsHeight;
   }
 }
 
 @media (min-width: $desktop) and (max-width: ($cinema - 1)) {
   .image {
-    width: 600px;
+    width: 320px;
     height: $minDesktopMaxCinemaSpeakerItemsHeight;
   }
 }
