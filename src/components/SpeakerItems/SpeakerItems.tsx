@@ -1,11 +1,11 @@
-import './Speakers.css';
+import '../../styles/components/speaker-items.scss';
 
 export interface Property {
   name: string;
   value: string | number;
 }
 
-export function Speakers({
+export function SpeakerItems({
   title,
   props,
 }: {
@@ -13,24 +13,24 @@ export function Speakers({
   props: Property[];
 }) {
   return (
-    <div className='speakers-props flex-col-center item'>
-      <h2>{title}</h2>
-      <div className='speaker-props'>
+    <div className='speaker item'>
+      <p>{title}</p>
+      <div className='props'>
         {props.map((prop, index) => {
-          return <Speaker prop={prop} key={index} />;
+          return <Item prop={prop} key={index} />;
         })}
       </div>
     </div>
   );
 }
 
-export function Speaker({ prop }: { prop: Property }) {
+export function Item({ prop }: { prop: Property }) {
   return (
     <div className='color-transition flex-row'>
-      <div className='speaker'>
+      <div className='prop'>
         <p>{prop.name}</p>
       </div>
-      <div className='speaker'>
+      <div className='prop'>
         <p>{prop.value}</p>
       </div>
     </div>

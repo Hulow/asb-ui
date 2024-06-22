@@ -1,0 +1,82 @@
+@import '../variables';
+
+.speaker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.props {
+  width: 100%;
+}
+
+.prop {
+  width: 100%;
+  margin-left: 15px;
+}
+
+// .prop {
+//   flex: 1;
+//   margin-left: 25px;
+//   margin-bottom: -10px;
+// }
+
+// .props {
+//   width: 25vh;
+//   height: 350px;
+//   margin-left: 20px;
+// }
+
+// .props {
+//   width: 100%;
+// }
+
+@media (max-width: $mobile) {
+  .speaker {
+    height: $maxMobileSpeakerItemsHeight;
+  }
+}
+
+@media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
+  .speaker {
+    height: $minMobileMaxTabletSpeakerItemsHeight;
+  }
+}
+
+@media (min-width: $tablet) and (max-width: ($laptop - 1)) {
+  .speaker {
+    height: $minTabletMaxLaptopSpeakerItemsHeight;
+  }
+}
+
+@media (min-width: $laptop) and (max-width: ($desktop - 1)) {
+  .speaker {
+    height: $minLaptopMaxDesktopSpeakerItemsHeight;
+  }
+}
+
+@media (min-width: $desktop) and (max-width: ($cinema - 1)) {
+  .speaker {
+    height: $minDesktopMaxCinemaSpeakerItemsHeight;
+    width: 220px;
+  }
+  .speaker > p {
+    font-size: 25px;
+  }
+  .prop > p {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: $cinema) {
+  .speaker {
+    height: $maxCinemaCabinetsSpeakerItemsHeight;
+    width: 320px;
+  }
+  .speaker > p {
+    font-size: 35px;
+  }
+  .prop > p {
+    font-size: 19px;
+  }
+}

@@ -1,9 +1,11 @@
+//screen size
 $cinema: 2000px;
 $desktop: 1200px;
 $laptop: 1024px;
 $tablet: 768px;
 $mobile: 375px;
 
+//cabinet page size
 $maxMobileCabinetsWidth: 95%;
 $minMobileMaxTabletCabinetsWidth: 95%;
 $minTabletMaxLaptopCabinetsWidth: 95%;
@@ -11,9 +13,18 @@ $minLaptopMaxDesktopCabinetsWidth: 85%;
 $minDesktopMaxCinemaCabinetsWidth: 65%;
 $maxCinemaCabinetsWidth: 55%;
 
+//cabinet page menu font size
 $maxMobileDropdownFont: 18px;
 $minMobileMaxTabletDropdownFont: 20px;
 $minTabletMaxLaptopDropdownFont: 20px;
 $minLaptopMaxDesktopDropdownFont: 20px;
 $minDesktopMaxCinemaDropdownFont: 20px;
 $maxCinemaCabinetsDropdownFont: 30px;
+
+//measurement page speaker items height
+$maxMobileSpeakerItemsHeight: 240px;
+$minMobileMaxTabletSpeakerItemsHeight: 320px;
+$minTabletMaxLaptopSpeakerItemsHeight: 300px;
+$minLaptopMaxDesktopSpeakerItemsHeight: 350px;
+$minDesktopMaxCinemaSpeakerItemsHeight: 420px;
+$maxCinemaCabinetsSpeakerItemsHeight: 550px;

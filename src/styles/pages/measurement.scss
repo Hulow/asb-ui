@@ -15,6 +15,11 @@
   .btn {
     display: none;
   }
+  .speaker-items {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
 }
 
 @media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
@@ -54,6 +59,11 @@
     top: 60px;
     right: 70px;
   }
+  .speaker-items {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
 }
 
 @media (min-width: $cinema) {
@@ -63,5 +73,10 @@
   .btn {
     top: 80px;
     right: 100px;
+  }
+  .speaker-items {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
   }
 }

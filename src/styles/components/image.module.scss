@@ -1,0 +1,43 @@
+@import '../variables';
+
+@media (max-width: $mobile) {
+  .image {
+    width: 300px;
+    height: $maxMobileSpeakerItemsHeight;
+  }
+}
+
+@media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
+  .image {
+    width: 370px;
+    height: $minMobileMaxTabletSpeakerItemsHeight;
+  }
+}
+
+@media (min-width: $tablet) and (max-width: ($laptop - 1)) {
+  .image {
+    width: 400px;
+    height: $minTabletMaxLaptopSpeakerItemsHeight;
+  }
+}
+
+@media (min-width: $laptop) and (max-width: ($desktop - 1)) {
+  .image {
+    width: 450px;
+    height: $minLaptopMaxDesktopSpeakerItemsHeight;
+  }
+}
+
+@media (min-width: $desktop) and (max-width: ($cinema - 1)) {
+  .image {
+    width: 600px;
+    height: $minDesktopMaxCinemaSpeakerItemsHeight;
+  }
+}
+
+@media (min-width: $cinema) {
+  .image {
+    width: 800px;
+    height: $maxCinemaCabinetsSpeakerItemsHeight;
+  }
+}

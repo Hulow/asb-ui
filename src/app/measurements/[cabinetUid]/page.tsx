@@ -9,7 +9,10 @@ import { asbClient } from '../../../services/client';
 import { CustomImage } from '../../../components/Image/Image';
 import { Cabinet } from '../../../types/cabinet';
 import { Driver } from '../../../types/driver';
-import { Property, Speakers } from '../../../components/Speakers/Speakers';
+import {
+  Property,
+  SpeakerItems,
+} from '../../../components/SpeakerItems/SpeakerItems';
 
 interface Params {
   params: {
@@ -40,16 +43,20 @@ export default async function MeasurementPage({ params }: Params) {
           </Button>
         </div>
       </div>
-      {/* <div className='flex-row'>
+      <div className='speaker-items'>
         <CustomImage src='cabinets/test_picture' />
-        <Speakers title={texts.cabinet} props={cabinetProps} />
+        <SpeakerItems title={texts.cabinet} props={cabinetProps} />
         {drivers.map((driver, index) => {
           const driverProps = getDriverProperties(driver);
           return (
-            <Speakers title={texts.driver} props={driverProps} key={index} />
+            <SpeakerItems
+              title={texts.driver}
+              props={driverProps}
+              key={index}
+            />
           );
         })}
-      </div> */}
+      </div>
 
       {/* <Measurements measurements={measurements} /> */}
     </main>
