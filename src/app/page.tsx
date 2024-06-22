@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Logo } from '../components/Logo/Logo';
+import { Logo } from '../components/Image/Logo';
 import { NavBar, OnEvent } from '../components/NavBar/NavBar';
 import texts from '../data/texts.json';
 import { Cabinets } from '../components/Cabinets/Cabinets';
@@ -36,7 +36,7 @@ export default function Home() {
   }
 
   return (
-    <main className='flex-column-center'>
+    <main className='flex-col-center'>
       <Logo route='/ASB.svg' alt='Anechoic Station Berlin' />
       <NavBar onEvent={handleEvent} />
       {event?.state ? <Content event={event} /> : null}

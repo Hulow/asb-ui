@@ -13,7 +13,7 @@ export function Speakers({
   props: Property[];
 }) {
   return (
-    <div className='speakers-props flex-column-center item'>
+    <div className='speakers-props flex-col-center item'>
       <h2>{title}</h2>
       <div className='speaker-props'>
         {props.map((prop, index) => {
