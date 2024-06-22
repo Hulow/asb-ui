@@ -2,14 +2,14 @@
 
 @media (max-width: $mobile) {
   .image {
-    width: 300px;
+    width: 100%;
     height: $maxMobileSpeakerItemsHeight;
   }
 }
 
 @media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
   .image {
-    width: 370px;
+    width: 100%;
     height: $minMobileMaxTabletSpeakerItemsHeight;
   }
 }

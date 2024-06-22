@@ -35,17 +35,36 @@
   .speaker {
     height: $maxMobileSpeakerItemsHeight;
   }
+  .speaker > p {
+    font-size: 15px;
+  }
+  .prop > p {
+    font-size: 10px;
+  }
 }
 
 @media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
   .speaker {
     height: $minMobileMaxTabletSpeakerItemsHeight;
   }
+  .speaker > p {
+    font-size: 20px;
+  }
+  .prop > p {
+    font-size: 15px;
+  }
 }
 
 @media (min-width: $tablet) and (max-width: ($laptop - 1)) {
   .speaker {
     height: $minTabletMaxLaptopSpeakerItemsHeight;
+    width: 100px;
+  }
+  .speaker > p {
+    font-size: 15px;
+  }
+  .prop > p {
+    font-size: 5px;
   }
 }
 

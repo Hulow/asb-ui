@@ -8,6 +8,12 @@
   position: fixed;
 }
 
+.speaker-items {
+  display: grid;
+  grid-template-rows: repeat(1, auto);
+  gap: 20px;
+}
+
 @media (max-width: $mobile) {
   .header-item > p {
     font-size: 30px;
@@ -16,9 +22,9 @@
     display: none;
   }
   .speaker-items {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+    background-color: blue;
+    width: 100%;
   }
 }
 
@@ -29,6 +35,11 @@
   .btn {
     display: none;
   }
+  .speaker-items {
+    grid-template-columns: repeat(1, 1fr);
+    background-color: grey;
+    width: 100%;
+  }
 }
 
 @media (min-width: $tablet) and (max-width: ($laptop - 1)) {
@@ -38,6 +49,10 @@
   .btn {
     top: 60px;
     right: 40px;
+  }
+  .speaker-items {
+    grid-template-columns: repeat(6, 1fr);
+    background-color: rgb(68, 37, 194);
   }
 }
 

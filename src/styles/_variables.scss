@@ -3,6 +3,7 @@ $cinema: 2000px;
 $desktop: 1200px;
 $laptop: 1024px;
 $tablet: 768px;
+$largeMobile: 500px;
 $mobile: 375px;
 
 //cabinet page size
@@ -22,9 +23,9 @@ $minDesktopMaxCinemaDropdownFont: 20px;
 $maxCinemaCabinetsDropdownFont: 30px;
 
 //measurement page speaker items height
-$maxMobileSpeakerItemsHeight: 240px;
-$minMobileMaxTabletSpeakerItemsHeight: 320px;
-$minTabletMaxLaptopSpeakerItemsHeight: 300px;
+$maxMobileSpeakerItemsHeight: 250px;
+$minMobileMaxTabletSpeakerItemsHeight: 360px;
+$minTabletMaxLaptopSpeakerItemsHeight: 250px;
 $minLaptopMaxDesktopSpeakerItemsHeight: 350px;
 $minDesktopMaxCinemaSpeakerItemsHeight: 420px;
 $maxCinemaCabinetsSpeakerItemsHeight: 550px;
