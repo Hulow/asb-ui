@@ -16,10 +16,10 @@
     font-size: 12px;
   }
   .card-item > p {
-    font-size: 10px;
+    font-size: 9px;
   }
   .card-item {
-    padding-left: 30px;
+    padding-left: 25px;
   }
   .card-sub-item > p {
     font-size: 8px;
@@ -28,7 +28,7 @@
 
 @media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
   .card {
-    height: 200px;
+    height: 230px;
   }
   .card-title > p {
     font-size: 15px;
@@ -46,7 +46,7 @@
 
 @media (min-width: $tablet) and (max-width: ($laptop - 1)) {
   .card {
-    height: 240px;
+    height: 280px;
   }
   .card-title > p {
     font-size: 20px;
@@ -64,7 +64,7 @@
 
 @media (min-width: $laptop) and (max-width: ($desktop - 1)) {
   .card {
-    height: 250px;
+    height: 290px;
   }
   .card-title > p {
     font-size: 21px;
@@ -85,16 +85,16 @@
     height: 280px;
   }
   .card-title > p {
-    font-size: 24px;
-  }
-  .card-item > p {
     font-size: 20px;
   }
+  .card-item > p {
+    font-size: 16px;
+  }
   .card-item {
-    padding-left: 80px;
+    padding-left: 40px;
   }
   .card-sub-item > p {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 
