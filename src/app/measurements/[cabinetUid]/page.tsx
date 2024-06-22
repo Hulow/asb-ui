@@ -27,23 +27,20 @@ export default async function MeasurementPage({ params }: Params) {
   const drivers = measurements.drivers;
 
   return (
-    <main className='measurement flex-column-center'>
-      <div className='header flex-center'>
-        <div className='header-item'></div>
-        <div className='header-item flex-center'>
-          <h1>{texts.measurements}</h1>
+    <main className='measurement flex-col-center'>
+      <div className='flex-col-center'>
+        <div className='header-item '>
+          <p>{texts.measurements}</p>
         </div>
-        <div className='header-item'>
-          <div className='header-button'>
-            <Button>
-              <CustomLink href={'/'}>
-                <p>BACK</p>
-              </CustomLink>
-            </Button>
-          </div>
+        <div className='header-item btn'>
+          <Button>
+            <CustomLink href={'/'}>
+              <p>BACK</p>
+            </CustomLink>
+          </Button>
         </div>
       </div>
-      <div className='flex-row'>
+      {/* <div className='flex-row'>
         <CustomImage src='cabinets/test_picture' />
         <Speakers title={texts.cabinet} props={cabinetProps} />
         {drivers.map((driver, index) => {
@@ -52,7 +49,7 @@ export default async function MeasurementPage({ params }: Params) {
             <Speakers title={texts.driver} props={driverProps} key={index} />
           );
         })}
-      </div>
+      </div> */}
 
       {/* <Measurements measurements={measurements} /> */}
     </main>

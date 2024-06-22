@@ -2,22 +2,66 @@
 
 .measurement {
   width: 95%;
-  margin-bottom: 8vh;
 }
 
-.header {
-  width: 100%;
+.btn {
+  position: fixed;
 }
 
-.header-item {
-  flex-grow: 1;
+@media (max-width: $mobile) {
+  .header-item > p {
+    font-size: 20px;
+  }
+  .btn {
+    display: none;
+  }
 }
 
-.header-item > h1 {
-  font-size: 55px;
+@media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
+  .header-item > p {
+    font-size: 40px;
+  }
+  .btn {
+    display: none;
+  }
 }
 
-.header-button {
-  width: 20%;
-  margin-left: auto;
+@media (min-width: $tablet) and (max-width: ($laptop - 1)) {
+  .header-item > p {
+    font-size: 40px;
+  }
+  .btn {
+    top: 60px;
+    right: 40px;
+  }
+}
+
+@media (min-width: $laptop) and (max-width: ($desktop - 1)) {
+  .header-item > p {
+    font-size: 40px;
+  }
+  .btn {
+    top: 60px;
+    right: 60px;
+  }
+}
+
+@media (min-width: $desktop) and (max-width: ($cinema - 1)) {
+  .header-item > p {
+    font-size: 40px;
+  }
+  .btn {
+    top: 60px;
+    right: 70px;
+  }
+}
+
+@media (min-width: $cinema) {
+  .header-item > p {
+    font-size: 60px;
+  }
+  .btn {
+    top: 80px;
+    right: 100px;
+  }
 }
