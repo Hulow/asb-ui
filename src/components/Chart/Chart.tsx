@@ -1,5 +1,5 @@
 import '../../styles/components/chart.scss';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -64,14 +64,46 @@ interface AxeTick {
   ) => string;
 }
 
+interface FontSize {
+  title: number;
+  tick: number;
+}
+
 export function Chart({ props }: { props: ChartProps }) {
+  const [fontSizes, setFontSize] = useState({ title: 1, tick: 8 });
+  useEffect(() => {
+    const handleResize = () => {
+      setFontSize(getFontSizeFromSCSS());
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const data = mapDataset(props);
-  const options = mapOptions(props);
+  const options = mapOptions(props, fontSizes);
   return (
     <div className='chart'>
       <Line data={data} options={options} />
     </div>
   );
+}
+
+function getFontSize() {
+  const width = window.innerWidth;
+  if (width <= 480) return { title: 14, tick: 8 };
+  if (width <= 768) return { title: 16, tick: 10 };
+  if (width <= 1200) return { title: 18, tick: 12 };
+  return { title: 20, tick: 14 };
+}
+
+function getFontSizeFromSCSS(): FontSize {
+  const rootStyles = getComputedStyle(document.documentElement);
+  return {
+    title: parseFloat(rootStyles.getPropertyValue('--chart-title-font-size')),
+    tick: parseFloat(rootStyles.getPropertyValue('--chart-tick-font-size')),
+  };
 }
 
 function mapDataset(props: ChartProps): ChartData<'line'> {
@@ -88,7 +120,10 @@ function mapDataset(props: ChartProps): ChartData<'line'> {
   };
 }
 
-function mapOptions(props: ChartProps): ChartOptions<'line'> {
+function mapOptions(
+  props: ChartProps,
+  fontSize: FontSize
+): ChartOptions<'line'> {
   const datasetContainsPhase = props.datasets.length === 2;
   const horizontalScalesAxeProps: ScalesAxeProps = {
     type: 'logarithmic',
@@ -130,23 +165,26 @@ function mapOptions(props: ChartProps): ChartOptions<'line'> {
 
   const y2 = datasetContainsPhase
     ? {
-        y2: mapScalesAxe({
-          type: 'linear',
-          min: props.datasets[1].yMin,
-          max: props.datasets[1].yMax,
-          position: 'right',
-          title: {
-            display: true,
-            text: props.datasets[1].title,
-          },
-          tick: {
-            maxTicksLimit: 5,
-            callback: (value, index, ticks) => {
-              return value + ' ' + props.datasets[1].unity;
+        y2: mapScalesAxe(
+          {
+            type: 'linear',
+            min: props.datasets[1].yMin,
+            max: props.datasets[1].yMax,
+            position: 'right',
+            title: {
+              display: true,
+              text: props.datasets[1].title,
             },
+            tick: {
+              maxTicksLimit: 5,
+              callback: (value, index, ticks) => {
+                return value + ' ' + props.datasets[1].unity;
+              },
+            },
+            grid: false,
           },
-          grid: false,
-        }),
+          fontSize
+        ),
       }
     : null;
 
@@ -154,8 +192,8 @@ function mapOptions(props: ChartProps): ChartOptions<'line'> {
     responsive: true,
     maintainAspectRatio: false,
     scales: {
-      x: mapScalesAxe(horizontalScalesAxeProps),
-      y1: mapScalesAxe(verticalScalesAxeProps),
+      x: mapScalesAxe(horizontalScalesAxeProps, fontSize),
+      y1: mapScalesAxe(verticalScalesAxeProps, fontSize),
       ...y2,
     },
     animation: false,
@@ -170,7 +208,8 @@ function mapFrequencyValue(val: string | number) {
 }
 
 function mapScalesAxe(
-  props: ScalesAxeProps
+  props: ScalesAxeProps,
+  fontSize: FontSize
 ): ScaleOptionsByType<'linear' | 'logarithmic'> {
   return {
     display: true,
@@ -184,7 +223,7 @@ function mapScalesAxe(
       align: 'center',
       color: '#51F502',
       font: {
-        size: 20,
+        size: fontSize.title,
       },
       padding: 10,
     },
@@ -193,7 +232,7 @@ function mapScalesAxe(
       autoSkip: true,
       maxTicksLimit: props.tick.maxTicksLimit,
       font: {
-        size: 14,
+        size: fontSize.tick,
       },
       callback: props.tick.callback,
     },

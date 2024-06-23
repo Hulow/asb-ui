@@ -6,19 +6,43 @@
 }
 
 @media (max-width: $mobile) {
+  :root {
+    --chart-title-font-size: 5px;
+    --chart-tick-font-size: 5px;
+  }
 }
 
 @media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
+  :root {
+    --chart-title-font-size: 10px;
+    --chart-tick-font-size: 12px;
+  }
 }
 
 @media (min-width: $tablet) and (max-width: ($laptop - 1)) {
+  :root {
+    --chart-title-font-size: 18px;
+    --chart-tick-font-size: 12px;
+  }
 }
 
 @media (min-width: $laptop) and (max-width: ($desktop - 1)) {
+  :root {
+    --chart-title-font-size: 18px;
+    --chart-tick-font-size: 12px;
+  }
 }
 
 @media (min-width: $desktop) and (max-width: ($cinema - 1)) {
+  :root {
+    --chart-title-font-size: 18px;
+    --chart-tick-font-size: 120px;
+  }
 }
 
 @media (min-width: $cinema) {
+  :root {
+    --chart-title-font-size: 18px;
+    --chart-tick-font-size: 12px;
+  }
 }
