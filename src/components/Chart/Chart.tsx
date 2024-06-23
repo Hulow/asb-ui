@@ -169,8 +169,8 @@ function mapOptions(
         y2: mapScalesAxe(
           {
             type: 'linear',
-            min: props.datasets[1].yMin,
-            max: props.datasets[1].yMax,
+            min: props.datasets[1].yMin - 2,
+            max: props.datasets[1].yMax + 2,
             position: 'right',
             title: {
               display: true,
