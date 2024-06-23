@@ -1,5 +1,24 @@
+@import '../variables';
+
 .chart {
-    width: 100%;
-    height: 50vh;
-  }
-  
+  width: 100%;
+  height: 50vh;
+}
+
+@media (max-width: $mobile) {
+}
+
+@media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
+}
+
+@media (min-width: $tablet) and (max-width: ($laptop - 1)) {
+}
+
+@media (min-width: $laptop) and (max-width: ($desktop - 1)) {
+}
+
+@media (min-width: $desktop) and (max-width: ($cinema - 1)) {
+}
+
+@media (min-width: $cinema) {
+}
