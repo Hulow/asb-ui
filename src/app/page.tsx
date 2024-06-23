@@ -17,7 +17,7 @@ export default function Home() {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    fetch(`${config.asbBaseUrl}${endpoint}`, {
+    fetch(`${endpoint}`, {
       headers: { Authorization: config.asbKeyUrl },
     })
       .then((res) => res.json())
