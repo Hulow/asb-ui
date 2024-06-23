@@ -20,7 +20,7 @@
     height: $maxMobileSpeakerItemsHeight;
   }
   .speaker > p {
-    font-size: 15px;
+    font-size: $maxMobileMeasurementTitle;
   }
   .prop {
     margin-left: 10px;
@@ -35,7 +35,7 @@
     height: $minMobileMaxTabletSpeakerItemsHeight;
   }
   .speaker > p {
-    font-size: 20px;
+    font-size: $minMobileMaxTabletMeasurementTitle;
   }
   .prop {
     margin-left: 10px;
@@ -51,7 +51,7 @@
     flex-grow: 1;
   }
   .speaker > p {
-    font-size: 20px;
+    font-size: $minTabletMaxLaptopMeasurementTitle;
   }
   .prop {
     margin-left: 10px;
@@ -67,7 +67,7 @@
     flex-grow: 1;
   }
   .speaker > p {
-    font-size: 20px;
+    font-size: $minLaptopMaxDesktopMeasurementTitle;
   }
   .prop {
     margin-left: 10px;
@@ -83,7 +83,7 @@
     width: 180px;
   }
   .speaker > p {
-    font-size: 20px;
+    font-size: $minDesktopMaxCinemaMeasurementTitle;
   }
   .prop {
     margin-left: 8px;
@@ -99,7 +99,7 @@
     width: 320px;
   }
   .speaker > p {
-    font-size: 30px;
+    font-size: $maxCinemaMeasurementTitle;
   }
   .prop > p {
     font-size: 19px;

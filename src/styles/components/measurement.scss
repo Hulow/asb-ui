@@ -13,36 +13,36 @@
 
 @media (max-width: $mobile) {
   .title > p {
-    font-size: 15px;
+    font-size: $maxMobileMeasurementTitle;
   }
 }
 
 @media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
   .title > p {
-    font-size: 20px;
+    font-size: $minMobileMaxTabletMeasurementTitle;
   }
 }
 
 @media (min-width: $tablet) and (max-width: ($laptop - 1)) {
   .title > p {
-    font-size: 20px;
+    font-size: $minTabletMaxLaptopMeasurementTitle;
   }
 }
 
 @media (min-width: $laptop) and (max-width: ($desktop - 1)) {
   .title > p {
-    font-size: 20px;
+    font-size: $minLaptopMaxDesktopMeasurementTitle;
   }
 }
 
 @media (min-width: $desktop) and (max-width: ($cinema - 1)) {
   .title > p {
-    font-size: 20px;
+    font-size: $minDesktopMaxCinemaMeasurementTitle;
   }
 }
 
 @media (min-width: $cinema) {
   .title > p {
-    font-size: 30px;
+    font-size: $maxCinemaMeasurementTitle;
   }
 }
