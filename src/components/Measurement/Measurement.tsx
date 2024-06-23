@@ -79,7 +79,7 @@ export const Measurements: React.FC<MeasurementsProps> = ({ measurements }) => {
       <div className='title item'>
         <p>{texts.frequencyResponse}</p>
       </div>
-      {/* <Chart props={frequencyChart} /> */}
+      <Chart props={frequencyChart} />
       {/* <Settings props={frequencySettings} />
       {impedanceChartsAndSettings.map(({ chart, settings }, index) => (
         <div key={index}>

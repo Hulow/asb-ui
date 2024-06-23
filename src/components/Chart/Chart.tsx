@@ -1,4 +1,4 @@
-import './Chart.css';
+import '../../styles/components/chart.scss';
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import {
