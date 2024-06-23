@@ -13,6 +13,7 @@ import {
   Property,
   SpeakerItems,
 } from '../../../components/SpeakerItems/SpeakerItems';
+import { ChartProps } from '../../../components/Chart/Chart';
 
 interface Params {
   params: {
@@ -59,8 +60,7 @@ export default async function MeasurementPage({ params }: Params) {
           })}
         </div>
       </div>
-
-      {/* <Measurements measurements={measurements} /> */}
+      <Measurements measurements={measurements} />
     </main>
   );
 }

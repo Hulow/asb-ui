@@ -1,8 +1,48 @@
 @import '../variables';
 
-.measurement-sub-title {
+.charts {
+  width: 100%;
+}
+
+.title {
   width: 100%;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 20px;
+}
+
+@media (max-width: $mobile) {
+  .title > p {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
+  .title > p {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: $tablet) and (max-width: ($laptop - 1)) {
+  .title > p {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: $laptop) and (max-width: ($desktop - 1)) {
+  .title > p {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: $desktop) and (max-width: ($cinema - 1)) {
+  .title > p {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: $cinema) {
+  .title > p {
+    font-size: 30px;
+  }
 }
