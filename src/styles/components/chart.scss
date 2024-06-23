@@ -2,47 +2,64 @@
 
 .chart {
   width: 100%;
-  height: 50vh;
 }
 
 @media (max-width: $mobile) {
   :root {
-    --chart-title-font-size: 5px;
-    --chart-tick-font-size: 5px;
+    --chart-tick-font-size: 8px;
+    --chart-border-width: 1;
+  }
+  .chart {
+    height: 220px;
   }
 }
 
 @media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
   :root {
-    --chart-title-font-size: 10px;
-    --chart-tick-font-size: 12px;
+    --chart-tick-font-size: 8px;
+    --chart-border-width: 1;
+  }
+  .chart {
+    height: 220px;
   }
 }
 
 @media (min-width: $tablet) and (max-width: ($laptop - 1)) {
   :root {
-    --chart-title-font-size: 18px;
     --chart-tick-font-size: 12px;
+    --chart-border-width: 1;
+  }
+  .chart {
+    height: 350px;
   }
 }
 
 @media (min-width: $laptop) and (max-width: ($desktop - 1)) {
   :root {
-    --chart-title-font-size: 18px;
-    --chart-tick-font-size: 12px;
+    --chart-tick-font-size: 14px;
+    --chart-border-width: 1;
+  }
+  .chart {
+    height: 350px;
   }
 }
 
 @media (min-width: $desktop) and (max-width: ($cinema - 1)) {
   :root {
-    --chart-title-font-size: 18px;
-    --chart-tick-font-size: 120px;
+    --chart-tick-font-size: 14px;
+    --chart-border-width: 2;
+  }
+  .chart {
+    height: 500px;
   }
 }
 
 @media (min-width: $cinema) {
   :root {
-    --chart-title-font-size: 18px;
     --chart-tick-font-size: 12px;
+    --chart-border-width: 2;
+  }
+  .chart {
+    height: 500px;
   }
 }

@@ -64,16 +64,19 @@ interface AxeTick {
   ) => string;
 }
 
-interface FontSize {
-  title: number;
+interface CssProperties {
   tick: number;
+  borderWidth: number;
 }
 
 export function Chart({ props }: { props: ChartProps }) {
-  const [fontSizes, setFontSize] = useState({ title: 1, tick: 8 });
+  const [cssProperties, setCssProperties] = useState({
+    tick: 8,
+    borderWidth: 2,
+  });
   useEffect(() => {
     const handleResize = () => {
-      setFontSize(getFontSizeFromSCSS());
+      setCssProperties(getCSSProperties());
     };
     window.addEventListener('resize', handleResize);
     return () => {
@@ -81,8 +84,8 @@ export function Chart({ props }: { props: ChartProps }) {
     };
   }, []);
 
-  const data = mapDataset(props);
-  const options = mapOptions(props, fontSizes);
+  const data = mapDataset(props, cssProperties);
+  const options = mapOptions(props, cssProperties);
   return (
     <div className='chart'>
       <Line data={data} options={options} />
@@ -90,23 +93,20 @@ export function Chart({ props }: { props: ChartProps }) {
   );
 }
 
-function getFontSize() {
-  const width = window.innerWidth;
-  if (width <= 480) return { title: 14, tick: 8 };
-  if (width <= 768) return { title: 16, tick: 10 };
-  if (width <= 1200) return { title: 18, tick: 12 };
-  return { title: 20, tick: 14 };
-}
-
-function getFontSizeFromSCSS(): FontSize {
+function getCSSProperties(): CssProperties {
   const rootStyles = getComputedStyle(document.documentElement);
   return {
-    title: parseFloat(rootStyles.getPropertyValue('--chart-title-font-size')),
     tick: parseFloat(rootStyles.getPropertyValue('--chart-tick-font-size')),
+    borderWidth: parseFloat(
+      rootStyles.getPropertyValue('--chart-border-width')
+    ),
   };
 }
 
-function mapDataset(props: ChartProps): ChartData<'line'> {
+function mapDataset(
+  props: ChartProps,
+  cssProperties: CssProperties
+): ChartData<'line'> {
   return {
     labels: props.labels,
     datasets: props.datasets.map((dataset: DataSet) => {
@@ -114,6 +114,7 @@ function mapDataset(props: ChartProps): ChartData<'line'> {
         label: dataset.label,
         data: dataset.data,
         borderColor: dataset.borderColor,
+        borderWidth: cssProperties.borderWidth,
         yAxisID: dataset.yAxisID,
       };
     }),
@@ -122,7 +123,7 @@ function mapDataset(props: ChartProps): ChartData<'line'> {
 
 function mapOptions(
   props: ChartProps,
-  fontSize: FontSize
+  cssProperties: CssProperties
 ): ChartOptions<'line'> {
   const datasetContainsPhase = props.datasets.length === 2;
   const horizontalScalesAxeProps: ScalesAxeProps = {
@@ -183,7 +184,7 @@ function mapOptions(
             },
             grid: false,
           },
-          fontSize
+          cssProperties
         ),
       }
     : null;
@@ -192,8 +193,8 @@ function mapOptions(
     responsive: true,
     maintainAspectRatio: false,
     scales: {
-      x: mapScalesAxe(horizontalScalesAxeProps, fontSize),
-      y1: mapScalesAxe(verticalScalesAxeProps, fontSize),
+      x: mapScalesAxe(horizontalScalesAxeProps, cssProperties),
+      y1: mapScalesAxe(verticalScalesAxeProps, cssProperties),
       ...y2,
     },
     animation: false,
@@ -209,7 +210,7 @@ function mapFrequencyValue(val: string | number) {
 
 function mapScalesAxe(
   props: ScalesAxeProps,
-  fontSize: FontSize
+  cssProperties: CssProperties
 ): ScaleOptionsByType<'linear' | 'logarithmic'> {
   return {
     display: true,
@@ -218,13 +219,7 @@ function mapScalesAxe(
     max: props.max,
     position: props.position,
     title: {
-      display: props.title.display,
-      text: props.title.text,
-      align: 'center',
-      color: '#51F502',
-      font: {
-        size: fontSize.title,
-      },
+      display: false,
       padding: 10,
     },
     ticks: {
@@ -232,7 +227,7 @@ function mapScalesAxe(
       autoSkip: true,
       maxTicksLimit: props.tick.maxTicksLimit,
       font: {
-        size: fontSize.tick,
+        size: cssProperties.tick,
       },
       callback: props.tick.callback,
     },
