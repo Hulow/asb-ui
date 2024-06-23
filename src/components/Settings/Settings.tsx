@@ -1,4 +1,4 @@
-import './Settings.css';
+import '../../styles/components/settings.scss';
 
 export interface SettingsProp {
   name: React.ReactNode;
@@ -7,7 +7,7 @@ export interface SettingsProp {
 
 export function Settings({ props }: { props: SettingsProp[] }) {
   return (
-    <div className='settings flex-row'>
+    <div className='settings'>
       {props.map((prop, index) => {
         return <Setting prop={prop} key={index} />;
       })}
