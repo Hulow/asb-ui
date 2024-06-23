@@ -111,7 +111,7 @@ function mapOptions(props: ChartProps): ChartOptions<'line'> {
   const verticalScalesAxeProps: ScalesAxeProps = {
     type: 'linear',
     min: props.datasets[0].yMin,
-    max: props.datasets[0].yMax,
+    max: props.datasets[0].yMax + 2,
     position: 'left',
     title: {
       display: true,
@@ -120,7 +120,9 @@ function mapOptions(props: ChartProps): ChartOptions<'line'> {
     tick: {
       maxTicksLimit: 15,
       callback: (value, index, ticks) => {
-        return value + ' ' + props.datasets[0].unity;
+        return (
+          String(value).replace(/\..*/, '') + ' ' + props.datasets[0].unity
+        );
       },
     },
     grid: true,

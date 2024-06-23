@@ -75,7 +75,7 @@ export const Measurements: React.FC<MeasurementsProps> = ({ measurements }) => {
   const frequencySettings = getFrequencySettings(measurements.frequency);
 
   return (
-    <div className='flex-center charts'>
+    <div className='flex-col-center charts'>
       <div className='title item'>
         <p>{texts.frequencyResponse}</p>
       </div>
