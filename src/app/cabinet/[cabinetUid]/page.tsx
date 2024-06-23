@@ -13,7 +13,6 @@ import {
   Property,
   SpeakerItems,
 } from '../../../components/SpeakerItems/SpeakerItems';
-import { ChartProps } from '../../../components/Chart/Chart';
 
 interface Params {
   params: {
