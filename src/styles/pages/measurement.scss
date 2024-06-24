@@ -136,10 +136,17 @@
     top: 80px;
     right: 100px;
   }
+  .overview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
   .items {
+    margin-left: 20px;
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 20px;
-    background-color: blue;
   }
 }
