@@ -1,5 +1,9 @@
 @import '../variables';
 
+.image {
+  border-radius: 15px;
+}
+
 @media (max-width: $mobile) {
   .image {
     width: 100%;
