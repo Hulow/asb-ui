@@ -44,7 +44,7 @@ export default async function MeasurementPage({ params }: Params) {
         </div>
       </div>
       <div className='overview'>
-        <CustomImage src={`cabinets/${measurements.cabinet.uid}`} />
+        <CustomImage src={`cabinets/${measurements.cabinet.uid}.jpg`} />
         <div className='items'>
           <SpeakerItems title={texts.cabinet} props={cabinetProps} />
           {drivers.map((driver, index) => {
