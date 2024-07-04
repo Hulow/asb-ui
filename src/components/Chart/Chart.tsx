@@ -164,7 +164,8 @@ function mapOptions(
     grid: true,
   };
 
-  const y2 = datasetContainsPhase
+  let y2: { y2: ScaleOptionsByType<'logarithmic' | 'linear'> } | null = null;
+  y2 = datasetContainsPhase
     ? {
         y2: mapScalesAxe(
           {
