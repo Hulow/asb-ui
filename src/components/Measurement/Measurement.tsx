@@ -1,12 +1,13 @@
 'use client';
 import '../../styles/components/measurement.scss';
 import React from 'react';
-import { Chart, ChartProps } from '../Chart/Chart';
 import { Settings, SettingsProp } from '../Settings/Settings';
 import { Measurement } from '../../types/measurement';
 import texts from '../../data/texts.json';
 import { Frequency } from '../../types/frequency';
 import { Impedance } from '../../types/impedance';
+import { ChartProps, FrequencyChart } from '../Chart/FrequencyChart';
+import { ImpedanceChart } from '../Chart/ImpedanceChart';
 
 interface MeasurementsProps {
   measurements: Measurement;
@@ -62,8 +63,8 @@ export const Measurements: React.FC<MeasurementsProps> = ({ measurements }) => {
           yAxisID: 'y2',
           position: 'right',
           unity: '°',
-          yMin: impedance.lowestPhase,
-          yMax: impedance.highestPhase,
+          yMin: -179,
+          yMax: 179,
         },
       ],
     };
@@ -79,14 +80,14 @@ export const Measurements: React.FC<MeasurementsProps> = ({ measurements }) => {
       <div className='title item'>
         <p>{texts.frequencyResponse}</p>
       </div>
-      <Chart props={frequencyChart} />
+      <FrequencyChart props={frequencyChart} />
       <Settings props={frequencySettings} />
       {impedanceChartsAndSettings.map(({ chart, settings }, index) => (
         <div key={index} className='flex-col-center'>
           <div className='title item'>
             <p>{texts.impedanceResponse}</p>
           </div>
-          <Chart props={chart} />
+          <ImpedanceChart props={chart} />
           <Settings props={settings} />
         </div>
       ))}

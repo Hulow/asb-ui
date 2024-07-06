@@ -69,7 +69,7 @@ interface CssProperties {
   borderWidth: number;
 }
 
-export function Chart({ props }: { props: ChartProps }) {
+export function ImpedanceChart({ props }: { props: ChartProps }) {
   const [cssProperties, setCssProperties] = useState({
     tick: 8,
     borderWidth: 2,
@@ -125,8 +125,7 @@ function mapOptions(
   props: ChartProps,
   cssProperties: CssProperties
 ): ChartOptions<'line'> {
-  const datasetContainsPhase = props.datasets.length === 2;
-  const horizontalScalesAxeProps: ScalesAxeProps = {
+  const frequencyScaleProps: ScalesAxeProps = {
     type: 'logarithmic',
     min: props.xMin,
     max: props.xMax,
@@ -144,7 +143,7 @@ function mapOptions(
     grid: true,
   };
 
-  const verticalScalesAxeProps: ScalesAxeProps = {
+  const impedanceScalesAxeProps: ScalesAxeProps = {
     type: 'linear',
     min: props.datasets[0].yMin - 1,
     max: props.datasets[0].yMax + 1,
@@ -164,41 +163,43 @@ function mapOptions(
     grid: true,
   };
 
-  let y2: { y2: ScaleOptionsByType<'logarithmic' | 'linear'> } | null = null;
-  y2 = datasetContainsPhase
-    ? {
-        y2: mapScalesAxe(
-          {
-            type: 'linear',
-            min: props.datasets[1].yMin - 1,
-            max: props.datasets[1].yMax + 1,
-            position: 'right',
-            title: {
-              display: true,
-              text: props.datasets[1].title,
-            },
-            tick: {
-              maxTicksLimit: 5,
-              callback: (value, index, ticks) => {
-                return value + ' ' + props.datasets[1].unity;
-              },
-            },
-            grid: false,
-          },
-          cssProperties
-        ),
-      }
-    : null;
+  const phaseScalesAxeProps: ScalesAxeProps = {
+    type: 'linear',
+    min: props.datasets[1].yMin - 1,
+    max: props.datasets[1].yMax + 1,
+    position: 'right',
+    title: {
+      display: true,
+      text: props.datasets[1].title,
+    },
+    tick: {
+      maxTicksLimit: 5,
+      callback: (value, index, ticks) => {
+        return value + ' ' + props.datasets[1].unity;
+      },
+    },
+    grid: false,
+  };
 
   return {
     responsive: true,
     maintainAspectRatio: false,
     scales: {
-      x: mapScalesAxe(horizontalScalesAxeProps, cssProperties),
-      y1: mapScalesAxe(verticalScalesAxeProps, cssProperties),
-      ...y2,
+      //   x: mapScalesAxe(frequencyScaleProps, cssProperties),
+      y1: mapScalesAxe(impedanceScalesAxeProps, cssProperties),
+      y2: mapScalesAxe(phaseScalesAxeProps, cssProperties),
     },
     animation: false,
+    plugins: {
+      tooltip: {
+        mode: 'nearest',
+        intersect: false,
+      },
+    },
+    hover: {
+      mode: 'nearest',
+      intersect: false,
+    },
   };
 }
 
