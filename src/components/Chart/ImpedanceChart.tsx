@@ -41,9 +41,9 @@ export interface DataSet {
 }
 
 interface ScalesAxeProps {
-  type: 'linear' | 'logarithmic';
-  min: number;
-  max: number;
+  type?: 'linear' | 'logarithmic';
+  min?: number;
+  max?: number;
   position: 'right' | 'left' | undefined;
   title: AxeTitle;
   tick: AxeTick;
@@ -61,7 +61,7 @@ interface AxeTick {
     tickValue: string | number,
     index: number,
     ticks: Tick[]
-  ) => string;
+  ) => string | number;
 }
 
 interface CssProperties {
@@ -127,8 +127,6 @@ function mapOptions(
 ): ChartOptions<'line'> {
   const frequencyScaleProps: ScalesAxeProps = {
     type: 'logarithmic',
-    min: props.xMin,
-    max: props.xMax,
     position: undefined,
     title: {
       display: false,
@@ -137,7 +135,7 @@ function mapOptions(
     tick: {
       maxTicksLimit: 8,
       callback: (val) => {
-        return mapFrequencyValue(val);
+        return val + ' Hz';
       },
     },
     grid: true,
@@ -185,7 +183,7 @@ function mapOptions(
     responsive: true,
     maintainAspectRatio: false,
     scales: {
-      //   x: mapScalesAxe(frequencyScaleProps, cssProperties),
+      x: mapScalesAxe(frequencyScaleProps, cssProperties),
       y1: mapScalesAxe(impedanceScalesAxeProps, cssProperties),
       y2: mapScalesAxe(phaseScalesAxeProps, cssProperties),
     },
