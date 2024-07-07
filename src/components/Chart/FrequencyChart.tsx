@@ -11,8 +11,13 @@ import {
   ChartOptions,
   ChartData,
   ScaleOptionsByType,
-  Tick,
 } from 'chart.js';
+import {
+  ChartProps,
+  CssProperties,
+  DataSet,
+  ScalesAxeProps,
+} from '../../types/graph';
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -20,54 +25,6 @@ ChartJS.register(
   LineElement,
   LogarithmicScale
 );
-
-export interface ChartProps {
-  labels: number[];
-  xMin: number;
-  xMax: number;
-  datasets: DataSet[];
-}
-
-export interface DataSet {
-  label: string;
-  title: string;
-  data: number[];
-  borderColor: string;
-  yAxisID: string;
-  position: string;
-  unity: string;
-  yMin: number;
-  yMax: number;
-}
-
-interface ScalesAxeProps {
-  type: 'linear' | 'logarithmic';
-  min: number;
-  max: number;
-  position: 'right' | 'left' | undefined;
-  title: AxeTitle;
-  tick: AxeTick;
-  grid: boolean;
-}
-
-interface AxeTitle {
-  display: boolean;
-  text: string;
-}
-
-interface AxeTick {
-  maxTicksLimit: number;
-  callback: (
-    tickValue: string | number,
-    index: number,
-    ticks: Tick[]
-  ) => string;
-}
-
-interface CssProperties {
-  tick: number;
-  borderWidth: number;
-}
 
 export function FrequencyChart({ props }: { props: ChartProps }) {
   const [cssProperties, setCssProperties] = useState({

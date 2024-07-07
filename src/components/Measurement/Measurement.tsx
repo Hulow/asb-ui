@@ -6,8 +6,9 @@ import { Measurement } from '../../types/measurement';
 import texts from '../../data/texts.json';
 import { Frequency } from '../../types/frequency';
 import { Impedance } from '../../types/impedance';
-import { ChartProps, FrequencyChart } from '../Chart/FrequencyChart';
+import { FrequencyChart } from '../Chart/FrequencyChart';
 import { ImpedanceChart } from '../Chart/ImpedanceChart';
+import { ChartProps } from '../../types/graph';
 
 interface MeasurementsProps {
   measurements: Measurement;
