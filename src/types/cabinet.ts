@@ -7,4 +7,5 @@ export interface Cabinet {
   dimension: string;
   description?: string;
   ownerUid: string;
+  createdAt: string;
 }

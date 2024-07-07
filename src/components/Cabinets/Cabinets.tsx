@@ -66,10 +66,21 @@ export function Cabinets({ cabinets }: { cabinets: CabinetOverview[] }) {
 
   function getSelectedCabinets(): CabinetOverview[] {
     if (selectedOwner === ALL_CABINETS) {
-      return cabinets;
+      return sortCabinets(cabinets);
     }
-    return cabinets.filter(
+
+    const selectedCabinets = cabinets.filter(
       (cabinet) => cabinet.owner.ownername === selectedOwner
+    );
+
+    return sortCabinets(selectedCabinets);
+  }
+
+  function sortCabinets(cabinets: CabinetOverview[]): CabinetOverview[] {
+    return cabinets.sort(
+      (a, b) =>
+        new Date(b.cabinet.createdAt).getTime() -
+        new Date(a.cabinet.createdAt).getTime()
     );
   }
 }
