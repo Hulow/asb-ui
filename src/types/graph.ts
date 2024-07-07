@@ -5,6 +5,8 @@ export interface ChartProps {
   xMin: number;
   xMax: number;
   datasets: DataSet[];
+  driverType?: string;
+  driverName?: string;
 }
 
 export interface DataSet {

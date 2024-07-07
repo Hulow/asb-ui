@@ -9,6 +9,7 @@ import { Impedance } from '../../types/impedance';
 import { FrequencyChart } from '../Chart/FrequencyChart';
 import { ImpedanceChart } from '../Chart/ImpedanceChart';
 import { ChartProps } from '../../types/graph';
+import { Driver } from '../../types/driver';
 
 interface MeasurementsProps {
   measurements: Measurement;
@@ -40,10 +41,13 @@ export const Measurements: React.FC<MeasurementsProps> = ({ measurements }) => {
   }[] = [];
 
   for (const impedance of measurements.impedances) {
+    const driver = getDriver(measurements.drivers, impedance.driverUid);
     const chart: ChartProps = {
       labels: impedance.frequencies,
       xMin: impedance.lowestFrequency,
       xMax: impedance.highestFrequency,
+      driverType: driver.driverType,
+      driverName: driver.productName,
       datasets: [
         {
           label: 'Ohms',
@@ -74,6 +78,8 @@ export const Measurements: React.FC<MeasurementsProps> = ({ measurements }) => {
     impedanceChartsAndSettings.push({ chart, settings });
   }
 
+  const isThereMoreThanOneImpedance = impedanceChartsAndSettings.length > 1;
+
   const frequencySettings = getFrequencySettings(measurements.frequency);
 
   return (
@@ -86,7 +92,12 @@ export const Measurements: React.FC<MeasurementsProps> = ({ measurements }) => {
       {impedanceChartsAndSettings.map(({ chart, settings }, index) => (
         <div key={index} className='flex-col-center'>
           <div className='title item'>
-            <p>{texts.impedanceResponse}</p>
+            <p>
+              {texts.impedanceResponse}
+              {isThereMoreThanOneImpedance
+                ? ` from ${chart.driverType} ${chart.driverName}`
+                : null}
+            </p>
           </div>
           <ImpedanceChart props={chart} />
           <Settings props={settings} />
@@ -95,6 +106,10 @@ export const Measurements: React.FC<MeasurementsProps> = ({ measurements }) => {
     </div>
   );
 };
+
+function getDriver(drivers: Driver[], driverUid: string): Driver {
+  return drivers.find((driver) => driver.uid === driverUid) as Driver;
+}
 
 function getFrequencySettings(frequency: Frequency): SettingsProp[] {
   return [

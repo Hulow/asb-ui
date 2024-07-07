@@ -1,4 +1,5 @@
 export interface Driver {
+  uid: string;
   brandName: string;
   productName: string;
   driverType: string;
