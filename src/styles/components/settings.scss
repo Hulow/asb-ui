@@ -7,7 +7,6 @@
 
 .setting {
   flex-grow: 1;
-  border-radius: 15px;
 }
 
 .setting > p {
@@ -29,6 +28,10 @@
     grid-template-rows: repeat(1, auto);
   }
 
+  .setting {
+    border-radius: 7px;
+  }
+
   .setting > h1 {
     font-size: 15px;
   }
@@ -36,6 +39,7 @@
   .setting > h3 {
     font-size: 8px;
   }
+  
   .setting > p {
     font-size: 5px;
   }
@@ -48,6 +52,10 @@
     grid-template-rows: repeat(1, auto);
   }
 
+  .setting {
+    border-radius: 7px;
+  }
+
   .setting > h1 {
     font-size: 15px;
   }
@@ -55,6 +63,7 @@
   .setting > h3 {
     font-size: 8px;
   }
+
   .setting > p {
     font-size: 5px;
   }
@@ -71,9 +80,14 @@
     font-size: 15px;
   }
 
+  .setting {
+    border-radius: 8px;
+  }
+
   .setting > h3 {
     font-size: 8px;
   }
+
   .setting > p {
     font-size: 5px;
   }
@@ -85,6 +99,10 @@
     flex-direction: row;
   }
 
+  .setting {
+    border-radius: 8px;
+  }
+
   .setting > h1 {
     font-size: 15px;
   }
@@ -92,6 +110,7 @@
   .setting > h3 {
     font-size: 10px;
   }
+
   .setting > p {
     font-size: 8px;
   }
@@ -103,6 +122,10 @@
     flex-direction: row;
   }
 
+  .setting {
+    border-radius: 10px;
+  }
+
   .setting > h1 {
     font-size: 15px;
   }
@@ -110,6 +133,7 @@
   .setting > h3 {
     font-size: 12px;
   }
+
   .setting > p {
     font-size: 10px;
   }
@@ -121,6 +145,10 @@
     flex-direction: row;
   }
 
+  .setting {
+    border-radius: 10px;
+  }
+
   .setting > h1 {
     font-size: 15px;
   }
@@ -128,6 +156,7 @@
   .setting > h3 {
     font-size: 12px;
   }
+
   .setting > p {
     font-size: 10px;
   }
