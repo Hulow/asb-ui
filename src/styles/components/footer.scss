@@ -14,13 +14,13 @@
 
 @media (max-width: $mobile) {
   p {
-    font-size: 11px;
+    font-size: 10px;
   }
 }
 
 @media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
   p {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
