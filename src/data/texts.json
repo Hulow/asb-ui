@@ -41,19 +41,9 @@
   "impedanceSettings": {
     "title": "TS Parameters",
     "source": "Measured by",
-    "resonanceFrequency": "F(s)",
+    "resonanceFrequency": "F(sc)",
     "acResistance": "AC Res",
     "dcResistance": "DC Res",
-    "totalDamping": "Q(ts)",
-    "electricalDamping": "Q(es)",
-    "mechanicalDamping": "Q(ms)",
-    "equivalenceCompliance": "V(as)",
-    "suspensionCompliance": "C(ms)",
-    "coneMass": "C(ms)",
-    "efficiency": "Efficiency",
-    "forceFactor": "BL",
-    "pistonDiameter": "Piston",
-    "sensitivity": "SPL",
-    "voiceCoilInductance": "L(e)"
+    "totalDamping": "Q(tsc)"
   }
 }

@@ -174,45 +174,5 @@ function getImpedanceSettings(impedance: Impedance): SettingsProp[] {
       name: <h3>{texts.impedanceSettings.totalDamping}:</h3>,
       value: <p>{impedance.totalDamping}</p>,
     },
-    {
-      name: <h3>{texts.impedanceSettings.electricalDamping}:</h3>,
-      value: <p>{impedance.electricalDamping}</p>,
-    },
-    {
-      name: <h3>{texts.impedanceSettings.mechanicalDamping}:</h3>,
-      value: <p>{impedance.mechanicalDamping}</p>,
-    },
-    {
-      name: <h3>{texts.impedanceSettings.equivalenceCompliance}:</h3>,
-      value: <p>{impedance.equivalenceCompliance} L</p>,
-    },
-    {
-      name: <h3>{texts.impedanceSettings.suspensionCompliance}:</h3>,
-      value: <p>{impedance.suspensionCompliance} mm/N</p>,
-    },
-    {
-      name: <h3>{texts.impedanceSettings.coneMass}:</h3>,
-      value: <p>{impedance.coneMass} g</p>,
-    },
-    {
-      name: <h3>{texts.impedanceSettings.efficiency}:</h3>,
-      value: <p>{impedance.efficiency} %</p>,
-    },
-    {
-      name: <h3>{texts.impedanceSettings.forceFactor}:</h3>,
-      value: <p>{impedance.forceFactor}</p>,
-    },
-    {
-      name: <h3>{texts.impedanceSettings.pistonDiameter}:</h3>,
-      value: <p>⌀ {impedance.pistonDiameter} mm</p>,
-    },
-    {
-      name: <h3>{texts.impedanceSettings.sensitivity}:</h3>,
-      value: <p>{impedance.sensitivity} 1W/1M</p>,
-    },
-    {
-      name: <h3>{texts.impedanceSettings.voiceCoilInductance}:</h3>,
-      value: <p>{impedance.voiceCoilInductance} mH</p>,
-    },
   ];
 }
