@@ -92,7 +92,7 @@ function mapOptions(
     tick: {
       maxTicksLimit: 8,
       callback: (val) => {
-        return val + ' Hz';
+        return mapFrequencyValue(val);
       },
     },
     grid: true,
@@ -160,7 +160,6 @@ function mapOptions(
 
 function mapFrequencyValue(val: string | number) {
   if (val === 1000) return val / 1000 + ' KHz';
-  if (val === 5000) return val / 1000 + ' KHz';
   if (val === 10000) return val / 1000 + ' KHz';
   return val + ' Hz';
 }
