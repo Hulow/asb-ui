@@ -10,14 +10,17 @@
 }
 
 .setting > p {
+  margin-left: 5px;
   font-size: 5px;
 }
 
 .setting > h1 {
+  margin-left: 5px;
   font-size: 10px;
 }
 
 .setting > h3 {
+  margin-left: 5px;
   font-size: 8px;
 }
 
@@ -39,7 +42,7 @@
   .setting > h3 {
     font-size: 8px;
   }
-  
+
   .setting > p {
     font-size: 5px;
   }
@@ -76,13 +79,14 @@
     grid-template-rows: repeat(1, auto);
   }
 
+  .setting {
+    border-radius: 8px;
+  }
+
   .setting > h1 {
     font-size: 15px;
   }
 
-  .setting {
-    border-radius: 8px;
-  }
 
   .setting > h3 {
     font-size: 8px;
