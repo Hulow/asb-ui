@@ -16,9 +16,23 @@ export default function Layout({
   return (
     <html lang='en'>
       <head>
+        <meta
+          name='description'
+          content='Semi Anechoic Chamber based in Berlin'
+        />
+        <meta
+          name='keywords'
+          content='Berlin, Anechoic, Anechoic Chamber, Non Profit Project'
+        />
+        <meta property='og:title' content='Anechoic Station Berlin' />
+        <meta property='og:description' content='Non Profit Project' />
+        <meta
+          property='og:image'
+          content='https://res.cloudinary.com/dmmaqdqha/image/upload/v1720454059/ASB_tembxv.png'
+        />
         <link
           rel='icon'
-          href='./public/icon.png'
+          href='./icon.png'
           type='image/<generated>'
           sizes='<generated>'
         />
