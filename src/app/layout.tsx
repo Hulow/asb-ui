@@ -2,7 +2,6 @@ import './globals.scss';
 import { Footer } from '../components/Footer/Footer';
 
 import type { Metadata } from 'next';
-import Head from 'next/head';
 
 export const metadata: Metadata = {
   title: 'ASB',
@@ -16,12 +15,12 @@ export default function Layout({
 }>) {
   return (
     <html lang='en'>
-      <Head>
+      <head>
         <meta
           name='viewport'
           content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
         />
-      </Head>
+      </head>
       <body>
         {children}
         <Footer />
