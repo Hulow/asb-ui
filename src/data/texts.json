@@ -39,11 +39,11 @@
     "note": "Note"
   },
   "impedanceSettings": {
-    "title": "TS Parameters",
+    "title": "Enclosure Parameters",
     "source": "Measured by",
-    "resonanceFrequency": "F(sc)",
+    "resonanceFrequency": "F(b)",
     "acResistance": "AC Res",
     "dcResistance": "DC Res",
-    "totalDamping": "Q(tsc)"
+    "totalDamping": "Q(tc)"
   }
 }
