@@ -1,0 +1,48 @@
+@import '../variables';
+
+.picture {
+  margin-top: 20px;
+  border-radius: 15px;
+}
+
+@media (max-width: $mobile) {
+  .picture {
+    width: $maxMobileCabinetsWidth;
+    height: 190px;
+  }
+}
+
+@media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
+  .picture {
+    width: $minMobileMaxTabletCabinetsWidth;
+    height: 290px;
+  }
+}
+
+@media (min-width: $tablet) and (max-width: ($laptop - 1)) {
+  .picture {
+    width: $minTabletMaxLaptopCabinetsWidth;
+    height: 460px;
+  }
+}
+
+@media (min-width: $laptop) and (max-width: ($desktop - 1)) {
+  .picture {
+    width: $minLaptopMaxDesktopCabinetsWidth;
+    height: 500px;
+  }
+}
+
+@media (min-width: $desktop) and (max-width: ($cinema - 1)) {
+  .picture {
+    width: $minDesktopMaxCinemaCabinetsWidth;
+    height: 580px;
+  }
+}
+
+@media (min-width: $cinema) {
+  .picture {
+    width: $maxCinemaCabinetsWidth;
+    height: 850px;
+  }
+}
