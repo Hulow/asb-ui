@@ -1,4 +1,3 @@
-import { config } from '../../config/config';
 import { CustomPicture } from '../Image/Picture';
 
 export function ProjectOverview() {
