@@ -30,10 +30,11 @@ export default function Layout({
           type="type='image/png'"
           sizes='<generated>'
         />
-        <script
-          type='application/ld+json'
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
-        />
+        <meta property='og:title' content='Anechoic Station Berlin' />
+        <meta property='og:description' content='Non Profit Project' />
+        <meta property='og:image' content='https://res.cloudinary.com/dmmaqdqha/image/upload/v1720454059/ASB_tembxv.png' />
+        <meta property='og:url' content='https://www.anechoic-station-berlin.com/' />
+        <meta property='og:type' content='website' />
       </head>
       <body>
         {children}
@@ -42,19 +43,3 @@ export default function Layout({
     </html>
   );
 }
-
-const schemaMarkup = {
-  '@context': 'http://schema.org',
-  '@type': 'Non Profit Project',
-  name: 'Anechoic Station Berlin',
-  url: 'https://www.anechoic-station-berlin.com/',
-  logo: 'https://res.cloudinary.com/dmmaqdqha/image/upload/v1720454059/ASB_tembxv.png',
-  image: {
-    '@type': 'ImageObject',
-    url: 'https://res.cloudinary.com/dmmaqdqha/image/upload/v1720454059/ASB_tembxv.png',
-    width: 1200,
-    height: 800,
-    caption: 'Anechoic Station Berlin',
-  },
-  description: 'Semi Anechoic Chamber based in Berlin.',
-};
