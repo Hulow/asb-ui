@@ -32,8 +32,14 @@ export default function Layout({
         />
         <meta property='og:title' content='Anechoic Station Berlin' />
         <meta property='og:description' content='Non Profit Project' />
-        <meta property='og:image' content='https://res.cloudinary.com/dmmaqdqha/image/upload/v1720454059/ASB_tembxv.png' />
-        <meta property='og:url' content='https://www.anechoic-station-berlin.com/' />
+        <meta
+          property='og:image'
+          content='https://res.cloudinary.com/dmmaqdqha/image/upload/v1720454059/ASB_tembxv.png'
+        />
+        <meta
+          property='og:url'
+          content='https://www.anechoic-station-berlin.com/'
+        />
         <meta property='og:type' content='website' />
       </head>
       <body>
