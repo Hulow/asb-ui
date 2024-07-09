@@ -4,7 +4,7 @@ import { CustomPicture } from '../Image/Picture';
 export function ProjectOverview() {
   return (
     <div className='flex-col-center'>
-      <CustomPicture src={`chamber/${config.env}_room.webp`} />
+      <CustomPicture src={`chamber/room.webp`} />
     </div>
   );
 }
