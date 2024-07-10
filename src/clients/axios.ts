@@ -6,7 +6,7 @@ interface AxiosConfig {
   authorization: string;
 }
 
-const client = (config: AxiosConfig) => {
+export const client = (config: AxiosConfig) => {
   return axios.create({
     baseURL: config.url,
     headers: {
@@ -15,8 +15,3 @@ const client = (config: AxiosConfig) => {
     },
   });
 };
-
-export const asbClient = client({
-  url: config.asbBaseUrl,
-  authorization: config.asbKeyUrl,
-});

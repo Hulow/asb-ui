@@ -5,7 +5,7 @@ import { Measurement } from '../../../types/measurement';
 import { Button } from '../../../components/Button/Button';
 import { CustomLink } from '../../../components/Link/Link';
 import { Measurements } from '../../../components/Measurement/Measurement';
-import { asbClient } from '../../../services/client';
+import { asbClient } from '../../../clients/axios';
 import { CustomImage } from '../../../components/Image/Image';
 import { Cabinet } from '../../../types/cabinet';
 import { Driver } from '../../../types/driver';
