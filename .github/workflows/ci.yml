@@ -1,8 +1,3 @@
-
-Certainly! Below is an example YAML file for GitHub Actions that builds an application using Next.js 14. This example assumes you want to run the build process on every push to the main branch:
-
-yaml
-Copy code
 name: Build and Deploy Next.js Application
 
 on:
