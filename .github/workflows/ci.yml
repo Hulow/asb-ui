@@ -30,7 +30,7 @@ jobs:
         run: npm ci
 
       - name: Start local server
-        run: npm run start-server & # Adjust the command to start your local server
+        run: npm run start
         env:
           PORT: 80
 
