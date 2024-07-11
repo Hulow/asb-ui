@@ -1,17 +1,11 @@
-import axios from 'axios';
-import { config } from '../config/config';
-
-interface AxiosConfig {
+export interface AxiosConfig {
   url: string;
-  authorization: string;
+  authorization?: string;
+  auth?: {
+    username: string;
+    password: string;
+  };
+  params?: {
+    public_ids: string;
+  };
 }
-
-export const client = (config: AxiosConfig) => {
-  return axios.create({
-    baseURL: config.url,
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: config.authorization,
-    },
-  });
-};
