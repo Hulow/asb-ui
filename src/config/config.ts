@@ -8,6 +8,9 @@ interface Config {
   };
   cloudinary: {
     name: string;
+    apiUrl: string;
+    apiKey: string;
+    apiSecret: string;
   };
 }
 
@@ -21,5 +24,8 @@ export const config: Config = {
   },
   cloudinary: {
     name: process.env.CLOUDINARY_CLOUD_NAME!,
+    apiUrl: `https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}`,
+    apiKey: process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY!,
+    apiSecret: process.env.NEXT_PUBLIC_CLOUDINARY_API_SECRET!,
   },
 };
