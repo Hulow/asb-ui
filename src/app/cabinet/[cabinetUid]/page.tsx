@@ -23,7 +23,7 @@ interface Params {
 export default async function MeasurementPage({ params }: Params) {
   const endpoint = config.endpoints.measurements;
   const measurements = await getMeasurements(
-    `${config.asbBaseUrl}${endpoint}/${params.cabinetUid}`
+    `${endpoint}/${params.cabinetUid}`
   );
 
   const cabinetProps = getCabinetProperties(measurements.cabinet);

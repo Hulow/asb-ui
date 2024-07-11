@@ -6,12 +6,12 @@ export interface AsbAxiosConfig {
   authorization: string;
 }
 
-const client = (config: AsbAxiosConfig) => {
+const client = (configs: AsbAxiosConfig) => {
   return axios.create({
-    baseURL: config.url,
+    baseURL: configs.url,
     headers: {
       'Content-Type': 'application/json',
-      Authorization: config.authorization,
+      Authorization: configs.authorization,
     },
   });
 };
