@@ -21,4 +21,4 @@ const client = (configs: CloudinaryAxiosConfig) => {
 export const cloudinaryClient = client({
   url: config.cloudinary.apiUrl,
   authorization: token,
-})
+});
