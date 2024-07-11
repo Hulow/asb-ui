@@ -32,7 +32,7 @@ jobs:
       - name: Start local server
         run: npm run start
         env:
-          PORT: 80
+          PORT: 8080
 
       - name: Wait for server to be ready
         run: sleep 10 # Adjust the time based on your server start-up time
