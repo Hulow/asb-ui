@@ -24,7 +24,7 @@ export const config: Config = {
   },
   cloudinary: {
     name: process.env.CLOUDINARY_CLOUD_NAME!,
-    apiUrl: `https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}`,
+    apiUrl: `https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}/resources/image/upload`,
     apiKey: process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY!,
     apiSecret: process.env.NEXT_PUBLIC_CLOUDINARY_API_SECRET!,
   },
