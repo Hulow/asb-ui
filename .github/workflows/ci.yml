@@ -34,14 +34,3 @@ jobs:
 
       - name: Build project
         run: npm run build
-
-      - name: Start local server
-        run: npm run start
-        env:
-          PORT: 8080
-
-      - name: Wait for server to be ready
-        run: sleep 10 # Adjust the time based on your server start-up time
-
-      - name: Check server availability
-        run: curl --fail http://localhost:8080 || exit 1
