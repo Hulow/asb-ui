@@ -6,9 +6,9 @@ import { NavBar, OnEvent } from '../components/NavBar/NavBar';
 import texts from '../data/texts.json';
 import { Cabinets } from '../components/Cabinets/Cabinets';
 import { Station } from '../components/Station/Station';
-import { ProjectOverview } from '../components/ProjectOverview/ProjectOverview';
 import { config } from '../config/config';
 import { CabinetOverview } from '../types/cabinet-overview';
+import { ProjectOverview } from '../components/ProjectOverview/ProjectOverview';
 
 export default function Home() {
   const endpoint = config.endpoints.cabinets;
