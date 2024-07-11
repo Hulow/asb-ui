@@ -26,7 +26,7 @@ export default function Layout({
         />
         <link
           rel='icon'
-          href='./icon.png'
+          href='./public/icon.png'
           type="type='image/png'"
           sizes='<generated>'
         />
