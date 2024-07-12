@@ -10,8 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      API_URL: http://0.0.0.0:8000
-      AUTHORIZATION: asb
+      ASB_BASE_URL: http://0.0.0.0:8000
+      ASB_KEY_URL: asb
+      NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}
+      NEXT_PUBLIC_CLOUDINARY_API_KEY: ${{ secrets.NEXT_PUBLIC_CLOUDINARY_API_KEY }}
+      NEXT_PUBLIC_CLOUDINARY_API_SECRET: ${{ secrets.NEXT_PUBLIC_CLOUDINARY_API_SECRET }}
 
     steps:
       - name: Checkout repository
