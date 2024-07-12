@@ -9,6 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      API_URL: ${{ http://0.0.0.0:8000 }}
+      AUTHORIZATION: ${{ asb }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
