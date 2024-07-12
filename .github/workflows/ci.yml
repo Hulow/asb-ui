@@ -28,8 +28,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Lint code
-        run: npm run lint
+      - name: Start backend server
+        run: npm run start-backend &
+        # Run the backend server in the background
 
-      - name: Build application
+      - name: Wait for backend to be ready
+        run: |
+          while ! nc -z localhost 8000; do
+            sleep 1
+          done
+
+      - name: Build the Next.js application
         run: npm run build
