@@ -38,8 +38,14 @@ export default async function Home() {
   const cabinets = await asbHandler(AsbEndpoint);
   const cloudinaryEndpoint = `${config.cloudinary.apiUrl}?public_ids=chamber%2Froom`;
 
-  const cloudinaryResponse = await cloudinaryHandler(cloudinaryEndpoint);
-  const pictureMetadata = mapPicture(cloudinaryResponse);
+  // const cloudinaryResponse = await cloudinaryHandler(cloudinaryEndpoint);
+  // const pictureMetadata = mapPicture(cloudinaryResponse);
+   const pictureMetadata = {
+    url: 'string',
+    width: 2,
+    height: 2,
+    ratio: 'string',
+   }
   return <HomePage cabinets={cabinets} pictureMetadata={pictureMetadata} />;
 }
 
