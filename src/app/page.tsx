@@ -40,12 +40,12 @@ export default async function Home() {
 
   // const cloudinaryResponse = await cloudinaryHandler(cloudinaryEndpoint);
   // const pictureMetadata = mapPicture(cloudinaryResponse);
-   const pictureMetadata = {
+  const pictureMetadata = {
     url: 'string',
     width: 2,
     height: 2,
     ratio: 'string',
-   }
+  };
   return <HomePage cabinets={cabinets} pictureMetadata={pictureMetadata} />;
 }
 
