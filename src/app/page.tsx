@@ -25,6 +25,10 @@ const Home = async () => {
     getPicture(),
   ]);
 
+  if (!cabinets.length || !pictureMetadata) {
+    return <div>Failed to load data</div>;
+  }
+
   return <HomePage cabinets={cabinets} pictureMetadata={pictureMetadata} />;
 };
 
