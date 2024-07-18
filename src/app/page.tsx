@@ -19,48 +19,52 @@ export type PictureMetadata = {
   ratio: string;
 };
 
-async function fetchData(): Promise<{
-  cabinets: CabinetOverview[];
-  pictureMetadata: PictureMetadata | null;
-}> {
-  try {
-    const cabinetsResponse = await fetch(
-      `${config.asbBaseUrl}${config.endpoints.cabinets}`,
-      {
-        headers: {
-          Authorization: config.asbKeyUrl,
-        },
-      }
-    );
+const Home = async () => {
+  const [cabinets, pictureMetadata] = await Promise.all([
+    getCabinets(),
+    getPicture(),
+  ]);
 
-    if (!cabinetsResponse.ok) {
-      throw new Error('Failed to fetch cabinets');
+  return <HomePage cabinets={cabinets} pictureMetadata={pictureMetadata} />;
+};
+
+export default Home;
+
+async function getCabinets(): Promise<CabinetOverview[]> {
+  const cabinetsResponse = await fetch(
+    `${config.asbBaseUrl}${config.endpoints.cabinets}`,
+    {
+      headers: {
+        Authorization: config.asbKeyUrl,
+      },
     }
+  );
 
-    const cloudinaryResponse = await fetch(
-      `${config.cloudinary.apiUrl}?public_ids=chamber%2Froom`,
-      {
-        headers: {
-          Authorization: Buffer.from(
-            `${config.cloudinary.apiKey}:${config.cloudinary.apiSecret}`
-          ).toString('base64'),
-        },
-      }
-    );
-    if (!cloudinaryResponse.ok) {
-      throw new Error('Failed to fetch cloudinary metadata');
-    }
-
-    const cabinets = await cabinetsResponse.json();
-    const cloudinaryData: CloudinaryResponse = await cloudinaryResponse.json();
-
-    const pictureMetadata = mapPicture(cloudinaryData);
-
-    return { cabinets, pictureMetadata };
-  } catch (error) {
-    console.error('Error fetching data:', error);
-    return { cabinets: [], pictureMetadata: null };
+  if (!cabinetsResponse.ok) {
+    throw new Error('Failed to get cabinets');
   }
+
+  return await cabinetsResponse.json();
+}
+
+async function getPicture(): Promise<PictureMetadata> {
+  const cloudinaryResponse = await fetch(
+    `${config.cloudinary.apiUrl}?public_ids=chamber%2Froom`,
+    {
+      headers: {
+        Authorization: Buffer.from(
+          `${config.cloudinary.apiKey}:${config.cloudinary.apiSecret}`
+        ).toString('base64'),
+      },
+    }
+  );
+  if (!cloudinaryResponse.ok) {
+    throw new Error('Failed to fetch cloudinary metadata');
+  }
+
+  const cloudinaryData: CloudinaryResponse = await cloudinaryResponse.json();
+
+  return mapPicture(cloudinaryData);
 }
 
 function mapPicture(resp: CloudinaryResponse): PictureMetadata {
@@ -83,15 +87,3 @@ function calculateAspectRatio(width: number, height: number): string {
   const aspectRatioHeight = height / divisor;
   return `${aspectRatioWidth}:${aspectRatioHeight}`;
 }
-
-const Home = async () => {
-  const { cabinets, pictureMetadata } = await fetchData();
-
-  if (!cabinets.length || !pictureMetadata) {
-    return <div>Failed to load data</div>;
-  }
-
-  return <HomePage cabinets={cabinets} pictureMetadata={pictureMetadata} />;
-};
-
-export default Home;
