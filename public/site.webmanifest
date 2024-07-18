@@ -3,7 +3,7 @@
   "short_name": "ASB",
   "icons": [
     {
-      "src": "/icon.png",
+      "src": "./public/icon.png",
       "sizes": "192x192",
       "type": "image/png"
     }
