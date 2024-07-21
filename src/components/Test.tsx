@@ -8,6 +8,7 @@ export async function Test(): Promise<CabinetOverview[]> {
       headers: {
         Authorization: config.asbKeyUrl,
       },
+      cache: 'no-store',
     }
   );
 
