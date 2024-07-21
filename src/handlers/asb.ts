@@ -6,7 +6,7 @@ export interface AsbAxiosConfig {
   authorization: string;
 }
 
-const client = (configs: AsbAxiosConfig) => {
+const handler = (configs: AsbAxiosConfig) => {
   return axios.create({
     baseURL: configs.url,
     headers: {
@@ -16,7 +16,7 @@ const client = (configs: AsbAxiosConfig) => {
   });
 };
 
-export const asbClient = client({
+export const asbHandler = handler({
   url: config.asbBaseUrl,
   authorization: config.asbKeyUrl,
 });

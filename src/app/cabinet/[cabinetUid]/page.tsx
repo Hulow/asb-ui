@@ -12,7 +12,7 @@ import {
   Property,
   SpeakerItems,
 } from '../../../components/SpeakerItems/SpeakerItems';
-import { asbClient } from '../../../clients/asb';
+import { asbHandler } from '../../../handlers/asb';
 
 interface Params {
   params: {
@@ -67,7 +67,7 @@ export default async function MeasurementPage({ params }: Params) {
 }
 
 async function getMeasurements(endpoint: string): Promise<Measurement> {
-  const response = await asbClient.get(endpoint);
+  const response = await asbHandler.get(endpoint);
   return response.data;
 }
 

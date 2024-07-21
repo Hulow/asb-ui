@@ -19,7 +19,6 @@ export type PictureMetadata = {
 
 export default async function Home() {
   const cabinets = await getCabinets();
-
   const cloudinaryData: CloudinaryResponse = await getPictureMetadata();
 
   if (!cabinets.length || !cloudinaryData.resources) {
