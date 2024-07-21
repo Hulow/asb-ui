@@ -8,41 +8,41 @@
 @media (max-width: $mobile) {
   .picture {
     width: $maxMobileCabinetsWidth;
-    height: 190px;
+    height: auto;
   }
 }
 
 @media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
   .picture {
     width: $minMobileMaxTabletCabinetsWidth;
-    height: 290px;
+    height: auto;
   }
 }
 
 @media (min-width: $tablet) and (max-width: ($laptop - 1)) {
   .picture {
     width: $minTabletMaxLaptopCabinetsWidth;
-    height: 460px;
+    height: auto;
   }
 }
 
 @media (min-width: $laptop) and (max-width: ($desktop - 1)) {
   .picture {
     width: $minLaptopMaxDesktopCabinetsWidth;
-    height: 500px;
+    height: auto;
   }
 }
 
 @media (min-width: $desktop) and (max-width: ($cinema - 1)) {
   .picture {
     width: $minDesktopMaxCinemaCabinetsWidth;
-    height: 580px;
+    height: auto;
   }
 }
 
 @media (min-width: $cinema) {
   .picture {
     width: $maxCinemaCabinetsWidth;
-    height: 850px;
+    height: auto;
   }
 }
