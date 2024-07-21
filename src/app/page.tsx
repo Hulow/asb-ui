@@ -17,9 +17,9 @@ export type PictureMetadata = {
   ratio: string;
 };
 
+//TODO: move it to server component?
 async function fetchData(): Promise<{
   cabinets: CabinetOverview[];
-  pictureMetadata: PictureMetadata | null;
 }> {
   try {
     const cabinetsResponse = await fetch(
@@ -35,29 +35,29 @@ async function fetchData(): Promise<{
       throw new Error('Failed to get cabinets');
     }
 
-    const cloudinaryResponse = await fetch(
-      `${config.cloudinary.apiUrl}?public_ids=chamber%2Froom`,
-      {
-        headers: {
-          Authorization: Buffer.from(
-            `${config.cloudinary.apiKey}:${config.cloudinary.apiSecret}`
-          ).toString('base64'),
-        },
-      }
-    );
-    if (!cloudinaryResponse.ok) {
-      throw new Error('Failed to fetch cloudinary metadata');
-    }
+    // const cloudinaryResponse = await fetch(
+    //   `${config.cloudinary.apiUrl}?public_ids=chamber%2Froom`,
+    //   {
+    //     headers: {
+    //       Authorization: Buffer.from(
+    //         `${config.cloudinary.apiKey}:${config.cloudinary.apiSecret}`
+    //       ).toString('base64'),
+    //     },
+    //   }
+    // );
+    // if (!cloudinaryResponse.ok) {
+    //   throw new Error('Failed to fetch cloudinary metadata');
+    // }
 
     const cabinets = await cabinetsResponse.json();
-    const cloudinaryData: CloudinaryResponse = await cloudinaryResponse.json();
+    // const cloudinaryData: CloudinaryResponse = await cloudinaryResponse.json();
 
-    const pictureMetadata = mapPicture(cloudinaryData);
+    // const pictureMetadata = mapPicture(cloudinaryData);
 
-    return { cabinets, pictureMetadata };
+    return { cabinets };
   } catch (error) {
     console.error('Error fetching data:', error);
-    return { cabinets: [], pictureMetadata: null };
+    return { cabinets: [] };
   }
 }
 
@@ -83,13 +83,13 @@ function calculateAspectRatio(width: number, height: number): string {
 }
 
 const Home = async () => {
-  const { cabinets, pictureMetadata } = await fetchData();
+  const { cabinets } = await fetchData();
 
-  if (!cabinets.length || !pictureMetadata) {
+  if (!cabinets.length) {
     return <div>Failed to load data</div>;
   }
 
-  return <HomePage cabinets={cabinets} pictureMetadata={pictureMetadata} />;
+  return <HomePage cabinets={cabinets} />;
 };
 
 export default Home;
