@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { config } from '../config/config';
 
 export interface AsbAxiosConfig {
@@ -6,17 +5,17 @@ export interface AsbAxiosConfig {
   authorization: string;
 }
 
-const handler = (configs: AsbAxiosConfig) => {
-  return axios.create({
-    baseURL: configs.url,
+export const asbHandler = async (endpoint: string) => {
+  const response = await fetch(endpoint, {
     headers: {
-      'Content-Type': 'application/json',
-      Authorization: configs.authorization,
+      Authorization: config.asbKeyUrl,
     },
+    cache: 'no-store',
   });
-};
 
-export const asbHandler = handler({
-  url: config.asbBaseUrl,
-  authorization: config.asbKeyUrl,
-});
+  if (!response.ok) {
+    throw new Error('Failed to get cabinets');
+  }
+
+  return await response.json();
+};

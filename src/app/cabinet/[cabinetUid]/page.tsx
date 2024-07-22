@@ -22,11 +22,9 @@ interface Params {
 }
 
 export default async function MeasurementPage({ params }: Params) {
-  const endpoint = config.endpoints.measurements;
-  const measurements = await getMeasurements(
-    `${endpoint}/${params.cabinetUid}`
-  );
-
+  const measurements = (await asbHandler(
+    `${config.asbBaseUrl}${config.endpoints.measurements}/${params.cabinetUid}`
+  )) as Measurement;
   const pictureMetadata = await cloudinaryHandler(
     `${config.cloudinary.apiUrl}?public_ids=cabinets%2F${config.env}-${measurements.cabinet.uid}`
   );
@@ -67,11 +65,6 @@ export default async function MeasurementPage({ params }: Params) {
       <Measurements measurements={measurements} />
     </main>
   );
-}
-
-async function getMeasurements(endpoint: string): Promise<Measurement> {
-  const response = await asbHandler.get(endpoint);
-  return response.data;
 }
 
 function getCabinetProperties(cabinet: Cabinet): Property[] {
