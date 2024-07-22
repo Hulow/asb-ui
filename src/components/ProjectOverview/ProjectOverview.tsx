@@ -1,4 +1,4 @@
-import { PictureMetadata } from '../../app/page';
+import { PictureMetadata } from '../../handlers/cloudinary';
 import { CustomPicture } from '../Image/Picture';
 
 export function ProjectOverview({

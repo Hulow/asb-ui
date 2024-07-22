@@ -7,8 +7,8 @@ import { NavBar, OnEvent } from '../NavBar/NavBar';
 import { Station } from '../Station/Station';
 import { Cabinets } from '../Cabinets/Cabinets';
 import { Logo } from '../Image/Logo';
-import { PictureMetadata } from '../../app/page';
 import { ProjectOverview } from '../ProjectOverview/ProjectOverview';
+import { PictureMetadata } from '../../handlers/cloudinary';
 
 export const HomePage = ({
   cabinets,

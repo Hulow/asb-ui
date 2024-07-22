@@ -1,13 +1,17 @@
 'use client';
 import Image from 'next/image';
 import styles from '../../styles/components/image.module.scss';
-import { config } from '../../config/config';
+import { PictureMetadata } from '../../handlers/cloudinary';
 
-export function CustomImage({ src }: { src: string }) {
+export function CustomImage({
+  pictureMetadata,
+}: {
+  pictureMetadata: PictureMetadata;
+}) {
   return (
     <Image
       className={styles['image']}
-      src={`https://res.cloudinary.com/${config.cloudinary.name}/image/upload/${src}`}
+      src={pictureMetadata.url}
       width={350}
       height={500}
       alt='prop'

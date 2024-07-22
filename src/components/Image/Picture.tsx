@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import styles from '../../styles/components/picture.module.scss';
-import { PictureMetadata } from '../../app/page';
+import { PictureMetadata } from '../../handlers/cloudinary';
 
 export function CustomPicture({
   pictureMetadata,

@@ -13,6 +13,7 @@ import {
   SpeakerItems,
 } from '../../../components/SpeakerItems/SpeakerItems';
 import { asbHandler } from '../../../handlers/asb';
+import { cloudinaryHandler } from '../../../handlers/cloudinary';
 
 interface Params {
   params: {
@@ -24,6 +25,10 @@ export default async function MeasurementPage({ params }: Params) {
   const endpoint = config.endpoints.measurements;
   const measurements = await getMeasurements(
     `${endpoint}/${params.cabinetUid}`
+  );
+
+  const pictureMetadata = await cloudinaryHandler(
+    `${config.cloudinary.apiUrl}?public_ids=cabinets%2F${config.env}-${measurements.cabinet.uid}`
   );
 
   const cabinetProps = getCabinetProperties(measurements.cabinet);
@@ -44,9 +49,7 @@ export default async function MeasurementPage({ params }: Params) {
         </div>
       </div>
       <div className='overview'>
-        <CustomImage
-          src={`cabinets/${config.env}-${measurements.cabinet.uid}.webp`}
-        />
+        <CustomImage pictureMetadata={pictureMetadata} />
         <div className='items'>
           <SpeakerItems title={texts.cabinet} props={cabinetProps} />
           {drivers.map((driver, index) => {
