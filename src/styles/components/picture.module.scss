@@ -3,46 +3,41 @@
 .picture {
   margin-top: 20px;
   border-radius: 15px;
+  height: auto;
 }
 
 @media (max-width: $mobile) {
   .picture {
     width: $maxMobileCabinetsWidth;
-    height: auto;
   }
 }
 
 @media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
   .picture {
     width: $minMobileMaxTabletCabinetsWidth;
-    height: auto;
   }
 }
 
 @media (min-width: $tablet) and (max-width: ($laptop - 1)) {
   .picture {
     width: $minTabletMaxLaptopCabinetsWidth;
-    height: auto;
   }
 }
 
 @media (min-width: $laptop) and (max-width: ($desktop - 1)) {
   .picture {
     width: $minLaptopMaxDesktopCabinetsWidth;
-    height: auto;
   }
 }
 
 @media (min-width: $desktop) and (max-width: ($cinema - 1)) {
   .picture {
     width: $minDesktopMaxCinemaCabinetsWidth;
-    height: auto;
   }
 }
 
 @media (min-width: $cinema) {
   .picture {
     width: $maxCinemaCabinetsWidth;
-    height: auto;
   }
 }
