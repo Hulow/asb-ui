@@ -1,7 +1,6 @@
 import '../../../styles/pages/measurement.scss';
 import { config } from '../../../config/config';
 import texts from '../../../data/texts.json';
-import { Measurement } from '../../../types/measurement';
 import { Button } from '../../../components/Button/Button';
 import { CustomLink } from '../../../components/Link/Link';
 import { Measurements } from '../../../components/Measurement/Measurement';
@@ -22,12 +21,12 @@ interface Params {
 }
 
 export default async function MeasurementPage({ params }: Params) {
-  const measurements = (await asbHandler(
-    `${config.asbBaseUrl}${config.endpoints.measurements}/${params.cabinetUid}`
-  )) as Measurement;
-  const pictureMetadata = await cloudinaryHandler(
-    `${config.cloudinary.apiUrl}?public_ids=cabinets%2F${config.env}-${measurements.cabinet.uid}`
-  );
+  const asbEndpoint = `${config.asbBaseUrl}${config.endpoints.measurements}/${params.cabinetUid}`;
+  const cloudinaryEndpoint = `${config.cloudinary.apiUrl}?public_ids=cabinets%2F${config.env}-${params.cabinetUid}`;
+  const [measurements, pictureMetadata] = await Promise.all([
+    asbHandler(asbEndpoint),
+    cloudinaryHandler(cloudinaryEndpoint),
+  ]);
 
   const cabinetProps = getCabinetProperties(measurements.cabinet);
   const drivers = measurements.drivers;
@@ -50,7 +49,7 @@ export default async function MeasurementPage({ params }: Params) {
         <CustomImage pictureMetadata={pictureMetadata} />
         <div className='items'>
           <SpeakerItems title={texts.cabinet} props={cabinetProps} />
-          {drivers.map((driver, index) => {
+          {drivers.map((driver: Driver, index: number) => {
             const driverProps = getDriverProperties(driver);
             return (
               <SpeakerItems
