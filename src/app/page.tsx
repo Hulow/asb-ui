@@ -1,5 +1,6 @@
 import { HomePage } from '../components/Home/Home';
 import { config } from '../config/config';
+import { cloudinaryHandler } from '../handlers/cloudinary';
 import { CabinetOverview } from '../types/cabinet-overview';
 
 interface CloudinaryResponse {
@@ -19,7 +20,9 @@ export type PictureMetadata = {
 
 export default async function Home() {
   const cabinets = await getCabinets();
-  const cloudinaryData: CloudinaryResponse = await getPictureMetadata();
+  const cloudinaryData: CloudinaryResponse = await cloudinaryHandler(
+    `${config.cloudinary.apiUrl}?public_ids=chamber%2Froom`
+  );
 
   if (!cabinets.length || !cloudinaryData.resources) {
     return <div>Web Application in maintenance</div>;
@@ -46,25 +49,6 @@ async function getCabinets(): Promise<CabinetOverview[]> {
   }
 
   return await cabinets.json();
-}
-
-async function getPictureMetadata(): Promise<CloudinaryResponse> {
-  const cloudinaryResponse = await fetch(
-    `${config.cloudinary.apiUrl}?public_ids=chamber%2Froom`,
-    {
-      headers: {
-        Authorization: Buffer.from(
-          `${config.cloudinary.apiKey}:${config.cloudinary.apiSecret}`
-        ).toString('base64'),
-      },
-      cache: 'no-store',
-    }
-  );
-  if (!cloudinaryResponse.ok) {
-    throw new Error('Failed to fetch cloudinary metadata');
-  }
-
-  return await cloudinaryResponse.json();
 }
 
 function mapPicture(resp: CloudinaryResponse): PictureMetadata {
