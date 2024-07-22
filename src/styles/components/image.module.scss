@@ -11,17 +11,24 @@
   }
 }
 
-@media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
+@media (min-width: $mobile) and (max-width: ( $largeMobile - 1)) {
   .image {
     width: 100%;
-    height: $minMobileMaxTabletSpeakerItemsHeight;
+    height: 400px;
+  }
+}
+
+@media (min-width: $largeMobile) and (max-width: ( $tablet - 1)) {
+  .image {
+    width: 100%;
+    height: 490px;
   }
 }
 
 @media (min-width: $tablet) and (max-width: ($laptop - 1)) {
   .image {
     width: 100%;
-    height: $minTabletMaxLaptopSpeakerItemsHeight;
+    height: 570px;
   }
 }
 
