@@ -160,7 +160,7 @@ function getImpedanceSettings(impedance: Impedance): SettingsProp[] {
     },
     {
       name: <h3>{texts.impedanceSettings.resonanceFrequency}:</h3>,
-      value: <p>{impedance.resonanceFrequency} Hz</p>,
+      value: <p>{mapImpedance(impedance.resonanceFrequency)} Hz</p>,
     },
     {
       name: <h3>{texts.impedanceSettings.acResistance}:</h3>,
@@ -175,4 +175,9 @@ function getImpedanceSettings(impedance: Impedance): SettingsProp[] {
       value: <p>{impedance.totalDamping}</p>,
     },
   ];
+}
+
+function mapImpedance(data: string): string {
+  const dataToArray = data.split(' ');
+  return dataToArray.length > 1 ? dataToArray.join(' - ') : data;
 }
