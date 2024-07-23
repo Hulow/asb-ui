@@ -20,8 +20,8 @@ export function Cabinets({ cabinets }: { cabinets: CabinetOverview[] }) {
   const cabinetsContent = getSelectedCabinets();
 
   return (
-    <div className='cabinets flex-col-center'>
-      <div className='cabinets-menu flex-col-center'>
+    <div className='cabinets flex-l-col-center'>
+      <div className='cabinets-menu flex-l-col-center'>
         <DropdownButton
           owner={selectedOwner ?? ALL_CABINETS}
           dropDownState={updateDropdownState}

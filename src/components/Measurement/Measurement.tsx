@@ -83,14 +83,14 @@ export const Measurements: React.FC<MeasurementsProps> = ({ measurements }) => {
   const frequencySettings = getFrequencySettings(measurements.frequency);
 
   return (
-    <div className='flex-col-center charts'>
+    <div className='flex-l-col-center charts'>
       <div className='title item'>
         <p>{texts.frequencyResponse}</p>
       </div>
       <FrequencyChart props={frequencyChart} />
       <Settings props={frequencySettings} />
       {impedanceChartsAndSettings.map(({ chart, settings }, index) => (
-        <div key={index} className='flex-col-center'>
+        <div key={index} className='flex-l-col-center'>
           <div className='title item'>
             <p>
               {texts.impedanceResponse}

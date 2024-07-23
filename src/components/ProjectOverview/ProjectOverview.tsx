@@ -7,7 +7,7 @@ export function ProjectOverview({
   pictureMetadata: PictureMetadata;
 }) {
   return (
-    <div className='flex-col-center'>
+    <div className='flex-l-col-center'>
       <CustomPicture pictureMetadata={pictureMetadata} />
     </div>
   );

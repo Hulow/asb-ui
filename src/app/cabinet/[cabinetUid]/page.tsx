@@ -32,8 +32,8 @@ export default async function MeasurementPage({ params }: Params) {
   const drivers = measurements.drivers;
 
   return (
-    <main className='measurement flex-col-center'>
-      <div className='flex-col-center'>
+    <main className='measurement flex-l-col-center'>
+      <div className='flex-l-col-center'>
         <div className='header-item '>
           <p>{texts.measurements}</p>
         </div>

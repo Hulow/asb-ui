@@ -35,7 +35,7 @@ export const HomePage = ({
   };
 
   return (
-    <main className='flex-col-center'>
+    <main className='flex-l-col-center'>
       <Logo route='/ASB.svg' alt='Anechoic Station Berlin' />
       <NavBar onEvent={handleEvent} />
       {event?.state ? <Content event={event} /> : null}
