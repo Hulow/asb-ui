@@ -45,6 +45,11 @@ main {
   align-items: center;
 }
 
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
 .flex-l-col-center {
   width: 100%;
   display: flex;

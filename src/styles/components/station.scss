@@ -1,2 +1,41 @@
 @import '../variables';
 
+.station {
+  gap: 50px;
+}
+
+@media (max-width: $mobile) {
+  .station {
+    width: $maxMobileCabinetsWidth;
+  }
+}
+
+@media (min-width: $mobile) and (max-width: ( $tablet - 1)) {
+  .station {
+    width: $minMobileMaxTabletCabinetsWidth;
+  }
+}
+
+@media (min-width: $tablet) and (max-width: ($laptop - 1)) {
+  .station {
+    width: $minTabletMaxLaptopCabinetsWidth;
+  }
+}
+
+@media (min-width: $laptop) and (max-width: ($desktop - 1)) {
+  .station {
+    width: $minLaptopMaxDesktopCabinetsWidth;
+  }
+}
+
+@media (min-width: $desktop) and (max-width: ($cinema - 1)) {
+  .station {
+    width: $minDesktopMaxCinemaCabinetsWidth;
+  }
+}
+
+@media (min-width: $cinema) {
+  .station {
+    width: $maxCinemaCabinetsWidth;
+  }
+}
