@@ -1,4 +1,11 @@
 import '../../styles/components/station.scss';
+import texts from '../../data/texts.json';
+
+interface CustomLinkProps {
+  href: string;
+  target?: boolean;
+  children: React.ReactNode;
+}
 
 export function Station() {
   return (
@@ -83,21 +90,33 @@ export function Station() {
         <h1>Applications overview</h1>
         <p>This part is more geek-oriented.</p>
         <p>
-          ASB APP and ASB UI are the applications designed for processing and
-          rendering measurements on the web. Both repositories are available on
-          github.
+          <CustomLink href={texts.asbAppUrl} target={true}>
+            {texts.asbApp}
+          </CustomLink>{' '}
+          and{' '}
+          <CustomLink href={texts.asbUiUrl} target={true}>
+            {texts.asbUi}
+          </CustomLink>{' '}
+          are the applications designed for processing and rendering
+          measurements on the web. Both repositories are available on github.
         </p>
         <p>
-          ASB APP acts as a backend, processing all measurements and storing
-          them in a PostgreSQL database. It uses an IoC container provided by
-          InversifyJS and follows the Hexagonal Architecture pattern introduced
-          by Alistair Cockburn.
+          <CustomLink href={texts.asbAppUrl} target={true}>
+            {texts.asbApp}
+          </CustomLink>{' '}
+          acts as a backend, processing all measurements and storing them in a
+          PostgreSQL database. It uses an IoC container provided by InversifyJS
+          and follows the Hexagonal Architecture pattern introduced by Alistair
+          Cockburn.
         </p>
         <p>
-          ASB UI serves as a frontend web application for rendering data, built
-          with Next.js for server-side rendering. Lots of things have to be
-          improved there since I have never had any proper experience with
-          frontend development…
+          <CustomLink href={texts.asbUiUrl} target={true}>
+            {texts.asbUi}
+          </CustomLink>{' '}
+          serves as a frontend web application for rendering data, built with
+          Next.js for server-side rendering. Lots of things have to be improved
+          there since I have never had any proper experience with frontend
+          development…
         </p>
         <p>
           Both applications are containerized with Docker and deployed on a
@@ -105,5 +124,22 @@ export function Station() {
         </p>
       </div>
     </div>
+  );
+}
+
+export function CustomLink({
+  href,
+  target = false,
+  children,
+}: CustomLinkProps) {
+  return (
+    <a
+      href={href}
+      target={target ? '_blank' : '_self'}
+      rel={target ? 'noopener noreferrer' : undefined}
+      className='custom-link'
+    >
+      {children}
+    </a>
   );
 }
