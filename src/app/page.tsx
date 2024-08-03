@@ -16,10 +16,14 @@ export default async function Home() {
   const cabinets = await asbHandler(asbEndpoint);
   const roomMetadata = getPictureMetadata('/anechoic_chamber.jpg');
   const roomWithDoorMetadata = getPictureMetadata('/anechoic_chamber_door.jpg');
+  const roomWithWallsMetadata = getPictureMetadata(
+    '/anechoic_chamber_walls.jpg'
+  );
 
   const picturesMetadata = {
     roomMetadata,
     roomWithDoorMetadata,
+    roomWithWallsMetadata,
   };
 
   if (!cabinets.length) {

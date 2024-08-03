@@ -10,6 +10,7 @@ export function ProjectOverview({
     <div className='flex-l-col-center'>
       <CustomPicture pictureMetadata={picturesMetadata.roomMetadata} />
       <CustomPicture pictureMetadata={picturesMetadata.roomWithDoorMetadata} />
+      <CustomPicture pictureMetadata={picturesMetadata.roomWithWallsMetadata} />
     </div>
   );
 }

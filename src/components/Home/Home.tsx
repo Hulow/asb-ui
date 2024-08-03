@@ -13,6 +13,7 @@ import { PictureMetadata } from '../../app/page';
 export interface PicturesMetadata {
   roomMetadata: PictureMetadata;
   roomWithDoorMetadata: PictureMetadata;
+  roomWithWallsMetadata: PictureMetadata;
 }
 
 export const HomePage = ({
