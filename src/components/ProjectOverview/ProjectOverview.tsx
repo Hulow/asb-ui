@@ -8,9 +8,22 @@ export function ProjectOverview({
 }) {
   return (
     <div className='flex-l-col-center'>
-      <CustomPicture pictureMetadata={picturesMetadata.roomMetadata} />
-      <CustomPicture pictureMetadata={picturesMetadata.roomWithDoorMetadata} />
-      <CustomPicture pictureMetadata={picturesMetadata.roomWithWallsMetadata} />
+      <>
+        <CustomPicture pictureMetadata={picturesMetadata.roomMetadata} />
+        <p>{picturesMetadata.roomMetadata.photographer}</p>
+      </>
+      <>
+        <CustomPicture
+          pictureMetadata={picturesMetadata.roomWithDoorMetadata}
+        />
+        <p>{picturesMetadata.roomWithDoorMetadata.photographer}</p>
+      </>
+      <>
+        <CustomPicture
+          pictureMetadata={picturesMetadata.roomWithWallsMetadata}
+        />
+        <p>{picturesMetadata.roomWithWallsMetadata.photographer}</p>
+      </>
     </div>
   );
 }
