@@ -8,14 +8,19 @@ import { Station } from '../Station/Station';
 import { Cabinets } from '../Cabinets/Cabinets';
 import { Logo } from '../Image/Logo';
 import { ProjectOverview } from '../ProjectOverview/ProjectOverview';
-import { PictureMetadata } from '../../handlers/cloudinary';
+import { PictureMetadata } from '../../app/page';
+
+export interface PicturesMetadata {
+  roomMetadata: PictureMetadata;
+  roomWithDoorMetadata: PictureMetadata;
+}
 
 export const HomePage = ({
   cabinets,
-  pictureMetadata,
+  picturesMetadata,
 }: {
   cabinets: CabinetOverview[];
-  pictureMetadata: PictureMetadata;
+  picturesMetadata: PicturesMetadata;
 }) => {
   const [event, setEvent] = useState<undefined | OnEvent>(undefined);
 
@@ -26,7 +31,7 @@ export const HomePage = ({
   const Content = ({ event }: { event: OnEvent }) => {
     switch (event?.name) {
       case texts.projectOverview:
-        return <ProjectOverview pictureMetadata={pictureMetadata} />;
+        return <ProjectOverview picturesMetadata={picturesMetadata} />;
       case texts.about:
         return <Station />;
       case texts.measurements:

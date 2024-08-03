@@ -1,3 +1,4 @@
+import { PictureMetadata } from '../app/page';
 import { config } from '../config/config';
 
 interface CloudinaryResponse {
@@ -8,12 +9,6 @@ interface CloudinaryImageDto {
   height: number;
   secure_url: string;
 }
-export type PictureMetadata = {
-  url: string;
-  width: number;
-  height: number;
-  ratio: string;
-};
 
 const token = `Basic ${Buffer.from(config.cloudinary.apiKey + ':' + config.cloudinary.apiSecret).toString('base64')}`;
 

@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import styles from '../../styles/components/image.module.scss';
-import { PictureMetadata } from '../../handlers/cloudinary';
+import { PictureMetadata } from '../../app/page';
 
 export function CustomImage({
   pictureMetadata,

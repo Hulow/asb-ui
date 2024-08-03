@@ -1,14 +1,15 @@
-import { PictureMetadata } from '../../handlers/cloudinary';
+import { PicturesMetadata } from '../Home/Home';
 import { CustomPicture } from '../Image/Picture';
 
 export function ProjectOverview({
-  pictureMetadata,
+  picturesMetadata,
 }: {
-  pictureMetadata: PictureMetadata;
+  picturesMetadata: PicturesMetadata;
 }) {
   return (
     <div className='flex-l-col-center'>
-      <CustomPicture pictureMetadata={pictureMetadata} />
+      <CustomPicture pictureMetadata={picturesMetadata.roomMetadata} />
+      <CustomPicture pictureMetadata={picturesMetadata.roomWithDoorMetadata} />
     </div>
   );
 }
