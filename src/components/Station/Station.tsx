@@ -44,9 +44,8 @@ export function Station() {
       <div>
         <h1>About the room</h1>
         <p>
-          The room covers a floor area of 20 m² and a volume of 38 m³. The size
-          of the room could not be bigger due to a budget constraint. Due to a
-          budget constraint, the room could not be bigger.
+          The room covers a floor area of 20 m² and a volume of 38 m³. Due to a
+          budget constraint, the size of the room could not be bigger.
         </p>
         <p>
           The walls, door, ceiling, and floor are insulated with a 200 mm thick
