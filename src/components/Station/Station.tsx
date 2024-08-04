@@ -24,7 +24,7 @@ export function Station() {
         </p>
         <p>
           Believing that collaboration and transparency accelerate learning,
-          this project is committed to three key principles:
+          this project is based on three pillars:
           <ul>
             <li>The project is non-profit-oriented.</li>
             <li>The room is open to everyone.</li>
