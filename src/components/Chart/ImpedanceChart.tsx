@@ -159,8 +159,11 @@ function mapOptions(
 }
 
 function mapFrequencyValue(val: string | number) {
-  if (val === 1000) return val / 1000 + ' KHz';
-  if (val === 10000) return val / 1000 + ' KHz';
+  let numStr = val.toString();
+  let zeroCount = (numStr.match(/0/g) || []).length;
+  if (zeroCount === 3) return Number(val) / 1000 + ' KHz';
+  if (zeroCount === 4) return Number(val) / 1000 + ' KHz';
+
   return val + ' Hz';
 }
 
