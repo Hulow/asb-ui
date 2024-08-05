@@ -78,7 +78,7 @@ export function Station() {
         </p>
         <p>
           Each thrown impulse is recorded by the microphone EEM6 Electret from
-          Dayton Audio
+          Dayton Audio.
         </p>
         <p>
           All audio signals are converted by the Scarlett 2i2 4th Generation
@@ -112,10 +112,11 @@ export function Station() {
           <CustomLink href={texts.asbUiUrl} target={true}>
             {texts.asbUi}
           </CustomLink>{' '}
-          serves as a frontend web application for rendering data, built with
-          Next.js for server-side rendering. Lots of things have to be improved
-          there since I have never had any proper experience with frontend
-          development…
+          ASB UI serves as a frontend and was built with Next.js React
+          framework. This choice was driven by wanting to optimize performances
+          with caching mechanisms such as server side rendering. ots of things
+          have to be improved there since I have never had any proper experience
+          with frontend development.
         </p>
         <p>
           Both applications are containerized with Docker and deployed on a
