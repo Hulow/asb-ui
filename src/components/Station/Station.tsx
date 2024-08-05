@@ -114,7 +114,7 @@ export function Station() {
             {texts.asbUi}
           </CustomLink>{' '}
           serves as a frontend and was built with Next.js React framework. This
-          choice was driven by optimizing performances with caching mechanisms
+          choice was driven by optimizing performances with caching mechanisms,
           more specifically with server side rendering. Lots of things have to
           be improved there, since I have never had any proper experience with
           frontend development.
