@@ -113,11 +113,11 @@ export function Station() {
           <CustomLink href={texts.asbUiUrl} target={true}>
             {texts.asbUi}
           </CustomLink>{' '}
-          ASB UI serves as a frontend and was built with Next.js React
-          framework. This choice was driven by optimizing performances with
-          caching mechanisms especially with server side rendering. Lots of
-          things have to be improved there since I have never had any proper
-          experience with frontend development.
+          serves as a frontend and was built with Next.js React framework. This
+          choice was driven by optimizing performances with caching mechanisms
+          especially with server side rendering. Lots of things have to be
+          improved there since I have never had any proper experience with
+          frontend development.
         </p>
         <p>
           Both applications are containerized with Docker and deployed on a
