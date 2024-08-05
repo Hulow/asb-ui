@@ -103,8 +103,8 @@ export function Station() {
           <CustomLink href={texts.asbAppUrl} target={true}>
             {texts.asbApp}
           </CustomLink>{' '}
-          acts as a backend, processing all measurements and storing them in a
-          PostgreSQL database. The application is managed by an IoC container
+          acts as a backend, processing all measurements and storing them
+          directly on the server. The application is managed by an IoC container
           provided by InversifyJS and is designed using the Hexagonal
           Architecture pattern introduced by Alistair Cockburn. It adheres to
           good practices, including the SOLID principles.
@@ -115,8 +115,8 @@ export function Station() {
           </CustomLink>{' '}
           serves as a frontend and was built with Next.js React framework. This
           choice was driven by optimizing performances with caching mechanisms
-          especially with server side rendering. Lots of things have to be
-          improved there since I have never had any proper experience with
+          more specifically with server side rendering. Lots of things have to
+          be improved there, since I have never had any proper experience with
           frontend development.
         </p>
         <p>
