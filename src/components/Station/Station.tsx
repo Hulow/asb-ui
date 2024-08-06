@@ -15,7 +15,7 @@ export function Station() {
         <p>
           Hello, my name is Victor, and this is my project related to acoustics.
           With a keen interest in loudspeaker design, I had the idea to build a
-          semi anechoic chamber in a Soviet bunker located in southern Berlin.
+          semi anechoic chamber in a soviet bunker located in southern Berlin.
         </p>
         <p>
           This room is focused on delivering accurate electro-acoustic
@@ -103,11 +103,11 @@ export function Station() {
           <CustomLink href={texts.asbAppUrl} target={true}>
             {texts.asbApp}
           </CustomLink>{' '}
-          acts as a backend, processing all measurements and storing them
-          directly on the server. The application is managed by an IoC container
-          provided by InversifyJS and is designed using the Hexagonal
-          Architecture pattern introduced by Alistair Cockburn. It adheres to
-          good practices, including the SOLID principles.
+          acts as a backend, processes all measurements and stores them directly
+          on a server. The application is managed by the IoC container from
+          InversifyJS and designed using the Hexagonal Architecture pattern
+          introduced by Alistair Cockburn. It adheres to good practices,
+          including SOLID principles.
         </p>
         <p>
           <CustomLink href={texts.asbUiUrl} target={true}>
