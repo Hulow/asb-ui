@@ -4,6 +4,9 @@ import { config } from '../config/config';
 import { asbHandler } from '../handlers/asb';
 import sizeOf from 'image-size';
 import texts from '../data/texts.json';
+import NewHome from '../app-new/page';
+
+const isUsingNewApp = process.env.USE_NEW_APP === 'true';
 
 export type PictureMetadata = {
   url: string;
@@ -21,6 +24,9 @@ export interface PictureDimension {
 }
 
 export default async function Home() {
+  if (isUsingNewApp) {
+    return <NewHome />;
+  }
   const asbEndpoint = `${config.asbBaseUrl}${config.endpoints.cabinets}`;
   const cabinets = await asbHandler(asbEndpoint);
   const roomMetadata = getPictureMetadata('/anechoic_chamber.jpg');
