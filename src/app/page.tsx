@@ -4,7 +4,7 @@ import { config } from '../config/config';
 import { asbHandler } from '../handlers/asb';
 import sizeOf from 'image-size';
 import texts from '../data/texts.json';
-import NewHome from '../app-new/page';
+import NewHome from './newPage';
 
 const isUsingNewApp = process.env.USE_NEW_APP === 'true';
 
