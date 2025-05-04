@@ -28,7 +28,7 @@ export default async function Home() {
     return <NewHome />;
   }
   const asbEndpoint = `${config.asbBaseUrl}${config.endpoints.cabinets}`;
-  const cabinets = await asbHandler(asbEndpoint);
+  // const cabinets = await asbHandler(asbEndpoint);
   const roomMetadata = getPictureMetadata('/anechoic_chamber.jpg');
   const roomWithDoorMetadata = getPictureMetadata('/anechoic_chamber_door.jpg');
   const roomWithWallsMetadata = getPictureMetadata(
@@ -41,11 +41,12 @@ export default async function Home() {
     roomWithWallsMetadata,
   };
 
-  if (!cabinets.length) {
-    return <div>{texts.appDown}</div>;
-  }
+  // if (!cabinets.length) {
+  //   return <div>{texts.appDown}</div>;
+  // }
 
-  return <HomePage cabinets={cabinets} picturesMetadata={picturesMetadata} />;
+  // return <HomePage cabinets={cabinets} picturesMetadata={picturesMetadata} />;
+  return <HomePage picturesMetadata={picturesMetadata} />;
 }
 
 function getPictureMetadata(url: string): PictureMetadata {

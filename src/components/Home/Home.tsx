@@ -9,6 +9,7 @@ import { Cabinets } from '../Cabinets/Cabinets';
 import { Logo } from '../Image/Logo';
 import { ProjectOverview } from '../ProjectOverview/ProjectOverview';
 import { PictureMetadata } from '../../app/page';
+import { TempMessage } from '../TempComponent/TempMessage';
 
 export interface PicturesMetadata {
   roomMetadata: PictureMetadata;
@@ -17,10 +18,10 @@ export interface PicturesMetadata {
 }
 
 export const HomePage = ({
-  cabinets,
+  // cabinets,
   picturesMetadata,
 }: {
-  cabinets: CabinetOverview[];
+  // cabinets: CabinetOverview[];
   picturesMetadata: PicturesMetadata;
 }) => {
   const [event, setEvent] = useState<undefined | OnEvent>(undefined);
@@ -36,7 +37,7 @@ export const HomePage = ({
       case texts.about:
         return <Station />;
       case texts.measurements:
-        return <Cabinets cabinets={cabinets} />;
+        return <TempMessage />;
     }
   };
 
